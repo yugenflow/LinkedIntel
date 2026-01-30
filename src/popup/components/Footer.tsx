@@ -1,13 +1,17 @@
 export default function Footer() {
   return (
-    <footer className="bg-bg-light p-4 flex justify-center items-center gap-6">
-      <a className="text-primary text-xs font-bold hover:underline" href="#">
-        Help Center
-      </a>
-      <div className="w-1.5 h-1.5 rounded-full bg-gray-300" />
-      <a className="text-primary text-xs font-bold hover:underline" href="#">
-        Full Dashboard
-      </a>
+    <footer className="px-5 py-3 flex items-center justify-between border-t border-border-subtle">
+      <span className="text-[11px] text-text-tertiary">
+        v1.0.0
+      </span>
+      <div className="flex items-center gap-4">
+        <a className="text-[11px] text-text-tertiary hover:text-text-secondary transition-colors" href="#">
+          Help
+        </a>
+        <a className="text-[11px] text-text-tertiary hover:text-text-secondary transition-colors" href="#">
+          Dashboard
+        </a>
+      </div>
     </footer>
   );
 }

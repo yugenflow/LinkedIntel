@@ -1,23 +1,94 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0074b2;
-  --color-intel-teal: #008080;
-  --color-bg-light: #f5f7f8;
-  --color-text-primary: #101618;
-  --color-text-secondary: #5e7c8d;
-  --color-border: #dae2e7;
-  --color-border-light: #f0f3f5;
-  --font-family-display: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-accent: #0D9488;
+  --color-accent-light: #CCFBF1;
+  --color-accent-mid: #5EEAD4;
+  --color-accent-subtle: #F0FDFA;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #FAFAFA;
+  --color-surface-sunken: #F4F4F5;
+  --color-text-primary: #18181B;
+  --color-text-secondary: #71717A;
+  --color-text-tertiary: #A1A1AA;
+  --color-border: #E4E4E7;
+  --color-border-subtle: #F4F4F5;
+  --color-danger: #EF4444;
+  --color-danger-light: #FEF2F2;
+  --color-success: #10B981;
+  --color-success-light: #ECFDF5;
+  --color-warning: #F59E0B;
+  --color-warning-light: #FFFBEB;
+  --font-family-display: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   width: 420px;
-  min-height: 520px;
+  min-height: 480px;
   max-height: 600px;
   margin: 0;
   font-family: var(--font-family-display);
-  background: var(--color-bg-light);
+  background: var(--color-surface);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
+  color: var(--color-text-primary);
+}
+
+/* Scrollbar styling */
+body::-webkit-scrollbar {
+  width: 4px;
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 100px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* Smooth transitions on all interactive elements */
+button, a, input, textarea {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Pulse animation for loading */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

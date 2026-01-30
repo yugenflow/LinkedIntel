@@ -18,7 +18,7 @@ export default function RealityCheckView({ jd }: Props) {
       const data = await chrome.storage.local.get('resume');
       const resume = data.resume as { text?: string } | null;
       if (!resume?.text) {
-        setError('Upload your resume in the extension popup first.');
+        setError('Upload your resume first.');
         setLoading(false);
         return;
       }
@@ -46,55 +46,74 @@ export default function RealityCheckView({ jd }: Props) {
       : result.status === 'moderate'
         ? 'text-warning'
         : 'text-danger'
-    : 'text-text-secondary';
+    : 'text-text-tertiary';
+
+  const gaugeBg = result
+    ? result.status === 'strong'
+      ? 'bg-success-light'
+      : result.status === 'moderate'
+        ? 'bg-warning-light'
+        : 'bg-danger-light'
+    : 'bg-surface-sunken';
 
   return (
-    <div className="p-4 space-y-4">
-      <div className="bg-white rounded-lg border border-border p-4 space-y-1">
-        <h2 className="text-sm font-bold text-text-primary">{jd.title}</h2>
-        <p className="text-xs text-text-secondary">{jd.company}</p>
+    <div className="space-y-3 px-1">
+      {/* Job card */}
+      <div className="rounded-lg border border-border bg-surface p-3 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+        <p className="text-[13px] font-medium text-text-primary">{jd.title}</p>
+        <p className="text-[11px] text-text-tertiary mt-0.5">{jd.company}</p>
       </div>
 
+      {/* Analyze button */}
       {!result && !loading && (
         <button
           onClick={handleAnalyze}
-          className="w-full py-2.5 px-4 bg-primary text-white text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity"
+          className="w-full py-2.5 bg-accent text-white text-[13px] font-medium rounded-lg hover:bg-accent/90 active:scale-[0.98] transition-all duration-150 shadow-[0_1px_3px_rgba(13,148,136,0.3)]"
         >
-          Analyze Match
+          Analyze match
         </button>
       )}
 
+      {/* Loading */}
       {loading && (
-        <div className="flex items-center justify-center gap-2 py-6 text-sm text-text-secondary">
-          <span className="inline-block w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-          Analyzing resume match...
+        <div className="flex items-center justify-center gap-2 py-5">
+          <span className="inline-block w-4 h-4 border-2 border-accent border-t-transparent rounded-full animate-spin" />
+          <span className="text-[12px] text-text-secondary">Analyzing...</span>
         </div>
       )}
 
+      {/* Error */}
       {error && (
-        <div className="bg-red-50 text-danger text-sm p-3 rounded-lg">{error}</div>
+        <div className="px-3 py-2 rounded-lg bg-danger-light text-danger text-[12px]">{error}</div>
       )}
 
+      {/* Results */}
       {result && (
-        <div className="space-y-4">
-          {/* Match gauge */}
-          <div className="bg-white rounded-lg border border-border p-4 flex flex-col items-center gap-2">
-            <span className={`text-4xl font-bold ${gaugeColor}`}>{result.matchPercent}%</span>
-            <span className={`text-xs font-semibold uppercase tracking-wider ${gaugeColor}`}>
-              {result.status} match
+        <div className="space-y-2.5">
+          {/* Score */}
+          <div className={`flex items-center gap-4 rounded-lg p-4 ${gaugeBg}`}>
+            <span className={`text-3xl font-bold tracking-tight ${gaugeColor}`}>
+              {result.matchPercent}%
             </span>
-            <p className="text-xs text-text-secondary text-center mt-1">{result.summary}</p>
+            <div className="flex-1">
+              <p className={`text-[12px] font-semibold capitalize ${gaugeColor}`}>
+                {result.status} match
+              </p>
+              <p className="text-[11px] text-text-secondary mt-0.5 leading-snug">
+                {result.summary}
+              </p>
+            </div>
           </div>
 
-          {/* Matched skills */}
+          {/* Skills */}
           {result.matchedSkills.length > 0 && (
-            <div className="bg-white rounded-lg border border-border p-3 space-y-2">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-success">
-                Matched Skills ({result.matchedSkills.length})
-              </h3>
-              <div className="flex flex-wrap gap-1.5">
+            <div className="space-y-1.5">
+              <p className="text-[11px] font-medium text-success px-0.5">
+                Matched ({result.matchedSkills.length})
+              </p>
+              <div className="flex flex-wrap gap-1">
                 {result.matchedSkills.map((skill) => (
-                  <span key={skill} className="text-xs bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">
+                  <span key={skill} className="text-[11px] bg-success-light text-success px-2 py-0.5 rounded-md">
                     {skill}
                   </span>
                 ))}
@@ -102,15 +121,14 @@ export default function RealityCheckView({ jd }: Props) {
             </div>
           )}
 
-          {/* Missing skills */}
           {result.missingSkills.length > 0 && (
-            <div className="bg-white rounded-lg border border-border p-3 space-y-2">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-danger">
-                Missing Skills ({result.missingSkills.length})
-              </h3>
-              <div className="flex flex-wrap gap-1.5">
+            <div className="space-y-1.5">
+              <p className="text-[11px] font-medium text-danger px-0.5">
+                Missing ({result.missingSkills.length})
+              </p>
+              <div className="flex flex-wrap gap-1">
                 {result.missingSkills.map((skill) => (
-                  <span key={skill} className="text-xs bg-red-50 text-red-700 px-2 py-0.5 rounded-full">
+                  <span key={skill} className="text-[11px] bg-danger-light text-danger px-2 py-0.5 rounded-md">
                     {skill}
                   </span>
                 ))}
@@ -120,7 +138,7 @@ export default function RealityCheckView({ jd }: Props) {
 
           <button
             onClick={() => setResult(null)}
-            className="w-full py-2 text-xs text-text-secondary hover:text-text-primary transition-colors"
+            className="w-full py-1.5 text-[11px] text-text-tertiary hover:text-text-secondary transition-colors"
           >
             Re-analyze
           </button>

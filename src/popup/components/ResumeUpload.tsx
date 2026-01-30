@@ -32,49 +32,32 @@ export default function ResumeUpload({ onFileSelect, uploading, error }: Props) 
   };
 
   return (
-    <div className="flex flex-col p-2">
+    <div className="px-1">
       <div
-        className={`flex flex-col items-center gap-4 rounded-xl border-2 border-dashed px-6 py-10 cursor-pointer group transition-colors ${
+        className={`flex flex-col items-center gap-3 rounded-xl border border-dashed px-5 py-7 cursor-pointer group transition-all duration-200 ${
           dragOver
-            ? 'border-primary bg-primary/5'
-            : 'border-border bg-bg-light/30 hover:border-primary'
+            ? 'border-accent bg-accent-subtle scale-[0.99]'
+            : 'border-border hover:border-accent/40 bg-surface-sunken/50 hover:bg-accent-subtle/30'
         }`}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onClick={handleClick}
       >
-        <div className="flex gap-4">
-          {/* PDF icon */}
-          <svg className="size-9 text-gray-400 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-          </svg>
-          {/* DOCX icon */}
-          <svg className="size-9 text-gray-400 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+        <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-surface border border-border shadow-sm group-hover:shadow-md group-hover:border-accent/30 transition-all duration-200">
+          <svg className="w-5 h-5 text-text-tertiary group-hover:text-accent transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13" />
           </svg>
         </div>
 
-        <div className="flex max-w-[280px] flex-col items-center gap-1">
-          <p className="text-text-primary text-base font-bold text-center">
-            Upload Resume (PDF, DOCX)
+        <div className="flex flex-col items-center gap-0.5">
+          <p className="text-[13px] font-medium text-text-primary">
+            {uploading ? 'Parsing resume...' : 'Upload your resume'}
           </p>
-          <p className="text-text-secondary text-xs font-normal text-center">
-            Drag and drop or click to browse
+          <p className="text-[11px] text-text-tertiary">
+            PDF or DOCX — drag & drop or click
           </p>
         </div>
-
-        <button
-          type="button"
-          className="flex min-w-[120px] cursor-pointer items-center justify-center rounded-full h-10 px-5 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all"
-          onClick={(e) => {
-            e.stopPropagation();
-            handleClick();
-          }}
-          disabled={uploading}
-        >
-          {uploading ? 'Parsing...' : 'Browse Files'}
-        </button>
 
         <input
           ref={inputRef}
@@ -86,7 +69,9 @@ export default function ResumeUpload({ onFileSelect, uploading, error }: Props) 
       </div>
 
       {error && (
-        <p className="text-red-500 text-xs mt-2 px-2">{error}</p>
+        <div className="mt-2 px-3 py-2 rounded-lg bg-danger-light text-danger text-[12px]">
+          {error}
+        </div>
       )}
     </div>
   );

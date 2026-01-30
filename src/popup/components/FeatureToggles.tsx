@@ -11,11 +11,15 @@ function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean
       role="switch"
       aria-checked={checked}
       onClick={() => onChange(!checked)}
-      className={`relative flex h-7 w-12 cursor-pointer items-center rounded-full p-0.5 transition-all ${
-        checked ? 'bg-primary justify-end' : 'bg-border-light justify-start'
+      className={`relative flex h-[22px] w-[40px] cursor-pointer items-center rounded-full p-[2px] transition-all duration-200 ${
+        checked ? 'bg-accent' : 'bg-zinc-200'
       }`}
     >
-      <div className="h-6 w-6 rounded-full bg-white shadow-md transition-transform" />
+      <div
+        className={`h-[18px] w-[18px] rounded-full bg-white shadow-sm transition-transform duration-200 ${
+          checked ? 'translate-x-[18px]' : 'translate-x-0'
+        }`}
+      />
     </button>
   );
 }
@@ -27,29 +31,27 @@ export default function FeatureToggles({
   onToggleConnect,
 }: Props) {
   return (
-    <div className="flex flex-col gap-1 px-2 pb-4">
-      <div className="flex items-center gap-4 min-h-16 py-2 justify-between border-b border-border-light">
-        <div className="flex flex-col justify-center">
-          <p className="text-text-primary text-sm font-bold">Show Salary Badges</p>
-          <p className="text-text-secondary text-[11px] font-normal leading-tight max-w-[240px]">
-            Displays salary estimates directly on LinkedIn job profiles
+    <div className="flex flex-col px-1">
+      <div className="flex items-center justify-between py-2.5 gap-4">
+        <div className="flex-1 min-w-0">
+          <p className="text-[13px] font-medium text-text-primary">Salary badges</p>
+          <p className="text-[11px] text-text-tertiary leading-snug">
+            Show estimates on job listings
           </p>
         </div>
-        <div className="shrink-0">
-          <Toggle checked={showSalary} onChange={onToggleSalary} />
-        </div>
+        <Toggle checked={showSalary} onChange={onToggleSalary} />
       </div>
 
-      <div className="flex items-center gap-4 min-h-16 py-2 justify-between">
-        <div className="flex flex-col justify-center">
-          <p className="text-text-primary text-sm font-bold">Enable Smart Connect</p>
-          <p className="text-text-secondary text-[11px] font-normal leading-tight max-w-[240px]">
-            AI-powered personalized message suggestions for networking
+      <div className="h-px bg-border-subtle" />
+
+      <div className="flex items-center justify-between py-2.5 gap-4">
+        <div className="flex-1 min-w-0">
+          <p className="text-[13px] font-medium text-text-primary">Smart Connect</p>
+          <p className="text-[11px] text-text-tertiary leading-snug">
+            AI message suggestions on profiles
           </p>
         </div>
-        <div className="shrink-0">
-          <Toggle checked={enableConnect} onChange={onToggleConnect} />
-        </div>
+        <Toggle checked={enableConnect} onChange={onToggleConnect} />
       </div>
     </div>
   );
