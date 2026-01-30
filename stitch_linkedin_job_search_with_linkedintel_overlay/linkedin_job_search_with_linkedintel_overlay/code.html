@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn Job Search with LinkedIntel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0074b2",
+                        "intel-teal": "#008080",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1c23",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#101618] dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-solid border-[#e0e0e0] dark:border-[#333] bg-white dark:bg-background-dark px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44.4 0H3.6C1.6 0 0 1.6 0 3.6v40.8C0 46.4 1.6 48 3.6 48h40.8c2 0 3.6-1.6 3.6-3.6V3.6C48 1.6 46.4 0 44.4 0zM14.1 40.8H7.1V18.2h7V40.8zM10.6 15.1c-2.3 0-4.1-1.8-4.1-4.1 0-2.3 1.8-4.1 4.1-4.1s4.1 1.8 4.1 4.1c0 2.3-1.8 4.1-4.1 4.1zm30.2 25.7h-7V29.9c0-2.6-.1-5.9-3.6-5.9-3.6 0-4.1 2.8-4.1 5.7v11.1h-7V18.2h6.7v3.1h.1c.9-1.7 3.2-3.6 6.5-3.6 6.9 0 8.2 4.6 8.2 10.5v12.6z"></path>
+</svg>
+</div>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full overflow-hidden">
+<div class="text-[#5e7c8d] flex border-none bg-[#f0f3f5] items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-[#f0f3f5] focus:ring-0 h-full placeholder:text-[#5e7c8d] px-4 text-sm font-normal" placeholder="Search jobs, skills, companies..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden lg:flex items-center gap-9">
+<a class="flex flex-col items-center text-primary text-xs font-medium" href="#">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center text-[#5e7c8d] text-xs font-medium" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Network</span>
+</a>
+<a class="flex flex-col items-center text-[#101618] dark:text-white text-xs font-medium border-b-2 border-primary" href="#">
+<span class="material-symbols-outlined">work</span>
+<span>Jobs</span>
+</a>
+<a class="flex flex-col items-center text-[#5e7c8d] text-xs font-medium" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span>Messaging</span>
+</a>
+</nav>
+<div class="h-10 w-10 rounded-full bg-cover bg-center border border-gray-200" data-alt="User profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgWWaQf_jDEk_uQ-KDT0dfN4QeBer-dvSkg3DKIdTeQAQppJTnEnCUHYvowo7jVMy3di3LAiN-A2zqOrzLKuKqVna6qmkNaswikn2y87bhMSEWgsydaMHePg7h-V2dtCEyU6wBUP9MGyBCsjcOu2gL5tES7FGAKNG7QUBe23Rn16bz43wn5TWGtXJdMLB9JKwM8L6eU6yg490gEE9SH8CfE3fWrwToem_5TcgQh5Mpic4ACW_zkF5FPeIYX5xzHqbQW9AD3PqyeV0');"></div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex-1 flex flex-col max-w-[1200px] mx-auto w-full px-4 lg:px-10 py-6">
+<!-- Filters/Chips -->
+<div class="flex gap-3 mb-4 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-4 text-sm font-bold">
+                    Jobs
+                </button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 px-4 text-sm font-medium">
+                    Date Posted <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 px-4 text-sm font-medium">
+                    Experience Level <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 px-4 text-sm font-medium">
+                    Salary Intel <span class="material-symbols-outlined text-sm text-intel-teal">auto_awesome</span>
+</button>
+</div>
+<div class="flex flex-1 gap-6 min-h-0">
+<!-- Left Sidebar: Job List -->
+<div class="w-full lg:w-[400px] flex flex-col gap-3 overflow-y-auto no-scrollbar bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
+<div class="p-4 border-b border-gray-100 dark:border-gray-800">
+<h2 class="text-lg font-bold">Recommended for you</h2>
+<p class="text-xs text-[#5e7c8d]">Based on your profile and search history</p>
+</div>
+<!-- Job Card 1 (Active) -->
+<div class="p-4 bg-primary/5 border-l-4 border-primary cursor-pointer">
+<div class="flex gap-3">
+<div class="size-12 rounded bg-white p-1 border border-gray-100 shrink-0">
+<div class="w-full h-full bg-cover" data-alt="Company logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBK_FcKaT9H9NURlWjqYpfGYNRp0BgY7WujQtWHMY0-DY2TokQvi_gbSZSF2GvqszU7aJyMepP-0O0D-IcS-kjRVT-KYIlyZYgTvJLxVbf6J_MMbNVdJD6gIQbLcLZCm1_2FtpZOMIvEUKhZ43DwntHw8wcU-rKZEM5leZaz4w5BmYuXyB4VE2MbkmC2jNY5Nyihgo-JurGLg6ypFFHzj0HqvEZezNy-ng0oqQcGX8eHwd_HwDLlSz-2KL42MEyTh4RZt_dSwHgTpM');"></div>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<div class="flex justify-between items-start">
+<h3 class="text-primary font-bold text-sm leading-tight hover:underline">Senior Product Designer</h3>
+<span class="material-symbols-outlined text-gray-400 text-lg">close</span>
+</div>
+<p class="text-xs font-medium">TealIntel AI</p>
+<p class="text-xs text-gray-500">San Francisco, CA (Remote)</p>
+<!-- LinkedIntel Salary Badge -->
+<div class="flex items-center gap-2 mt-1">
+<span class="flex items-center gap-1 bg-intel-teal/10 text-intel-teal px-2 py-0.5 rounded-full text-[10px] font-bold">
+<span class="material-symbols-outlined text-[12px]">payments</span>
+                                        $140k - $180k
+                                    </span>
+<span class="text-[10px] text-gray-400">2 days ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="p-4 hover:bg-gray-50 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 cursor-pointer">
+<div class="flex gap-3">
+<div class="size-12 rounded bg-white p-1 border border-gray-100 shrink-0">
+<div class="w-full h-full bg-cover" data-alt="Company logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3w_tIFyLOb6rSEJL3okzLERGj0gwR8D6JqRGnGov2J7690ZMP79nSCyePDFiywtjibur1fkyGMHoNcpnsT97Kfzl5Z-1ZTxUscz5xi-GKN6FG1QnAzYnbKmL1cTg1ki3HvXHvWoW8CZ8k-Hdkr24GpnRkYlu7es5s6kOLd-h1GkYuC0t7CHNKLd1lMnHg3QpwE1zMIwygQGZmD-Av_RJ9BscUt0HbRJZ_1K7HS_MnoeAoyDXXoY--s8lkQ3MyKxUmM62P3-gcoQc');"></div>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<div class="flex justify-between items-start">
+<h3 class="text-primary font-bold text-sm leading-tight hover:underline">UX Engineering Lead</h3>
+<span class="material-symbols-outlined text-gray-400 text-lg">close</span>
+</div>
+<p class="text-xs font-medium">Stripe</p>
+<p class="text-xs text-gray-500">South San Francisco, CA (Hybrid)</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="flex items-center gap-1 bg-intel-teal/10 text-intel-teal px-2 py-0.5 rounded-full text-[10px] font-bold">
+<span class="material-symbols-outlined text-[12px]">payments</span>
+                                        $190k - $240k
+                                    </span>
+<span class="text-[10px] text-gray-400">5 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Job Card 3 -->
+<div class="p-4 hover:bg-gray-50 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 cursor-pointer">
+<div class="flex gap-3">
+<div class="size-12 rounded bg-white p-1 border border-gray-100 shrink-0">
+<div class="w-full h-full bg-cover" data-alt="Company logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWP14ZSzmRu5UWagYzaDVxYTCx7dWVdZRwdKn-UuS7_bOqJwet6a_xDizwN2KfRa26vbMZipCpdGarVsVJW2cGV0Wq7xlYnmaiZyA3y7DieaAPI3U3kPzqnhP7sJvzO9rLSHadzINIVEfVOTbl3I4qsc4HdSJUHTvuQwdYIwR87E-5F199xJmuKr3zJyd21GTSYapBXRF_3C7HyKVOZq2ADaY_OlXQRSgZ714t6njdp10Rkiou3EgUyrqXED1fhJ1FYYyyEFOWxKE');"></div>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<div class="flex justify-between items-start">
+<h3 class="text-primary font-bold text-sm leading-tight hover:underline">Principal Designer</h3>
+<span class="material-symbols-outlined text-gray-400 text-lg">close</span>
+</div>
+<p class="text-xs font-medium">Airbnb</p>
+<p class="text-xs text-gray-500">Mountain View, CA</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="flex items-center gap-1 bg-intel-teal/10 text-intel-teal px-2 py-0.5 rounded-full text-[10px] font-bold">
+<span class="material-symbols-outlined text-[12px]">payments</span>
+                                        $210k+
+                                    </span>
+<span class="text-[10px] text-gray-400">1 week ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Pane: Job Detail -->
+<div class="hidden lg:flex flex-1 flex-col overflow-y-auto no-scrollbar bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 relative">
+<!-- Job Header -->
+<div class="p-6 pb-4">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-2xl font-bold">Senior Product Designer</h1>
+<p class="text-sm font-medium">TealIntel AI • San Francisco, CA (Remote)</p>
+<p class="text-xs text-gray-500 mt-1">Posted 2 days ago • 124 applicants</p>
+</div>
+<div class="flex gap-3">
+<button class="p-2 rounded-full hover:bg-gray-100">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+<div class="flex gap-2 mb-6">
+<button class="bg-primary text-white font-bold py-2 px-6 rounded-full hover:bg-primary/90">Apply</button>
+<button class="bg-white border border-primary text-primary font-bold py-2 px-6 rounded-full hover:bg-primary/5">Save</button>
+</div>
+<!-- LinkedIntel Reality Check Widget -->
+<div class="bg-white dark:bg-gray-800 border-l-4 border-intel-teal rounded shadow-md p-5 mb-8">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-intel-teal font-bold">bolt</span>
+<h3 class="text-intel-teal font-extrabold uppercase tracking-wider text-xs">Reality Check Intelligence</h3>
+</div>
+<span class="bg-intel-teal text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">Strong Match</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative size-20 flex items-center justify-center">
+<svg class="size-full rotate-[-90deg]">
+<circle class="text-gray-100 dark:text-gray-700" cx="40" cy="40" fill="transparent" r="34" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-intel-teal" cx="40" cy="40" fill="transparent" r="34" stroke="currentColor" stroke-dasharray="213.6" stroke-dashoffset="32" stroke-width="6"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-xl font-extrabold text-intel-teal leading-none">85%</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                                        "Your 4 years of experience fits the 3+ requirement."
+                                    </p>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="flex items-center gap-1 text-[11px] text-green-600 bg-green-50 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Figma Expert
+                                        </span>
+<span class="flex items-center gap-1 text-[11px] text-green-600 bg-green-50 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> AI Product Exp
+                                        </span>
+<button class="text-intel-teal text-[11px] font-bold hover:underline ml-2">Optimize with AI →</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Job Description Section -->
+<div class="border-t border-gray-100 dark:border-gray-800 pt-6">
+<h3 class="text-lg font-bold mb-4">About the job</h3>
+<div class="text-sm text-gray-700 dark:text-gray-300 space-y-4">
+<p>TealIntel AI is looking for a Senior Product Designer to lead the design of our next-generation AI enterprise tools. We are a fast-growing team focused on bringing clarity to complex data through intuitive design.</p>
+<h4 class="font-bold text-gray-900 dark:text-white mt-4">Responsibilities:</h4>
+<ul class="list-disc pl-5 space-y-2">
+<li>Own the end-to-end design process for major feature areas.</li>
+<li>Work closely with engineering to ensure high-quality implementation.</li>
+<li>Contribute to and evolve our enterprise design system.</li>
+<li>Mentor junior designers and champion design culture across the company.</li>
+</ul>
+<h4 class="font-bold text-gray-900 dark:text-white mt-4">Requirements:</h4>
+<ul class="list-disc pl-5 space-y-2">
+<li>3+ years of experience in product design for web applications.</li>
+<li>Strong portfolio demonstrating UX/UI excellence and systems thinking.</li>
+<li>Experience working with AI/ML products is a major plus.</li>
+<li>Fluent in Figma and rapid prototyping.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Extension Tooltip (Overlay Simulation) -->
+<div class="fixed bottom-6 right-6 z-[60] flex flex-col items-end gap-3 pointer-events-none">
+<div class="bg-white dark:bg-gray-800 shadow-xl border border-intel-teal rounded-lg p-3 max-w-[200px] pointer-events-auto">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-intel-teal text-xl">auto_awesome</span>
+<span class="text-xs font-bold">LinkedIntel Active</span>
+</div>
+<p class="text-[10px] text-gray-500">Analyzing job market trends and matching your profile in real-time.</p>
+</div>
+<button class="size-14 bg-intel-teal text-white rounded-full shadow-lg flex items-center justify-center pointer-events-auto hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">insights</span>
+</button>
+</div>
+</div>
+</body></html>

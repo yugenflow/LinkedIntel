@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIntel Extension Popup Configuration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0074b2",
+              "background-light": "#f5f7f8",
+              "background-dark": "#0f1c23",
+            },
+            fontFamily: {
+              "display": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<!-- Extension Popup Container (standardized width for browser extension popups) -->
+<div class="relative flex min-h-screen w-full flex-col items-center justify-start p-4">
+<div class="layout-container flex w-full max-w-[420px] flex-col overflow-hidden rounded-xl bg-white shadow-xl dark:bg-[#1a2b34] dark:border dark:border-[#2d3e4a]">
+<!-- TopNavBar Section -->
+<header class="flex items-center justify-between border-b border-solid border-[#f0f3f5] dark:border-[#2d3e4a] px-6 py-4">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-6">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-[#101618] dark:text-white text-lg font-extrabold leading-tight tracking-tight">LinkedIntel</h2>
+</div>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-background-light dark:bg-[#2d3e4a] text-[#101618] dark:text-white hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex flex-col gap-2 p-4">
+<!-- Section Header -->
+<h3 class="text-[#101618] dark:text-white text-sm font-bold uppercase tracking-wider px-2 pt-2">Resume Matching</h3>
+<!-- EmptyState / Upload Area -->
+<div class="flex flex-col p-2">
+<div class="flex flex-col items-center gap-4 rounded-xl border-2 border-dashed border-[#dae2e7] dark:border-[#2d3e4a] px-6 py-10 bg-background-light/30 dark:bg-[#13222a] hover:border-primary transition-colors cursor-pointer group">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-primary">description</span>
+<span class="material-symbols-outlined text-4xl text-gray-400 group-hover:text-primary">article</span>
+</div>
+<div class="flex max-w-[280px] flex-col items-center gap-1">
+<p class="text-[#101618] dark:text-white text-base font-bold text-center">Upload Resume (PDF, DOCX)</p>
+<p class="text-[#5e7c8d] text-xs font-normal text-center">Drag and drop or click to browse</p>
+</div>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-full h-10 px-5 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all">
+<span>Browse Files</span>
+</button>
+</div>
+</div>
+<!-- ActionPanel (Active Status) -->
+<div class="p-2 @container">
+<div class="flex flex-1 items-center justify-between gap-4 rounded-xl border border-[#dae2e7] dark:border-[#2d3e4a] bg-white dark:bg-[#1a2b34] p-4 shadow-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<p class="text-[#101618] dark:text-white text-sm font-bold">Resume Active</p>
+</div>
+<p class="text-[#5e7c8d] text-xs font-medium pl-6">My_CV.docx</p>
+</div>
+<button class="flex cursor-pointer items-center justify-center rounded-full h-8 px-4 bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20 transition-all">
+<span>Change</span>
+</button>
+</div>
+</div>
+<!-- Section Header -->
+<h3 class="text-[#101618] dark:text-white text-sm font-bold uppercase tracking-wider px-2 pt-4">Extension Features</h3>
+<!-- Feature Toggle List -->
+<div class="flex flex-col gap-1 px-2 pb-4">
+<!-- Toggle 1 -->
+<div class="flex items-center gap-4 bg-white dark:bg-[#1a2b34] min-h-[64px] py-2 justify-between border-b border-[#f0f3f5] dark:border-[#2d3e4a]">
+<div class="flex flex-col justify-center">
+<p class="text-[#101618] dark:text-white text-sm font-bold">Show Salary Badges</p>
+<p class="text-[#5e7c8d] text-[11px] font-normal leading-tight max-w-[240px]">Displays salary estimates directly on LinkedIn job profiles</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-[#f0f3f5] dark:bg-[#2d3e4a] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all">
+<div class="h-full w-[24px] rounded-full bg-white shadow-md"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Toggle 2 -->
+<div class="flex items-center gap-4 bg-white dark:bg-[#1a2b34] min-h-[64px] py-2 justify-between">
+<div class="flex flex-col justify-center">
+<p class="text-[#101618] dark:text-white text-sm font-bold">Enable Smart Connect</p>
+<p class="text-[#5e7c8d] text-[11px] font-normal leading-tight max-w-[240px]">AI-powered personalized message suggestions for networking</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border-none bg-[#f0f3f5] dark:bg-[#2d3e4a] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all">
+<div class="h-full w-[24px] rounded-full bg-white shadow-md"></div>
+<input class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-[#13222a] p-4 flex justify-center items-center gap-6">
+<a class="text-primary text-xs font-bold hover:underline" href="#">Help Center</a>
+<div class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+<a class="text-primary text-xs font-bold hover:underline" href="#">Full Dashboard</a>
+</footer>
+</div>
+<!-- Meta info for developer check -->
+<div class="mt-6 flex flex-col items-center gap-2 opacity-60">
+<p class="text-xs text-[#5e7c8d] dark:text-gray-400">Version 2.4.0 — Connected as Professional</p>
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-[10px] font-bold text-[#101618] dark:text-white uppercase tracking-widest">System Operational</span>
+</div>
+</div>
+</div>
+</body></html>

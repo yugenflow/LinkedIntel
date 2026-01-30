@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn Profile - Smart Connect AI</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0074b2",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1c23",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101618] dark:text-white transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#dae2e7] dark:border-gray-800 bg-white dark:bg-[#1a2b34] px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"></path>
+</svg>
+</div>
+<h2 class="text-primary text-xl font-bold leading-tight tracking-[-0.015em]">LinkedIn</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full">
+<div class="text-[#5e7c8d] flex border-none bg-background-light dark:bg-gray-800 items-center justify-center pl-4 rounded-l-full">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-background-light dark:bg-gray-800 focus:ring-0 h-full placeholder:text-[#5e7c8d] px-4 rounded-r-full text-base font-normal" placeholder="Search" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-6">
+<a class="text-primary flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined fill-icon">home</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<a class="text-[#5e7c8d] dark:text-gray-400 flex flex-col items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Network</span>
+</a>
+<a class="text-[#5e7c8d] dark:text-gray-400 flex flex-col items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Jobs</span>
+</a>
+<a class="text-[#5e7c8d] dark:text-gray-400 flex flex-col items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Messages</span>
+</a>
+<a class="text-[#5e7c8d] dark:text-gray-400 flex flex-col items-center gap-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="text-[10px] font-medium uppercase tracking-wider">Alerts</span>
+</a>
+</nav>
+<div class="flex items-center gap-2 border-l border-[#dae2e7] dark:border-gray-800 pl-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZ-ne236DiPqqBbkP2HoCS3_VUceR-CQglPQiQBPZHxwvNEFrbirHcJjWpOMcC4oLSKld3DyCG5gcaxMsqVi53tQGt8w7EpHCyRxIH4CfRxbZds6jUXtp2XDBXc1D6viOXkJ5-mWndZbN0kCNLb3wkxVqJWZFzipXxYkkxRObEEpcFT4L2eJxjcn25Jgx7E31t1-rZApxXYyQ0JMPWIV8DFJguKPgObAvtGSMndqw187RJNUaA3Fg0jA0ou4mdOqGiE33xZs3P8Qg");'></div>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-4">
+<!-- Profile Header Card -->
+<div class="bg-white dark:bg-[#1a2b34] rounded-xl border border-[#dae2e7] dark:border-gray-800 overflow-hidden shadow-sm">
+<!-- Banner Placeholder -->
+<div class="h-32 bg-gradient-to-r from-primary to-blue-400" data-alt="Blue professional profile banner gradient"></div>
+<div class="px-8 pb-8 -mt-12">
+<div class="flex @container">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-end">
+<div class="flex flex-col gap-4">
+<div class="bg-white dark:bg-[#1a2b34] p-1 rounded-full inline-block">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-32 border-4 border-white dark:border-[#1a2b34]" data-alt="Sarah Chen portrait professional photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4dhq_c8fDaCJP8wr6HnzEXXB1onwhbIs8utp9VZffGZ_YyEQDmSXFlFA6P-dhXO1h0G-wf1m7cgIQ11zQTCRLKJfikZXrfhXbFKRCx0_JYbd7KCp18sJ7xXNnVBwiseTXjvdgOgwPvRJ9_J04rgD_b1cGAMcqacd2Z2-9UY5TQsN5i9IaljzjxRXZFFEReyLPxg5CEbmHigjfwaco1GIowWs4huOuZu713NHMzAo2NbZ-vkfo84VLaku5F9sSKHEX1ZTBjjK5__A");'></div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<p class="text-[#101618] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]">Sarah Chen</p>
+<span class="text-[#5e7c8d] text-sm">• 1st</span>
+</div>
+<p class="text-[#101618] dark:text-gray-300 text-lg font-normal">Senior Product Designer at TechCorp</p>
+<p class="text-[#5e7c8d] dark:text-gray-400 text-sm font-normal">San Francisco, California • <span class="text-primary font-bold">500+ connections</span></p>
+</div>
+</div>
+<div class="flex w-full max-w-[480px] gap-3 @[480px]:w-auto pb-2 relative">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-full h-9 px-4 bg-primary text-white text-sm font-bold leading-normal transition-opacity hover:opacity-90">
+<span class="truncate">Message</span>
+</button>
+<!-- Injected Smart Connect Button -->
+<div class="relative group">
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center gap-2 rounded-full h-9 px-4 bg-white dark:bg-[#1a2b34] border border-primary text-primary text-sm font-bold leading-normal hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-lg fill-icon">auto_awesome</span>
+<span class="truncate">Draft Invite</span>
+</button>
+<!-- Smart Connect AI Tooltip -->
+<div class="absolute bottom-full right-0 mb-4 w-[380px] bg-white dark:bg-[#1f2d36] rounded-xl shadow-2xl border border-primary/20 p-5 z-50 animate-in fade-in slide-in-from-bottom-2">
+<!-- Tooltip Caret -->
+<div class="absolute -bottom-2 right-12 w-4 h-4 bg-white dark:bg-[#1f2d36] border-b border-r border-primary/20 rotate-45"></div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="bg-primary/10 p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-primary text-sm fill-icon">colors_spark</span>
+</div>
+<span class="text-primary text-sm font-bold uppercase tracking-wider">Smart Connect AI</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-2 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-[#5e7c8d] dark:text-gray-400 text-xs font-medium">Ready</span>
+</div>
+</div>
+<div class="mb-4">
+<div class="bg-background-light dark:bg-gray-800/50 rounded-lg border border-[#dae2e7] dark:border-gray-700 p-3">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-sm text-[#101618] dark:text-gray-200 resize-none h-28 leading-relaxed font-normal p-0" placeholder="AI is drafting...">Hi Sarah, I saw you're hiring for a Senior Designer role. With my background in UX research and interactive prototyping at DesignOps, I'd love to connect and discuss how my skills align with TechCorp's current design initiatives.</textarea>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 bg-primary/5 border border-primary/10 rounded-full text-[10px] text-primary font-bold cursor-pointer hover:bg-primary/10 transition-colors">#SeniorDesigner</span>
+<span class="px-2 py-1 bg-primary/5 border border-primary/10 rounded-full text-[10px] text-primary font-bold cursor-pointer hover:bg-primary/10 transition-colors">#UXResearch</span>
+<span class="px-2 py-1 bg-primary/5 border border-primary/10 rounded-full text-[10px] text-primary font-bold cursor-pointer hover:bg-primary/10 transition-colors">#Prototyping</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-[#dae2e7] dark:border-gray-700">
+<button class="flex items-center gap-2 text-[#5e7c8d] dark:text-gray-400 hover:text-primary text-sm font-medium transition-colors">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+<span>Copy</span>
+</button>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-full h-8 px-4 bg-background-light dark:bg-gray-700 text-[#101618] dark:text-white text-xs font-bold">
+                                                        Edit
+                                                    </button>
+<button class="flex items-center justify-center rounded-full h-8 px-5 bg-primary text-white text-xs font-bold shadow-lg shadow-primary/20">
+                                                        Send Invite
+                                                    </button>
+</div>
+</div>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-full h-9 px-4 border border-[#5e7c8d] text-[#5e7c8d] dark:text-gray-400 text-sm font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                                        More
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Left Column -->
+<div class="md:col-span-2 flex flex-col gap-4">
+<div class="bg-white dark:bg-[#1a2b34] rounded-xl border border-[#dae2e7] dark:border-gray-800 p-6 shadow-sm">
+<h3 class="text-xl font-bold mb-4">About</h3>
+<p class="text-[#5e7c8d] dark:text-gray-300 text-base leading-relaxed">
+                                Passionate Product Designer with over 8 years of experience in creating user-centered digital products. Specialist in design systems, interaction design, and building scalable UI solutions for enterprise-grade SaaS platforms.
+                            </p>
+</div>
+<div class="bg-white dark:bg-[#1a2b34] rounded-xl border border-[#dae2e7] dark:border-gray-800 p-6 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold">Experience</h3>
+<button class="text-primary hover:underline text-sm font-bold">See all</button>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex gap-4">
+<div class="size-12 rounded bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-400">domain</span>
+</div>
+<div>
+<h4 class="font-bold text-base">Senior Product Designer</h4>
+<p class="text-sm">TechCorp • Full-time</p>
+<p class="text-[#5e7c8d] dark:text-gray-400 text-xs">Jan 2021 - Present • 3 yrs 4 mos</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-12 rounded bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-400">domain</span>
+</div>
+<div>
+<h4 class="font-bold text-base">UX Designer</h4>
+<p class="text-sm">DesignOps Agency • Contract</p>
+<p class="text-[#5e7c8d] dark:text-gray-400 text-xs">Jun 2018 - Dec 2020 • 2 yrs 7 mos</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Sidebar Tools) -->
+<div class="flex flex-col gap-4">
+<!-- AI Extension Sidebar Component -->
+<div class="bg-white dark:bg-[#1a2b34] rounded-xl border-2 border-primary/30 p-6 shadow-xl relative overflow-hidden">
+<!-- Extension Header -->
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-primary rounded-lg size-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white fill-icon">auto_awesome</span>
+</div>
+<div>
+<h4 class="text-sm font-bold leading-tight">Smart Connect</h4>
+<p class="text-[#5e7c8d] text-[10px] font-medium uppercase tracking-wider">Extension Active</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="p-3 bg-primary/5 rounded-xl border border-primary/10 hover:bg-primary/10 cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">payments</span>
+<p class="text-sm font-bold text-[#101618] dark:text-gray-200">Analyze Salary</p>
+</div>
+<p class="text-[11px] text-[#5e7c8d] mt-1">Market range for Senior Designer at TechCorp</p>
+</div>
+<div class="p-3 bg-primary/5 rounded-xl border border-primary/10 hover:bg-primary/10 cursor-pointer transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">description</span>
+<p class="text-sm font-bold text-[#101618] dark:text-gray-200">Match Resume</p>
+</div>
+<p class="text-[11px] text-[#5e7c8d] mt-1">92% Match with your current profile</p>
+</div>
+<div class="p-3 bg-primary rounded-xl border border-primary shadow-lg shadow-primary/20 hover:opacity-95 cursor-pointer transition-all">
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined fill-icon">chat</span>
+<p class="text-sm font-bold">Generate AI Message</p>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-[#dae2e7] dark:border-gray-700">
+<p class="text-[10px] text-[#5e7c8d] uppercase tracking-widest text-center">Powered by Smart Connect AI</p>
+</div>
+</div>
+<!-- Native LinkedIn People Section -->
+<div class="bg-white dark:bg-[#1a2b34] rounded-xl border border-[#dae2e7] dark:border-gray-800 p-4">
+<h4 class="text-sm font-bold mb-4">People you may know</h4>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Profile of another professional" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzT0CKOGoUW0pDZWwPi4lIX_FjS7-i8q7uXN3QCWaoQP1svZ2H6GjeS76IRTjVzscqhbzT_g9XISZBe7AznNeRRLdO_5b6BRe5WHhNZTHwreTgv8YAqMO78txzPgO2eci1SdIk0XSPc85dh00kRqEGeUD5qlnpvUKLn1K2NZ-cy-IXPhB6OdOZm5PbLJMoPXAe1lb20nHyI48snFENNNVTB0MRL2t0pTVRKXAEBiE3rAVXxdXDGsCfOoxXzFqZDn45bRtQ7EeUub8");'></div>
+<div class="flex-1">
+<p class="text-xs font-bold">Marcus Johnson</p>
+<p class="text-[10px] text-[#5e7c8d]">Creative Director at PixelPuff</p>
+</div>
+<button class="material-symbols-outlined text-[#5e7c8d]">person_add</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Profile of another professional" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKFfSg_JU8ZL2_53HkQRaWc7cNU5M-VNjCW016SeG9w7lVbFX7cdE2KMO14inDx1ikbDl48YnP3eL5KEIA1znFyA3-bQUwF3egnvqZ1cGijmWEI2_56ygPhA18kxp_H4eRv0tVePsik-U2vd5JuN8mGmDdA0zBW7MMosxYTN2Nk7OdGzVGfWhhGppPBHdFBGFs7BaZi_hUEzwh39MGusGkXs7BoOHYA1gevv91OyfzeNdRzaFVj_Qq--277rNPJjP9avFv09kfYZs");'></div>
+<div class="flex-1">
+<p class="text-xs font-bold">Elena Rodriguez</p>
+<p class="text-[10px] text-[#5e7c8d]">Full-stack Engineer at DevHub</p>
+</div>
+<button class="material-symbols-outlined text-[#5e7c8d]">person_add</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

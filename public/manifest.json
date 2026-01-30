@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIntel",
+  "version": "1.0.0",
+  "description": "Intelligence layer for LinkedIn — salary badges, resume matching, and AI networking messages.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://www.linkedin.com/*"],
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/jobs/view/*"],
+      "js": ["reality-check.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.linkedin.com/in/*"],
+      "js": ["smart-connect.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.linkedin.com/jobs/search/*",
+        "https://www.linkedin.com/jobs/collections/*",
+        "https://www.linkedin.com/jobs/"
+      ],
+      "js": ["salary-intel.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["pdf.worker.min.mjs"],
+      "matches": ["https://www.linkedin.com/*"]
+    }
+  ]
+}
