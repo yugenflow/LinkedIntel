@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import type { JobDescriptionData, MatchResult } from '../../lib/types';
+import CategoryBreakdown from './CategoryBreakdown';
+import Recommendations from './Recommendations';
 
 interface Props {
   jd: JobDescriptionData;
@@ -134,6 +136,14 @@ export default function RealityCheckView({ jd }: Props) {
                 ))}
               </div>
             </div>
+          )}
+
+          {result.categories && result.categories.length > 0 && (
+            <CategoryBreakdown categories={result.categories} />
+          )}
+
+          {result.recommendations && result.recommendations.length > 0 && (
+            <Recommendations recommendations={result.recommendations} />
           )}
 
           <button

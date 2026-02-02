@@ -3,7 +3,7 @@ import { getStorage, setStorage, hashString } from '../lib/storage';
 import { buildMatchPrompt, buildConnectPrompt } from '../lib/prompts';
 
 // ── Middleware base URL ──
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = 'http://localhost:3099/api';
 
 // ── Determine which content script to inject based on URL ──
 function getContentScriptForUrl(url: string): string | null {

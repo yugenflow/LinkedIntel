@@ -14,6 +14,21 @@ export interface StorageData {
   matchCache: Record<string, MatchResult>;
 }
 
+export interface CategoryBreakdown {
+  name: string;
+  score: number;
+  status: 'strong' | 'moderate' | 'weak';
+  matched: string[];
+  missing: string[];
+}
+
+export interface ResumeRecommendation {
+  area: string;
+  suggestion: string;
+  example: string;
+  priority: 'high' | 'medium' | 'low';
+}
+
 export interface MatchResult {
   matchPercent: number;
   status: 'strong' | 'moderate' | 'weak';
@@ -21,6 +36,8 @@ export interface MatchResult {
   matchedSkills: string[];
   missingSkills: string[];
   cachedAt: number;
+  categories?: CategoryBreakdown[];
+  recommendations?: ResumeRecommendation[];
 }
 
 export interface ProfileData {

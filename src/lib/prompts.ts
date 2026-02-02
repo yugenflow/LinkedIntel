@@ -21,7 +21,24 @@ Return a JSON object with exactly this structure:
   "status": "<strong|moderate|weak>",
   "summary": "<1-2 sentence summary of the match quality>",
   "matchedSkills": ["<skill1>", "<skill2>", ...],
-  "missingSkills": ["<skill1>", "<skill2>", ...]
+  "missingSkills": ["<skill1>", "<skill2>", ...],
+  "categories": [
+    {
+      "name": "<category name>",
+      "score": <number 0-100>,
+      "status": "<strong|moderate|weak>",
+      "matched": ["<what aligns, max 3>"],
+      "missing": ["<what's lacking, max 3>"]
+    }
+  ],
+  "recommendations": [
+    {
+      "area": "<category this applies to>",
+      "suggestion": "<what to add or change>",
+      "example": "<a ready-to-use resume bullet point>",
+      "priority": "<high|medium|low>"
+    }
+  ]
 }
 
 Rules:
@@ -30,7 +47,20 @@ Rules:
 - matchPercent < 50 → status "weak"
 - Maximum 5 items each for matchedSkills and missingSkills
 - Keep summary concise and actionable
-- Return ONLY valid JSON, no markdown`;
+- categories must include exactly these 5, in this order:
+  1. "Experience" — years and relevance of work experience
+  2. "Technical Skills" — languages, tools, frameworks
+  3. "Domain Knowledge" — industry-specific expertise
+  4. "Education & Certifications" — degrees, certs, courses
+  5. "Soft Skills" — leadership, communication, teamwork
+- Each category score follows the same strong/moderate/weak thresholds
+- Each category matched and missing arrays have at most 3 items
+- recommendations: 3-5 items sorted by priority (high first)
+- Each recommendation example should be a concrete resume bullet point the candidate can use
+- Do NOT use ellipsis (...) or trailing commas in arrays
+- Do NOT use single quotes — only double quotes for JSON strings
+- Escape any double quotes inside string values with backslash
+- Return ONLY valid JSON, no markdown, no comments`;
 }
 
 export function buildConnectPrompt(
