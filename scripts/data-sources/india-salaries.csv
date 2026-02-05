@@ -1,0 +1,680 @@
+title,company,city,state,country,experienceLevel,salaryMin,salaryMax,salaryMedian,currency,source
+Software Engineer,TCS,Bangalore,Karnataka,IN,entry,400000,700000,550000,INR,ambitionbox
+Software Engineer,TCS,Hyderabad,Telangana,IN,entry,380000,680000,530000,INR,ambitionbox
+Software Engineer,TCS,Pune,Maharashtra,IN,entry,380000,680000,530000,INR,ambitionbox
+Software Engineer,TCS,Chennai,Tamil Nadu,IN,entry,370000,660000,520000,INR,ambitionbox
+Software Engineer,TCS,Mumbai,Maharashtra,IN,entry,400000,720000,560000,INR,ambitionbox
+Senior Software Engineer,TCS,Bangalore,Karnataka,IN,mid,800000,1500000,1100000,INR,ambitionbox
+Senior Software Engineer,TCS,Hyderabad,Telangana,IN,mid,780000,1450000,1050000,INR,ambitionbox
+Senior Software Engineer,TCS,Pune,Maharashtra,IN,mid,780000,1400000,1050000,INR,ambitionbox
+Software Engineer,Infosys,Bangalore,Karnataka,IN,entry,420000,750000,580000,INR,ambitionbox
+Software Engineer,Infosys,Hyderabad,Telangana,IN,entry,400000,720000,560000,INR,ambitionbox
+Software Engineer,Infosys,Pune,Maharashtra,IN,entry,400000,720000,560000,INR,ambitionbox
+Software Engineer,Infosys,Chennai,Tamil Nadu,IN,entry,390000,700000,550000,INR,ambitionbox
+Senior Software Engineer,Infosys,Bangalore,Karnataka,IN,mid,850000,1600000,1200000,INR,ambitionbox
+Senior Software Engineer,Infosys,Hyderabad,Telangana,IN,mid,820000,1550000,1150000,INR,ambitionbox
+Software Engineer,Wipro,Bangalore,Karnataka,IN,entry,380000,680000,530000,INR,ambitionbox
+Software Engineer,Wipro,Hyderabad,Telangana,IN,entry,360000,660000,510000,INR,ambitionbox
+Software Engineer,Wipro,Pune,Maharashtra,IN,entry,360000,660000,510000,INR,ambitionbox
+Senior Software Engineer,Wipro,Bangalore,Karnataka,IN,mid,750000,1400000,1050000,INR,ambitionbox
+Software Engineer,HCL Technologies,Bangalore,Karnataka,IN,entry,380000,700000,540000,INR,ambitionbox
+Software Engineer,HCL Technologies,Noida,Uttar Pradesh,IN,entry,360000,680000,520000,INR,ambitionbox
+Senior Software Engineer,HCL Technologies,Bangalore,Karnataka,IN,mid,780000,1450000,1080000,INR,ambitionbox
+Software Engineer,Tech Mahindra,Bangalore,Karnataka,IN,entry,370000,680000,520000,INR,ambitionbox
+Software Engineer,Tech Mahindra,Hyderabad,Telangana,IN,entry,350000,650000,500000,INR,ambitionbox
+Senior Software Engineer,Tech Mahindra,Bangalore,Karnataka,IN,mid,750000,1350000,1020000,INR,ambitionbox
+Software Engineer,Flipkart,Bangalore,Karnataka,IN,entry,1800000,2800000,2200000,INR,ambitionbox
+Software Engineer,Flipkart,Bangalore,Karnataka,IN,mid,2800000,4500000,3500000,INR,ambitionbox
+Senior Software Engineer,Flipkart,Bangalore,Karnataka,IN,senior,4000000,7000000,5500000,INR,ambitionbox
+Software Engineer,Amazon,Bangalore,Karnataka,IN,entry,1600000,2500000,2000000,INR,ambitionbox
+Software Engineer,Amazon,Hyderabad,Telangana,IN,entry,1600000,2500000,2000000,INR,ambitionbox
+Senior Software Engineer,Amazon,Bangalore,Karnataka,IN,mid,2500000,4200000,3200000,INR,ambitionbox
+Senior Software Engineer,Amazon,Hyderabad,Telangana,IN,mid,2500000,4200000,3200000,INR,ambitionbox
+Staff Software Engineer,Amazon,Bangalore,Karnataka,IN,senior,4500000,8000000,6000000,INR,ambitionbox
+Software Engineer,Google,Bangalore,Karnataka,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Software Engineer,Google,Hyderabad,Telangana,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Senior Software Engineer,Google,Bangalore,Karnataka,IN,mid,3500000,5500000,4500000,INR,ambitionbox
+Senior Software Engineer,Google,Hyderabad,Telangana,IN,mid,3500000,5500000,4500000,INR,ambitionbox
+Staff Software Engineer,Google,Bangalore,Karnataka,IN,senior,5500000,9000000,7000000,INR,ambitionbox
+Software Engineer,Microsoft,Bangalore,Karnataka,IN,entry,1800000,2800000,2300000,INR,ambitionbox
+Software Engineer,Microsoft,Hyderabad,Telangana,IN,entry,1800000,2800000,2300000,INR,ambitionbox
+Senior Software Engineer,Microsoft,Bangalore,Karnataka,IN,mid,3000000,5000000,4000000,INR,ambitionbox
+Senior Software Engineer,Microsoft,Hyderabad,Telangana,IN,mid,3000000,5000000,4000000,INR,ambitionbox
+Staff Software Engineer,Microsoft,Bangalore,Karnataka,IN,senior,5000000,8500000,6500000,INR,ambitionbox
+Software Engineer,Razorpay,Bangalore,Karnataka,IN,entry,1500000,2400000,1900000,INR,ambitionbox
+Senior Software Engineer,Razorpay,Bangalore,Karnataka,IN,mid,2800000,4500000,3600000,INR,ambitionbox
+Staff Software Engineer,Razorpay,Bangalore,Karnataka,IN,senior,4500000,7500000,5800000,INR,ambitionbox
+Software Engineer,Zomato,Gurugram,Haryana,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Zomato,Gurugram,Haryana,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Swiggy,Bangalore,Karnataka,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,Swiggy,Bangalore,Karnataka,IN,mid,2500000,4200000,3400000,INR,ambitionbox
+Software Engineer,PhonePe,Bangalore,Karnataka,IN,entry,1500000,2400000,1900000,INR,ambitionbox
+Senior Software Engineer,PhonePe,Bangalore,Karnataka,IN,mid,2800000,4500000,3600000,INR,ambitionbox
+Software Engineer,Paytm,Noida,Uttar Pradesh,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Senior Software Engineer,Paytm,Noida,Uttar Pradesh,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Software Engineer,Meesho,Bangalore,Karnataka,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,Meesho,Bangalore,Karnataka,IN,mid,2600000,4200000,3400000,INR,ambitionbox
+Software Engineer,Cred,Bangalore,Karnataka,IN,entry,1800000,2800000,2300000,INR,ambitionbox
+Senior Software Engineer,Cred,Bangalore,Karnataka,IN,mid,3200000,5200000,4200000,INR,ambitionbox
+Software Engineer,Zerodha,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Zerodha,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Groww,Bangalore,Karnataka,IN,entry,1300000,2200000,1700000,INR,ambitionbox
+Senior Software Engineer,Groww,Bangalore,Karnataka,IN,mid,2400000,4000000,3200000,INR,ambitionbox
+Software Engineer,Ola,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Ola,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Uber,Bangalore,Karnataka,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Senior Software Engineer,Uber,Bangalore,Karnataka,IN,mid,3500000,5500000,4500000,INR,ambitionbox
+Software Engineer,Goldman Sachs,Bangalore,Karnataka,IN,entry,1800000,2800000,2300000,INR,ambitionbox
+Senior Software Engineer,Goldman Sachs,Bangalore,Karnataka,IN,mid,3200000,5200000,4200000,INR,ambitionbox
+Software Engineer,Morgan Stanley,Mumbai,Maharashtra,IN,entry,1700000,2700000,2200000,INR,ambitionbox
+Senior Software Engineer,Morgan Stanley,Mumbai,Maharashtra,IN,mid,3000000,5000000,4000000,INR,ambitionbox
+Software Engineer,JP Morgan,Mumbai,Maharashtra,IN,entry,1600000,2600000,2100000,INR,ambitionbox
+Senior Software Engineer,JP Morgan,Mumbai,Maharashtra,IN,mid,2800000,4800000,3800000,INR,ambitionbox
+Software Engineer,JP Morgan,Bangalore,Karnataka,IN,entry,1600000,2600000,2100000,INR,ambitionbox
+Software Engineer,Deutsche Bank,Pune,Maharashtra,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,Deutsche Bank,Pune,Maharashtra,IN,mid,2500000,4200000,3400000,INR,ambitionbox
+Software Engineer,SAP Labs,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,SAP Labs,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Adobe,Noida,Uttar Pradesh,IN,entry,1600000,2600000,2100000,INR,ambitionbox
+Senior Software Engineer,Adobe,Noida,Uttar Pradesh,IN,mid,2800000,4800000,3800000,INR,ambitionbox
+Software Engineer,Salesforce,Hyderabad,Telangana,IN,entry,1800000,2800000,2300000,INR,ambitionbox
+Senior Software Engineer,Salesforce,Hyderabad,Telangana,IN,mid,3200000,5200000,4200000,INR,ambitionbox
+Software Engineer,Oracle,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Oracle,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,IBM,Bangalore,Karnataka,IN,entry,600000,1100000,850000,INR,ambitionbox
+Senior Software Engineer,IBM,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Software Engineer,Accenture,Bangalore,Karnataka,IN,entry,450000,800000,620000,INR,ambitionbox
+Software Engineer,Accenture,Hyderabad,Telangana,IN,entry,430000,780000,600000,INR,ambitionbox
+Software Engineer,Accenture,Pune,Maharashtra,IN,entry,430000,780000,600000,INR,ambitionbox
+Senior Software Engineer,Accenture,Bangalore,Karnataka,IN,mid,900000,1700000,1300000,INR,ambitionbox
+Software Engineer,Cognizant,Bangalore,Karnataka,IN,entry,400000,720000,560000,INR,ambitionbox
+Software Engineer,Cognizant,Chennai,Tamil Nadu,IN,entry,380000,700000,540000,INR,ambitionbox
+Senior Software Engineer,Cognizant,Bangalore,Karnataka,IN,mid,800000,1500000,1100000,INR,ambitionbox
+Product Manager,Flipkart,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Product Manager,Amazon,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Product Manager,Google,Bangalore,Karnataka,IN,mid,3000000,5500000,4200000,INR,ambitionbox
+Product Manager,Microsoft,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Product Manager,Razorpay,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Product Manager,Swiggy,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Product Manager,Zomato,Gurugram,Haryana,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Product Manager,Meesho,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Product Manager,Paytm,Noida,Uttar Pradesh,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Senior Product Manager,Flipkart,Bangalore,Karnataka,IN,senior,4000000,7000000,5500000,INR,ambitionbox
+Senior Product Manager,Amazon,Bangalore,Karnataka,IN,senior,3800000,6500000,5000000,INR,ambitionbox
+Senior Product Manager,Google,Bangalore,Karnataka,IN,senior,5000000,8500000,6500000,INR,ambitionbox
+Data Scientist,Flipkart,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Data Scientist,Amazon,Bangalore,Karnataka,IN,mid,2000000,3800000,2800000,INR,ambitionbox
+Data Scientist,Google,Bangalore,Karnataka,IN,mid,2800000,5000000,3800000,INR,ambitionbox
+Data Scientist,Microsoft,Hyderabad,Telangana,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Data Scientist,Swiggy,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Data Scientist,Zomato,Gurugram,Haryana,IN,mid,1600000,3000000,2300000,INR,ambitionbox
+Data Scientist,TCS,Bangalore,Karnataka,IN,entry,600000,1100000,850000,INR,ambitionbox
+Data Scientist,Infosys,Bangalore,Karnataka,IN,entry,650000,1200000,900000,INR,ambitionbox
+Data Analyst,TCS,Bangalore,Karnataka,IN,entry,350000,600000,480000,INR,ambitionbox
+Data Analyst,Infosys,Bangalore,Karnataka,IN,entry,380000,650000,500000,INR,ambitionbox
+Data Analyst,Flipkart,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Data Analyst,Amazon,Bangalore,Karnataka,IN,mid,1400000,2400000,1900000,INR,ambitionbox
+Data Analyst,Accenture,Bangalore,Karnataka,IN,entry,400000,700000,550000,INR,ambitionbox
+Machine Learning Engineer,Google,Bangalore,Karnataka,IN,mid,3200000,5500000,4200000,INR,ambitionbox
+Machine Learning Engineer,Amazon,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Machine Learning Engineer,Microsoft,Hyderabad,Telangana,IN,mid,2800000,5000000,3800000,INR,ambitionbox
+Machine Learning Engineer,Flipkart,Bangalore,Karnataka,IN,mid,2500000,4200000,3300000,INR,ambitionbox
+Machine Learning Engineer,Swiggy,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Business Analyst,TCS,Bangalore,Karnataka,IN,entry,400000,700000,550000,INR,ambitionbox
+Business Analyst,Infosys,Bangalore,Karnataka,IN,entry,420000,750000,580000,INR,ambitionbox
+Business Analyst,Flipkart,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Business Analyst,Amazon,Bangalore,Karnataka,IN,mid,1400000,2500000,1900000,INR,ambitionbox
+Business Analyst,Accenture,Bangalore,Karnataka,IN,entry,450000,800000,620000,INR,ambitionbox
+Business Analyst,Deloitte,Bangalore,Karnataka,IN,entry,600000,1100000,850000,INR,ambitionbox
+Business Analyst,Deloitte,Hyderabad,Telangana,IN,entry,580000,1050000,820000,INR,ambitionbox
+Business Analyst,EY,Bangalore,Karnataka,IN,entry,550000,1000000,780000,INR,ambitionbox
+Business Analyst,KPMG,Bangalore,Karnataka,IN,entry,550000,1000000,780000,INR,ambitionbox
+Consultant,McKinsey,Gurugram,Haryana,IN,entry,2500000,4000000,3200000,INR,ambitionbox
+Consultant,McKinsey,Mumbai,Maharashtra,IN,entry,2500000,4000000,3200000,INR,ambitionbox
+Consultant,BCG,Gurugram,Haryana,IN,entry,2400000,3800000,3000000,INR,ambitionbox
+Consultant,BCG,Mumbai,Maharashtra,IN,entry,2400000,3800000,3000000,INR,ambitionbox
+Consultant,Bain,Gurugram,Haryana,IN,entry,2300000,3700000,2900000,INR,ambitionbox
+Consultant,Bain,Mumbai,Maharashtra,IN,entry,2300000,3700000,2900000,INR,ambitionbox
+Consultant,Deloitte,Bangalore,Karnataka,IN,entry,800000,1500000,1100000,INR,ambitionbox
+Consultant,Deloitte,Hyderabad,Telangana,IN,entry,780000,1450000,1050000,INR,ambitionbox
+Consultant,Deloitte,Mumbai,Maharashtra,IN,entry,820000,1550000,1150000,INR,ambitionbox
+Consultant,EY,Bangalore,Karnataka,IN,entry,700000,1300000,1000000,INR,ambitionbox
+Consultant,EY,Mumbai,Maharashtra,IN,entry,720000,1350000,1020000,INR,ambitionbox
+Consultant,KPMG,Bangalore,Karnataka,IN,entry,680000,1250000,960000,INR,ambitionbox
+Consultant,KPMG,Mumbai,Maharashtra,IN,entry,700000,1300000,1000000,INR,ambitionbox
+Senior Consultant,Deloitte,Bangalore,Karnataka,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Senior Consultant,Deloitte,Mumbai,Maharashtra,IN,mid,1600000,2900000,2200000,INR,ambitionbox
+Senior Consultant,EY,Bangalore,Karnataka,IN,mid,1300000,2500000,1900000,INR,ambitionbox
+Senior Consultant,KPMG,Bangalore,Karnataka,IN,mid,1200000,2400000,1800000,INR,ambitionbox
+Senior Consultant,McKinsey,Gurugram,Haryana,IN,mid,4500000,7000000,5500000,INR,ambitionbox
+Senior Consultant,BCG,Gurugram,Haryana,IN,mid,4200000,6500000,5200000,INR,ambitionbox
+DevOps Engineer,TCS,Bangalore,Karnataka,IN,entry,450000,800000,620000,INR,ambitionbox
+DevOps Engineer,Infosys,Bangalore,Karnataka,IN,entry,480000,850000,660000,INR,ambitionbox
+DevOps Engineer,Amazon,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+DevOps Engineer,Flipkart,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+DevOps Engineer,Razorpay,Bangalore,Karnataka,IN,mid,1800000,3000000,2400000,INR,ambitionbox
+Quality Assurance Engineer,TCS,Bangalore,Karnataka,IN,entry,350000,620000,480000,INR,ambitionbox
+Quality Assurance Engineer,Infosys,Bangalore,Karnataka,IN,entry,370000,660000,510000,INR,ambitionbox
+Quality Assurance Engineer,Flipkart,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Quality Assurance Engineer,Amazon,Bangalore,Karnataka,IN,mid,1400000,2400000,1900000,INR,ambitionbox
+Frontend Engineer,Flipkart,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Frontend Engineer,Razorpay,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Frontend Engineer,Swiggy,Bangalore,Karnataka,IN,mid,1500000,2600000,2000000,INR,ambitionbox
+Frontend Engineer,Zomato,Gurugram,Haryana,IN,mid,1400000,2500000,1900000,INR,ambitionbox
+Backend Engineer,Flipkart,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Backend Engineer,Razorpay,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Backend Engineer,Swiggy,Bangalore,Karnataka,IN,mid,1500000,2600000,2000000,INR,ambitionbox
+Full Stack Engineer,Flipkart,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Full Stack Engineer,Razorpay,Bangalore,Karnataka,IN,mid,1500000,2700000,2100000,INR,ambitionbox
+Full Stack Engineer,Swiggy,Bangalore,Karnataka,IN,mid,1400000,2500000,1900000,INR,ambitionbox
+Full Stack Engineer,TCS,Bangalore,Karnataka,IN,entry,450000,800000,620000,INR,ambitionbox
+Full Stack Engineer,Infosys,Bangalore,Karnataka,IN,entry,480000,850000,660000,INR,ambitionbox
+Product Designer,Flipkart,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Product Designer,Razorpay,Bangalore,Karnataka,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Product Designer,Swiggy,Bangalore,Karnataka,IN,mid,1400000,2500000,1900000,INR,ambitionbox
+Product Designer,Zomato,Gurugram,Haryana,IN,mid,1300000,2400000,1800000,INR,ambitionbox
+Product Designer,Google,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Product Designer,Microsoft,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Engineering Manager,Google,Bangalore,Karnataka,IN,senior,5500000,9000000,7200000,INR,ambitionbox
+Engineering Manager,Amazon,Bangalore,Karnataka,IN,senior,4500000,7500000,6000000,INR,ambitionbox
+Engineering Manager,Microsoft,Bangalore,Karnataka,IN,senior,4500000,7500000,6000000,INR,ambitionbox
+Engineering Manager,Flipkart,Bangalore,Karnataka,IN,senior,4000000,7000000,5500000,INR,ambitionbox
+Engineering Manager,Razorpay,Bangalore,Karnataka,IN,senior,3500000,6000000,4800000,INR,ambitionbox
+Technical Program Manager,Amazon,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Technical Program Manager,Google,Bangalore,Karnataka,IN,mid,2800000,5000000,3800000,INR,ambitionbox
+Technical Program Manager,Microsoft,Hyderabad,Telangana,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Solutions Architect,Amazon,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Solutions Architect,TCS,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Solutions Architect,Infosys,Bangalore,Karnataka,IN,mid,1300000,2400000,1800000,INR,ambitionbox
+Project Manager,TCS,Bangalore,Karnataka,IN,mid,1000000,1800000,1400000,INR,ambitionbox
+Project Manager,Infosys,Bangalore,Karnataka,IN,mid,1050000,1900000,1450000,INR,ambitionbox
+Project Manager,Wipro,Bangalore,Karnataka,IN,mid,950000,1750000,1350000,INR,ambitionbox
+Project Manager,Accenture,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Human Resources,TCS,Bangalore,Karnataka,IN,entry,350000,600000,470000,INR,ambitionbox
+Human Resources,Infosys,Bangalore,Karnataka,IN,entry,370000,650000,500000,INR,ambitionbox
+Human Resources,Flipkart,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Financial Analyst,Goldman Sachs,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Financial Analyst,JP Morgan,Mumbai,Maharashtra,IN,entry,1100000,1800000,1450000,INR,ambitionbox
+Financial Analyst,Morgan Stanley,Mumbai,Maharashtra,IN,entry,1100000,1900000,1500000,INR,ambitionbox
+Financial Analyst,Deutsche Bank,Pune,Maharashtra,IN,entry,1000000,1700000,1350000,INR,ambitionbox
+Financial Analyst,Deloitte,Bangalore,Karnataka,IN,entry,600000,1100000,850000,INR,ambitionbox
+Financial Analyst,EY,Bangalore,Karnataka,IN,entry,550000,1000000,780000,INR,ambitionbox
+Marketing Manager,Flipkart,Bangalore,Karnataka,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Marketing Manager,Amazon,Bangalore,Karnataka,IN,mid,1600000,3000000,2300000,INR,ambitionbox
+Marketing Manager,Zomato,Gurugram,Haryana,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Marketing Manager,Swiggy,Bangalore,Karnataka,IN,mid,1300000,2400000,1800000,INR,ambitionbox
+Sales Executive,TCS,Bangalore,Karnataka,IN,entry,300000,550000,420000,INR,ambitionbox
+Sales Executive,Infosys,Bangalore,Karnataka,IN,entry,320000,580000,450000,INR,ambitionbox
+Account Manager,TCS,Bangalore,Karnataka,IN,mid,800000,1500000,1100000,INR,ambitionbox
+Account Manager,Infosys,Bangalore,Karnataka,IN,mid,850000,1600000,1200000,INR,ambitionbox
+Mobile Developer,Flipkart,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Mobile Developer,Swiggy,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Mobile Developer,Zomato,Gurugram,Haryana,IN,mid,1400000,2500000,1900000,INR,ambitionbox
+Mobile Developer,PhonePe,Bangalore,Karnataka,IN,mid,1500000,2700000,2100000,INR,ambitionbox
+Security Engineer,Amazon,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Security Engineer,Google,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Security Engineer,Microsoft,Hyderabad,Telangana,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Database Administrator,TCS,Bangalore,Karnataka,IN,entry,400000,700000,550000,INR,ambitionbox
+Database Administrator,Infosys,Bangalore,Karnataka,IN,entry,420000,750000,580000,INR,ambitionbox
+Database Administrator,Oracle,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Data Engineer,Flipkart,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Data Engineer,Amazon,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Data Engineer,Google,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Data Engineer,Swiggy,Bangalore,Karnataka,IN,mid,1500000,2600000,2000000,INR,ambitionbox
+Data Engineer,TCS,Bangalore,Karnataka,IN,entry,450000,800000,620000,INR,ambitionbox
+Data Engineer,Infosys,Bangalore,Karnataka,IN,entry,480000,850000,660000,INR,ambitionbox
+Scrum Master,TCS,Bangalore,Karnataka,IN,mid,800000,1500000,1100000,INR,ambitionbox
+Scrum Master,Infosys,Bangalore,Karnataka,IN,mid,850000,1600000,1200000,INR,ambitionbox
+Scrum Master,Accenture,Bangalore,Karnataka,IN,mid,1000000,1800000,1400000,INR,ambitionbox
+Technical Writer,Google,Bangalore,Karnataka,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Technical Writer,Amazon,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Technical Writer,Microsoft,Hyderabad,Telangana,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Network Engineer,TCS,Bangalore,Karnataka,IN,entry,350000,620000,480000,INR,ambitionbox
+Network Engineer,Infosys,Bangalore,Karnataka,IN,entry,370000,660000,510000,INR,ambitionbox
+Systems Administrator,TCS,Bangalore,Karnataka,IN,entry,320000,580000,450000,INR,ambitionbox
+Systems Administrator,Infosys,Bangalore,Karnataka,IN,entry,340000,620000,480000,INR,ambitionbox
+Software Engineer,Atlassian,Bangalore,Karnataka,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Senior Software Engineer,Atlassian,Bangalore,Karnataka,IN,mid,3500000,5500000,4500000,INR,ambitionbox
+Software Engineer,Intuit,Bangalore,Karnataka,IN,entry,1500000,2400000,1900000,INR,ambitionbox
+Senior Software Engineer,Intuit,Bangalore,Karnataka,IN,mid,2800000,4500000,3600000,INR,ambitionbox
+Software Engineer,Walmart Labs,Bangalore,Karnataka,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,Walmart Labs,Bangalore,Karnataka,IN,mid,2500000,4200000,3400000,INR,ambitionbox
+Software Engineer,Myntra,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Myntra,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Directi,Mumbai,Maharashtra,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Directi,Mumbai,Maharashtra,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Dream11,Mumbai,Maharashtra,IN,entry,1500000,2400000,1900000,INR,ambitionbox
+Senior Software Engineer,Dream11,Mumbai,Maharashtra,IN,mid,2800000,4500000,3600000,INR,ambitionbox
+Software Engineer,Juspay,Bangalore,Karnataka,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Senior Software Engineer,Juspay,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Software Engineer,Freshworks,Chennai,Tamil Nadu,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Freshworks,Chennai,Tamil Nadu,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Zoho,Chennai,Tamil Nadu,IN,entry,500000,900000,700000,INR,ambitionbox
+Senior Software Engineer,Zoho,Chennai,Tamil Nadu,IN,mid,1000000,1800000,1400000,INR,ambitionbox
+Software Engineer,Harness,Bangalore,Karnataka,IN,entry,1500000,2400000,1900000,INR,ambitionbox
+Senior Software Engineer,Harness,Bangalore,Karnataka,IN,mid,2800000,4500000,3600000,INR,ambitionbox
+Software Engineer,Nutanix,Bangalore,Karnataka,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,Nutanix,Bangalore,Karnataka,IN,mid,2500000,4200000,3400000,INR,ambitionbox
+Software Engineer,VMware,Bangalore,Karnataka,IN,entry,1300000,2100000,1700000,INR,ambitionbox
+Senior Software Engineer,VMware,Bangalore,Karnataka,IN,mid,2400000,4000000,3200000,INR,ambitionbox
+Software Engineer,Cisco,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Cisco,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Samsung,Bangalore,Karnataka,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Senior Software Engineer,Samsung,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Software Engineer,Qualcomm,Hyderabad,Telangana,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Qualcomm,Hyderabad,Telangana,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Intel,Bangalore,Karnataka,IN,entry,1100000,1900000,1500000,INR,ambitionbox
+Senior Software Engineer,Intel,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Software Engineer,Nvidia,Bangalore,Karnataka,IN,entry,1600000,2600000,2100000,INR,ambitionbox
+Senior Software Engineer,Nvidia,Bangalore,Karnataka,IN,mid,3000000,5000000,4000000,INR,ambitionbox
+Software Engineer,Nvidia,Pune,Maharashtra,IN,entry,1500000,2500000,2000000,INR,ambitionbox
+Software Engineer,ServiceNow,Hyderabad,Telangana,IN,entry,1500000,2400000,1900000,INR,ambitionbox
+Senior Software Engineer,ServiceNow,Hyderabad,Telangana,IN,mid,2800000,4500000,3600000,INR,ambitionbox
+Software Engineer,Thoughtworks,Bangalore,Karnataka,IN,entry,800000,1400000,1100000,INR,ambitionbox
+Senior Software Engineer,Thoughtworks,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Software Engineer,Thoughtworks,Pune,Maharashtra,IN,entry,780000,1350000,1050000,INR,ambitionbox
+Lead Software Engineer,TCS,Bangalore,Karnataka,IN,senior,1500000,2500000,2000000,INR,ambitionbox
+Lead Software Engineer,Infosys,Bangalore,Karnataka,IN,senior,1600000,2700000,2100000,INR,ambitionbox
+Lead Software Engineer,Wipro,Bangalore,Karnataka,IN,senior,1400000,2400000,1900000,INR,ambitionbox
+Software Engineer,,Bangalore,Karnataka,IN,entry,500000,1200000,800000,INR,market
+Software Engineer,,Hyderabad,Telangana,IN,entry,450000,1100000,750000,INR,market
+Software Engineer,,Pune,Maharashtra,IN,entry,450000,1100000,750000,INR,market
+Software Engineer,,Chennai,Tamil Nadu,IN,entry,420000,1000000,700000,INR,market
+Software Engineer,,Mumbai,Maharashtra,IN,entry,480000,1200000,800000,INR,market
+Software Engineer,,Gurugram,Haryana,IN,entry,500000,1200000,800000,INR,market
+Software Engineer,,Noida,Uttar Pradesh,IN,entry,450000,1100000,750000,INR,market
+Software Engineer,,Delhi,Delhi,IN,entry,480000,1200000,800000,INR,market
+Software Engineer,,Kolkata,West Bengal,IN,entry,380000,900000,620000,INR,market
+Senior Software Engineer,,Bangalore,Karnataka,IN,mid,1200000,3000000,2000000,INR,market
+Senior Software Engineer,,Hyderabad,Telangana,IN,mid,1100000,2800000,1800000,INR,market
+Senior Software Engineer,,Pune,Maharashtra,IN,mid,1100000,2700000,1800000,INR,market
+Senior Software Engineer,,Chennai,Tamil Nadu,IN,mid,1000000,2500000,1700000,INR,market
+Senior Software Engineer,,Mumbai,Maharashtra,IN,mid,1200000,3000000,2000000,INR,market
+Senior Software Engineer,,Gurugram,Haryana,IN,mid,1200000,3000000,2000000,INR,market
+Senior Software Engineer,,Noida,Uttar Pradesh,IN,mid,1000000,2500000,1700000,INR,market
+Product Manager,,Bangalore,Karnataka,IN,mid,1500000,3500000,2400000,INR,market
+Product Manager,,Mumbai,Maharashtra,IN,mid,1400000,3200000,2200000,INR,market
+Product Manager,,Gurugram,Haryana,IN,mid,1300000,3000000,2000000,INR,market
+Product Manager,,Hyderabad,Telangana,IN,mid,1200000,2800000,1900000,INR,market
+Data Scientist,,Bangalore,Karnataka,IN,mid,1200000,2800000,1900000,INR,market
+Data Scientist,,Hyderabad,Telangana,IN,mid,1100000,2600000,1800000,INR,market
+Data Scientist,,Pune,Maharashtra,IN,mid,1000000,2400000,1700000,INR,market
+Data Scientist,,Mumbai,Maharashtra,IN,mid,1100000,2700000,1800000,INR,market
+Data Analyst,,Bangalore,Karnataka,IN,entry,400000,900000,650000,INR,market
+Data Analyst,,Hyderabad,Telangana,IN,entry,370000,850000,600000,INR,market
+Data Analyst,,Pune,Maharashtra,IN,entry,360000,800000,580000,INR,market
+Data Analyst,,Mumbai,Maharashtra,IN,entry,380000,880000,630000,INR,market
+Business Analyst,,Bangalore,Karnataka,IN,entry,450000,1000000,700000,INR,market
+Business Analyst,,Mumbai,Maharashtra,IN,entry,430000,950000,680000,INR,market
+Business Analyst,,Gurugram,Haryana,IN,entry,430000,950000,680000,INR,market
+Business Analyst,,Hyderabad,Telangana,IN,entry,400000,900000,650000,INR,market
+Machine Learning Engineer,,Bangalore,Karnataka,IN,mid,1500000,3200000,2300000,INR,market
+Machine Learning Engineer,,Hyderabad,Telangana,IN,mid,1400000,3000000,2100000,INR,market
+DevOps Engineer,,Bangalore,Karnataka,IN,mid,1000000,2200000,1600000,INR,market
+DevOps Engineer,,Hyderabad,Telangana,IN,mid,900000,2000000,1400000,INR,market
+DevOps Engineer,,Pune,Maharashtra,IN,mid,850000,1900000,1350000,INR,market
+Frontend Engineer,,Bangalore,Karnataka,IN,mid,1000000,2200000,1600000,INR,market
+Frontend Engineer,,Hyderabad,Telangana,IN,mid,900000,2000000,1400000,INR,market
+Backend Engineer,,Bangalore,Karnataka,IN,mid,1000000,2400000,1700000,INR,market
+Backend Engineer,,Hyderabad,Telangana,IN,mid,950000,2200000,1550000,INR,market
+Full Stack Engineer,,Bangalore,Karnataka,IN,mid,1000000,2300000,1650000,INR,market
+Full Stack Engineer,,Hyderabad,Telangana,IN,mid,900000,2100000,1500000,INR,market
+Quality Assurance Engineer,,Bangalore,Karnataka,IN,entry,400000,900000,650000,INR,market
+Quality Assurance Engineer,,Hyderabad,Telangana,IN,entry,370000,850000,600000,INR,market
+Quality Assurance Engineer,,Pune,Maharashtra,IN,entry,360000,800000,580000,INR,market
+Product Designer,,Bangalore,Karnataka,IN,mid,1200000,2600000,1800000,INR,market
+Product Designer,,Mumbai,Maharashtra,IN,mid,1100000,2400000,1700000,INR,market
+Mobile Developer,,Bangalore,Karnataka,IN,mid,1000000,2200000,1600000,INR,market
+Mobile Developer,,Hyderabad,Telangana,IN,mid,900000,2000000,1400000,INR,market
+Engineering Manager,,Bangalore,Karnataka,IN,senior,2500000,5500000,4000000,INR,market
+Engineering Manager,,Hyderabad,Telangana,IN,senior,2200000,5000000,3500000,INR,market
+Engineering Manager,,Gurugram,Haryana,IN,senior,2200000,5000000,3500000,INR,market
+Consultant,,Bangalore,Karnataka,IN,entry,500000,1200000,850000,INR,market
+Consultant,,Mumbai,Maharashtra,IN,entry,550000,1300000,900000,INR,market
+Consultant,,Gurugram,Haryana,IN,entry,550000,1300000,900000,INR,market
+Security Engineer,,Bangalore,Karnataka,IN,mid,1200000,2500000,1800000,INR,market
+Security Engineer,,Hyderabad,Telangana,IN,mid,1100000,2300000,1700000,INR,market
+Data Engineer,,Bangalore,Karnataka,IN,mid,1200000,2600000,1800000,INR,market
+Data Engineer,,Hyderabad,Telangana,IN,mid,1100000,2400000,1700000,INR,market
+Scrum Master,,Bangalore,Karnataka,IN,mid,900000,1800000,1350000,INR,market
+Project Manager,,Bangalore,Karnataka,IN,mid,1000000,2200000,1600000,INR,market
+Project Manager,,Mumbai,Maharashtra,IN,mid,1000000,2200000,1600000,INR,market
+Financial Analyst,,Bangalore,Karnataka,IN,entry,500000,1100000,800000,INR,market
+Financial Analyst,,Mumbai,Maharashtra,IN,entry,520000,1200000,850000,INR,market
+Marketing Manager,,Bangalore,Karnataka,IN,mid,1000000,2200000,1600000,INR,market
+Marketing Manager,,Mumbai,Maharashtra,IN,mid,1000000,2300000,1650000,INR,market
+Sales Executive,,Bangalore,Karnataka,IN,entry,300000,600000,450000,INR,market
+Human Resources,,Bangalore,Karnataka,IN,entry,350000,700000,500000,INR,market
+Technical Writer,,Bangalore,Karnataka,IN,mid,800000,1600000,1200000,INR,market
+Network Engineer,,Bangalore,Karnataka,IN,entry,350000,700000,520000,INR,market
+Database Administrator,,Bangalore,Karnataka,IN,entry,400000,800000,600000,INR,market
+Software Engineer,,India,,IN,entry,400000,1200000,750000,INR,market
+Senior Software Engineer,,India,,IN,mid,1000000,3000000,1800000,INR,market
+Product Manager,,India,,IN,mid,1200000,3500000,2200000,INR,market
+Data Scientist,,India,,IN,mid,1000000,2800000,1800000,INR,market
+Data Analyst,,India,,IN,entry,350000,900000,600000,INR,market
+Business Analyst,,India,,IN,entry,400000,1000000,650000,INR,market
+Machine Learning Engineer,,India,,IN,mid,1300000,3200000,2100000,INR,market
+DevOps Engineer,,India,,IN,mid,800000,2200000,1400000,INR,market
+Consultant,,India,,IN,entry,500000,1500000,900000,INR,market
+Quality Assurance Engineer,,India,,IN,entry,350000,900000,600000,INR,market
+Frontend Engineer,,India,,IN,mid,800000,2200000,1400000,INR,market
+Backend Engineer,,India,,IN,mid,900000,2400000,1500000,INR,market
+Full Stack Engineer,,India,,IN,mid,800000,2300000,1500000,INR,market
+Product Designer,,India,,IN,mid,1000000,2600000,1700000,INR,market
+Mobile Developer,,India,,IN,mid,800000,2200000,1400000,INR,market
+Engineering Manager,,India,,IN,senior,2000000,5500000,3500000,INR,market
+Project Manager,,India,,IN,mid,800000,2200000,1400000,INR,market
+Financial Analyst,,India,,IN,entry,450000,1200000,750000,INR,market
+Marketing Manager,,India,,IN,mid,800000,2300000,1500000,INR,market
+Software Engineer,Stripe,Bangalore,Karnataka,IN,entry,2200000,3500000,2800000,INR,ambitionbox
+Senior Software Engineer,Stripe,Bangalore,Karnataka,IN,mid,4000000,6500000,5200000,INR,ambitionbox
+Software Engineer,Twitter,Bangalore,Karnataka,IN,entry,1800000,2800000,2300000,INR,ambitionbox
+Senior Software Engineer,Twitter,Bangalore,Karnataka,IN,mid,3200000,5200000,4200000,INR,ambitionbox
+Software Engineer,LinkedIn,Bangalore,Karnataka,IN,entry,1800000,3000000,2400000,INR,ambitionbox
+Senior Software Engineer,LinkedIn,Bangalore,Karnataka,IN,mid,3200000,5500000,4300000,INR,ambitionbox
+Software Engineer,Uber,Hyderabad,Telangana,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Software Engineer,Apple,Bangalore,Karnataka,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Senior Software Engineer,Apple,Bangalore,Karnataka,IN,mid,3500000,5800000,4600000,INR,ambitionbox
+Software Engineer,Apple,Hyderabad,Telangana,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Software Engineer,Meta,Bangalore,Karnataka,IN,entry,2200000,3500000,2800000,INR,ambitionbox
+Senior Software Engineer,Meta,Bangalore,Karnataka,IN,mid,4000000,6500000,5200000,INR,ambitionbox
+Software Engineer,Meta,Hyderabad,Telangana,IN,entry,2200000,3500000,2800000,INR,ambitionbox
+Software Engineer,Walmart,Bangalore,Karnataka,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,Walmart,Bangalore,Karnataka,IN,mid,2500000,4200000,3400000,INR,ambitionbox
+Software Engineer,Spotify,Mumbai,Maharashtra,IN,entry,1600000,2600000,2100000,INR,ambitionbox
+Senior Software Engineer,Spotify,Mumbai,Maharashtra,IN,mid,3000000,5000000,4000000,INR,ambitionbox
+Software Engineer,Airbnb,Bangalore,Karnataka,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Senior Software Engineer,Airbnb,Bangalore,Karnataka,IN,mid,3800000,6200000,5000000,INR,ambitionbox
+Software Engineer,Netflix,Bangalore,Karnataka,IN,entry,2500000,4000000,3200000,INR,ambitionbox
+Senior Software Engineer,Netflix,Bangalore,Karnataka,IN,mid,4500000,7500000,6000000,INR,ambitionbox
+Software Engineer,Shopify,Bangalore,Karnataka,IN,entry,1500000,2400000,1900000,INR,ambitionbox
+Senior Software Engineer,Shopify,Bangalore,Karnataka,IN,mid,2800000,4500000,3600000,INR,ambitionbox
+Software Engineer,Twilio,Bangalore,Karnataka,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,Twilio,Bangalore,Karnataka,IN,mid,2600000,4200000,3400000,INR,ambitionbox
+Software Engineer,Confluent,Bangalore,Karnataka,IN,entry,1600000,2600000,2100000,INR,ambitionbox
+Senior Software Engineer,Confluent,Bangalore,Karnataka,IN,mid,3000000,5000000,4000000,INR,ambitionbox
+Software Engineer,Snowflake,Bangalore,Karnataka,IN,entry,1800000,2800000,2300000,INR,ambitionbox
+Senior Software Engineer,Snowflake,Bangalore,Karnataka,IN,mid,3200000,5200000,4200000,INR,ambitionbox
+Software Engineer,Databricks,Bangalore,Karnataka,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Senior Software Engineer,Databricks,Bangalore,Karnataka,IN,mid,3800000,6200000,5000000,INR,ambitionbox
+Software Engineer,Rubrik,Bangalore,Karnataka,IN,entry,1800000,2800000,2300000,INR,ambitionbox
+Senior Software Engineer,Rubrik,Bangalore,Karnataka,IN,mid,3200000,5200000,4200000,INR,ambitionbox
+Software Engineer,Sprinklr,Gurugram,Haryana,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Sprinklr,Gurugram,Haryana,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Druva,Pune,Maharashtra,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Druva,Pune,Maharashtra,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Postman,Bangalore,Karnataka,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,Postman,Bangalore,Karnataka,IN,mid,2600000,4200000,3400000,INR,ambitionbox
+Software Engineer,BrowserStack,Mumbai,Maharashtra,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,BrowserStack,Mumbai,Maharashtra,IN,mid,2600000,4200000,3400000,INR,ambitionbox
+Software Engineer,Chargebee,Chennai,Tamil Nadu,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Chargebee,Chennai,Tamil Nadu,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Unacademy,Bangalore,Karnataka,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Senior Software Engineer,Unacademy,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Software Engineer,Byju's,Bangalore,Karnataka,IN,entry,900000,1600000,1250000,INR,ambitionbox
+Senior Software Engineer,Byju's,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Software Engineer,Lenskart,Gurugram,Haryana,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Senior Software Engineer,Lenskart,Gurugram,Haryana,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Software Engineer,Nykaa,Mumbai,Maharashtra,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Senior Software Engineer,Nykaa,Mumbai,Maharashtra,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Software Engineer,Urban Company,Gurugram,Haryana,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Urban Company,Gurugram,Haryana,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Cars24,Gurugram,Haryana,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Senior Software Engineer,Cars24,Gurugram,Haryana,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Software Engineer,Delhivery,Gurugram,Haryana,IN,entry,900000,1600000,1250000,INR,ambitionbox
+Senior Software Engineer,Delhivery,Gurugram,Haryana,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Software Engineer,Dunzo,Bangalore,Karnataka,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Software Engineer,Ather Energy,Bangalore,Karnataka,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Senior Software Engineer,Ather Energy,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Software Engineer,Rapido,Bangalore,Karnataka,IN,entry,900000,1600000,1250000,INR,ambitionbox
+Software Engineer,Jupiter,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Jupiter,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Slice,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Slice,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,Jar,Bangalore,Karnataka,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Software Engineer,Smallcase,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Senior Software Engineer,Smallcase,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Software Engineer,INDmoney,Gurugram,Haryana,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Software Engineer,Upstox,Mumbai,Maharashtra,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Senior Software Engineer,Upstox,Mumbai,Maharashtra,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Software Engineer,Sharechat,Bangalore,Karnataka,IN,entry,1400000,2200000,1800000,INR,ambitionbox
+Senior Software Engineer,Sharechat,Bangalore,Karnataka,IN,mid,2500000,4200000,3400000,INR,ambitionbox
+Software Engineer,Dailyhunt,Bangalore,Karnataka,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Software Engineer,Practo,Bangalore,Karnataka,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Software Engineer,1mg,Gurugram,Haryana,IN,entry,900000,1600000,1250000,INR,ambitionbox
+Software Engineer,Pharmeasy,Mumbai,Maharashtra,IN,entry,900000,1600000,1250000,INR,ambitionbox
+Software Engineer,Spinny,Gurugram,Haryana,IN,entry,1000000,1800000,1400000,INR,ambitionbox
+Software Engineer,Park+,Bangalore,Karnataka,IN,entry,900000,1600000,1250000,INR,ambitionbox
+Software Engineer,Khatabook,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Software Engineer,OkCredit,Bangalore,Karnataka,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Product Manager,Cred,Bangalore,Karnataka,IN,mid,2500000,4200000,3300000,INR,ambitionbox
+Product Manager,PhonePe,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Product Manager,Groww,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Product Manager,Uber,Bangalore,Karnataka,IN,mid,2800000,5000000,3800000,INR,ambitionbox
+Product Manager,LinkedIn,Bangalore,Karnataka,IN,mid,2800000,5000000,3800000,INR,ambitionbox
+Product Manager,Atlassian,Bangalore,Karnataka,IN,mid,2800000,5000000,3800000,INR,ambitionbox
+Product Manager,Intuit,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Product Manager,Salesforce,Hyderabad,Telangana,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Product Manager,Walmart Labs,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Product Manager,Freshworks,Chennai,Tamil Nadu,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Product Manager,Dream11,Mumbai,Maharashtra,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Data Scientist,Uber,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Data Scientist,LinkedIn,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Data Scientist,Flipkart,Bangalore,Karnataka,IN,entry,1400000,2400000,1900000,INR,ambitionbox
+Data Scientist,Razorpay,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Data Scientist,PhonePe,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Data Scientist,Walmart Labs,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Data Scientist,Freshworks,Chennai,Tamil Nadu,IN,mid,1400000,2500000,1900000,INR,ambitionbox
+Data Analyst,Google,Bangalore,Karnataka,IN,mid,1800000,3000000,2400000,INR,ambitionbox
+Data Analyst,Microsoft,Hyderabad,Telangana,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Data Analyst,Flipkart,Bangalore,Karnataka,IN,entry,800000,1400000,1100000,INR,ambitionbox
+Data Analyst,Swiggy,Bangalore,Karnataka,IN,entry,700000,1200000,950000,INR,ambitionbox
+Data Analyst,Zomato,Gurugram,Haryana,IN,entry,650000,1100000,880000,INR,ambitionbox
+Data Analyst,Deloitte,Bangalore,Karnataka,IN,entry,500000,900000,700000,INR,ambitionbox
+Data Analyst,EY,Bangalore,Karnataka,IN,entry,450000,800000,620000,INR,ambitionbox
+Data Analyst,KPMG,Bangalore,Karnataka,IN,entry,430000,780000,600000,INR,ambitionbox
+Machine Learning Engineer,Uber,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Machine Learning Engineer,LinkedIn,Bangalore,Karnataka,IN,mid,2800000,5000000,3800000,INR,ambitionbox
+Machine Learning Engineer,Razorpay,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Machine Learning Engineer,PhonePe,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Machine Learning Engineer,Walmart Labs,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+DevOps Engineer,Google,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+DevOps Engineer,Microsoft,Hyderabad,Telangana,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+DevOps Engineer,Salesforce,Hyderabad,Telangana,IN,mid,1800000,3000000,2400000,INR,ambitionbox
+DevOps Engineer,Walmart Labs,Bangalore,Karnataka,IN,mid,1500000,2600000,2000000,INR,ambitionbox
+DevOps Engineer,Swiggy,Bangalore,Karnataka,IN,mid,1500000,2600000,2000000,INR,ambitionbox
+DevOps Engineer,Zomato,Gurugram,Haryana,IN,mid,1300000,2400000,1850000,INR,ambitionbox
+DevOps Engineer,Accenture,Bangalore,Karnataka,IN,mid,800000,1500000,1150000,INR,ambitionbox
+DevOps Engineer,Cognizant,Bangalore,Karnataka,IN,entry,450000,800000,620000,INR,ambitionbox
+Frontend Engineer,Google,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Frontend Engineer,Amazon,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Frontend Engineer,Microsoft,Hyderabad,Telangana,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Frontend Engineer,Atlassian,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Frontend Engineer,Intuit,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Frontend Engineer,Cred,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Frontend Engineer,PhonePe,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Backend Engineer,Google,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Backend Engineer,Amazon,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Backend Engineer,Microsoft,Hyderabad,Telangana,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Backend Engineer,Atlassian,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Backend Engineer,Cred,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Backend Engineer,PhonePe,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Full Stack Engineer,Google,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Full Stack Engineer,Amazon,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Full Stack Engineer,Cred,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Full Stack Engineer,Meesho,Bangalore,Karnataka,IN,mid,1400000,2500000,1900000,INR,ambitionbox
+Full Stack Engineer,Groww,Bangalore,Karnataka,IN,mid,1300000,2400000,1850000,INR,ambitionbox
+Quality Assurance Engineer,Google,Bangalore,Karnataka,IN,mid,1800000,3000000,2400000,INR,ambitionbox
+Quality Assurance Engineer,Microsoft,Hyderabad,Telangana,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Quality Assurance Engineer,Salesforce,Hyderabad,Telangana,IN,mid,1500000,2600000,2000000,INR,ambitionbox
+Quality Assurance Engineer,Razorpay,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Quality Assurance Engineer,Swiggy,Bangalore,Karnataka,IN,mid,1000000,1800000,1400000,INR,ambitionbox
+Quality Assurance Engineer,Accenture,Bangalore,Karnataka,IN,entry,350000,620000,480000,INR,ambitionbox
+Quality Assurance Engineer,Cognizant,Bangalore,Karnataka,IN,entry,330000,600000,460000,INR,ambitionbox
+Security Engineer,Flipkart,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Security Engineer,Razorpay,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Security Engineer,PhonePe,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Security Engineer,Goldman Sachs,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Security Engineer,JP Morgan,Mumbai,Maharashtra,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Data Engineer,Microsoft,Hyderabad,Telangana,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Data Engineer,Uber,Bangalore,Karnataka,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Data Engineer,Razorpay,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Data Engineer,PhonePe,Bangalore,Karnataka,IN,mid,1500000,2600000,2000000,INR,ambitionbox
+Data Engineer,Walmart Labs,Bangalore,Karnataka,IN,mid,1500000,2600000,2000000,INR,ambitionbox
+Data Engineer,Freshworks,Chennai,Tamil Nadu,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Data Engineer,Cognizant,Bangalore,Karnataka,IN,entry,420000,750000,580000,INR,ambitionbox
+Data Engineer,Accenture,Bangalore,Karnataka,IN,entry,450000,800000,620000,INR,ambitionbox
+Technical Program Manager,Flipkart,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Technical Program Manager,Uber,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Technical Program Manager,Salesforce,Hyderabad,Telangana,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Technical Program Manager,LinkedIn,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Solutions Architect,Google,Bangalore,Karnataka,IN,mid,2800000,5000000,3800000,INR,ambitionbox
+Solutions Architect,Microsoft,Hyderabad,Telangana,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Solutions Architect,Salesforce,Hyderabad,Telangana,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Solutions Architect,Accenture,Bangalore,Karnataka,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Engineering Manager,Uber,Bangalore,Karnataka,IN,senior,5000000,8500000,6500000,INR,ambitionbox
+Engineering Manager,Swiggy,Bangalore,Karnataka,IN,senior,3500000,6000000,4800000,INR,ambitionbox
+Engineering Manager,Zomato,Gurugram,Haryana,IN,senior,3200000,5500000,4300000,INR,ambitionbox
+Engineering Manager,Cred,Bangalore,Karnataka,IN,senior,4000000,7000000,5500000,INR,ambitionbox
+Engineering Manager,PhonePe,Bangalore,Karnataka,IN,senior,3500000,6000000,4800000,INR,ambitionbox
+Engineering Manager,Salesforce,Hyderabad,Telangana,IN,senior,3800000,6500000,5000000,INR,ambitionbox
+Engineering Manager,Atlassian,Bangalore,Karnataka,IN,senior,4500000,7500000,6000000,INR,ambitionbox
+Engineering Manager,Intuit,Bangalore,Karnataka,IN,senior,3800000,6500000,5000000,INR,ambitionbox
+Consultant,PwC,Bangalore,Karnataka,IN,entry,700000,1300000,1000000,INR,ambitionbox
+Consultant,PwC,Mumbai,Maharashtra,IN,entry,720000,1350000,1020000,INR,ambitionbox
+Consultant,Accenture,Bangalore,Karnataka,IN,entry,600000,1100000,850000,INR,ambitionbox
+Consultant,Accenture,Mumbai,Maharashtra,IN,entry,620000,1150000,880000,INR,ambitionbox
+Senior Consultant,PwC,Bangalore,Karnataka,IN,mid,1300000,2500000,1900000,INR,ambitionbox
+Senior Consultant,Accenture,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Consultant,Capgemini,Bangalore,Karnataka,IN,entry,500000,900000,700000,INR,ambitionbox
+Consultant,Capgemini,Mumbai,Maharashtra,IN,entry,520000,950000,730000,INR,ambitionbox
+Software Engineer,Capgemini,Bangalore,Karnataka,IN,entry,380000,680000,530000,INR,ambitionbox
+Software Engineer,Capgemini,Pune,Maharashtra,IN,entry,360000,660000,510000,INR,ambitionbox
+Senior Software Engineer,Capgemini,Bangalore,Karnataka,IN,mid,780000,1400000,1050000,INR,ambitionbox
+Software Engineer,LTIMindtree,Bangalore,Karnataka,IN,entry,400000,720000,560000,INR,ambitionbox
+Software Engineer,LTIMindtree,Hyderabad,Telangana,IN,entry,380000,700000,540000,INR,ambitionbox
+Senior Software Engineer,LTIMindtree,Bangalore,Karnataka,IN,mid,800000,1500000,1100000,INR,ambitionbox
+Software Engineer,Mphasis,Bangalore,Karnataka,IN,entry,380000,680000,530000,INR,ambitionbox
+Senior Software Engineer,Mphasis,Bangalore,Karnataka,IN,mid,750000,1350000,1020000,INR,ambitionbox
+Software Engineer,Persistent Systems,Pune,Maharashtra,IN,entry,400000,720000,560000,INR,ambitionbox
+Senior Software Engineer,Persistent Systems,Pune,Maharashtra,IN,mid,800000,1500000,1100000,INR,ambitionbox
+Software Engineer,Coforge,Noida,Uttar Pradesh,IN,entry,370000,660000,510000,INR,ambitionbox
+Senior Software Engineer,Coforge,Noida,Uttar Pradesh,IN,mid,750000,1400000,1050000,INR,ambitionbox
+Software Engineer,Birlasoft,Pune,Maharashtra,IN,entry,350000,640000,490000,INR,ambitionbox
+Software Engineer,Cyient,Hyderabad,Telangana,IN,entry,350000,640000,490000,INR,ambitionbox
+Software Engineer,L&T Technology,Bangalore,Karnataka,IN,entry,400000,720000,560000,INR,ambitionbox
+Software Engineer,Mindtree,Bangalore,Karnataka,IN,entry,400000,720000,560000,INR,ambitionbox
+Software Engineer,Hexaware,Mumbai,Maharashtra,IN,entry,350000,640000,490000,INR,ambitionbox
+Software Engineer,Zensar,Pune,Maharashtra,IN,entry,360000,660000,510000,INR,ambitionbox
+Software Engineer,EPAM,Hyderabad,Telangana,IN,entry,500000,900000,700000,INR,ambitionbox
+Senior Software Engineer,EPAM,Hyderabad,Telangana,IN,mid,1000000,1800000,1400000,INR,ambitionbox
+Software Engineer,GlobalLogic,Noida,Uttar Pradesh,IN,entry,450000,800000,620000,INR,ambitionbox
+Senior Software Engineer,GlobalLogic,Noida,Uttar Pradesh,IN,mid,900000,1600000,1250000,INR,ambitionbox
+Software Engineer,Publicis Sapient,Gurugram,Haryana,IN,entry,600000,1100000,850000,INR,ambitionbox
+Senior Software Engineer,Publicis Sapient,Gurugram,Haryana,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Software Engineer,Hashedin,Bangalore,Karnataka,IN,entry,600000,1100000,850000,INR,ambitionbox
+Senior Software Engineer,Hashedin,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Product Manager,Nykaa,Mumbai,Maharashtra,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Product Manager,Urban Company,Gurugram,Haryana,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Product Manager,Lenskart,Gurugram,Haryana,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Product Manager,BrowserStack,Mumbai,Maharashtra,IN,mid,2000000,3500000,2700000,INR,ambitionbox
+Product Manager,Postman,Bangalore,Karnataka,IN,mid,2200000,3800000,3000000,INR,ambitionbox
+Product Manager,TCS,Bangalore,Karnataka,IN,mid,1000000,1800000,1400000,INR,ambitionbox
+Product Manager,Infosys,Bangalore,Karnataka,IN,mid,1050000,1900000,1450000,INR,ambitionbox
+Product Manager,Accenture,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Product Manager,Cognizant,Bangalore,Karnataka,IN,mid,1000000,1800000,1400000,INR,ambitionbox
+Product Manager,Wipro,Bangalore,Karnataka,IN,mid,950000,1750000,1350000,INR,ambitionbox
+Business Analyst,McKinsey,Gurugram,Haryana,IN,entry,2000000,3200000,2600000,INR,ambitionbox
+Business Analyst,BCG,Gurugram,Haryana,IN,entry,1800000,3000000,2400000,INR,ambitionbox
+Business Analyst,Bain,Gurugram,Haryana,IN,entry,1800000,3000000,2400000,INR,ambitionbox
+Business Analyst,PwC,Bangalore,Karnataka,IN,entry,550000,1000000,780000,INR,ambitionbox
+Business Analyst,Capgemini,Bangalore,Karnataka,IN,entry,420000,750000,580000,INR,ambitionbox
+Business Analyst,Wipro,Bangalore,Karnataka,IN,entry,380000,680000,530000,INR,ambitionbox
+Business Analyst,Cognizant,Bangalore,Karnataka,IN,entry,400000,720000,560000,INR,ambitionbox
+Business Analyst,Google,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Business Analyst,Amazon,Hyderabad,Telangana,IN,mid,1400000,2500000,1900000,INR,ambitionbox
+Business Analyst,Microsoft,Hyderabad,Telangana,IN,mid,1400000,2500000,1900000,INR,ambitionbox
+Financial Analyst,Goldman Sachs,Hyderabad,Telangana,IN,entry,1200000,2000000,1600000,INR,ambitionbox
+Financial Analyst,Citi,Mumbai,Maharashtra,IN,entry,1000000,1700000,1350000,INR,ambitionbox
+Financial Analyst,Citi,Pune,Maharashtra,IN,entry,950000,1600000,1280000,INR,ambitionbox
+Financial Analyst,HSBC,Pune,Maharashtra,IN,entry,900000,1500000,1200000,INR,ambitionbox
+Financial Analyst,Barclays,Mumbai,Maharashtra,IN,entry,950000,1600000,1280000,INR,ambitionbox
+Financial Analyst,BNP Paribas,Mumbai,Maharashtra,IN,entry,850000,1400000,1120000,INR,ambitionbox
+Financial Analyst,Standard Chartered,Bangalore,Karnataka,IN,entry,900000,1500000,1200000,INR,ambitionbox
+Financial Analyst,American Express,Gurugram,Haryana,IN,entry,1000000,1700000,1350000,INR,ambitionbox
+Marketing Manager,Google,Bangalore,Karnataka,IN,mid,2200000,4000000,3100000,INR,ambitionbox
+Marketing Manager,Microsoft,Hyderabad,Telangana,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Marketing Manager,Uber,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Marketing Manager,PhonePe,Bangalore,Karnataka,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Marketing Manager,Lenskart,Gurugram,Haryana,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Marketing Manager,Nykaa,Mumbai,Maharashtra,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Human Resources,Google,Bangalore,Karnataka,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Human Resources,Amazon,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Human Resources,Wipro,Bangalore,Karnataka,IN,entry,330000,580000,450000,INR,ambitionbox
+Human Resources,Accenture,Bangalore,Karnataka,IN,entry,350000,620000,480000,INR,ambitionbox
+Human Resources,Deloitte,Bangalore,Karnataka,IN,entry,450000,800000,620000,INR,ambitionbox
+Mobile Developer,Google,Bangalore,Karnataka,IN,mid,2500000,4500000,3500000,INR,ambitionbox
+Mobile Developer,Amazon,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Mobile Developer,Razorpay,Bangalore,Karnataka,IN,mid,1600000,2800000,2200000,INR,ambitionbox
+Mobile Developer,Cred,Bangalore,Karnataka,IN,mid,1800000,3200000,2500000,INR,ambitionbox
+Mobile Developer,Groww,Bangalore,Karnataka,IN,mid,1300000,2400000,1850000,INR,ambitionbox
+Scrum Master,Amazon,Bangalore,Karnataka,IN,mid,1500000,2600000,2000000,INR,ambitionbox
+Scrum Master,Google,Bangalore,Karnataka,IN,mid,1800000,3000000,2400000,INR,ambitionbox
+Scrum Master,Flipkart,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Scrum Master,Wipro,Bangalore,Karnataka,IN,mid,800000,1400000,1100000,INR,ambitionbox
+Scrum Master,Cognizant,Bangalore,Karnataka,IN,mid,750000,1350000,1020000,INR,ambitionbox
+Technical Writer,Flipkart,Bangalore,Karnataka,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Technical Writer,Salesforce,Hyderabad,Telangana,IN,mid,1200000,2200000,1700000,INR,ambitionbox
+Technical Writer,Atlassian,Bangalore,Karnataka,IN,mid,1500000,2800000,2100000,INR,ambitionbox
+Technical Writer,TCS,Bangalore,Karnataka,IN,entry,350000,620000,480000,INR,ambitionbox
+Technical Writer,Infosys,Bangalore,Karnataka,IN,entry,370000,660000,510000,INR,ambitionbox
+Solutions Architect,,Bangalore,Karnataka,IN,mid,1500000,3200000,2300000,INR,market
+Solutions Architect,,Hyderabad,Telangana,IN,mid,1400000,3000000,2100000,INR,market
+Solutions Architect,,India,,IN,mid,1200000,3200000,2000000,INR,market
+Technical Program Manager,,Bangalore,Karnataka,IN,mid,1800000,3500000,2600000,INR,market
+Technical Program Manager,,Hyderabad,Telangana,IN,mid,1600000,3200000,2400000,INR,market
+Technical Program Manager,,India,,IN,mid,1500000,3500000,2300000,INR,market
+Senior Product Manager,,Bangalore,Karnataka,IN,senior,2800000,5500000,4000000,INR,market
+Senior Product Manager,,Mumbai,Maharashtra,IN,senior,2600000,5000000,3700000,INR,market
+Senior Product Manager,,India,,IN,senior,2500000,5500000,3800000,INR,market
+Senior Consultant,,Bangalore,Karnataka,IN,mid,1200000,2500000,1800000,INR,market
+Senior Consultant,,Mumbai,Maharashtra,IN,mid,1300000,2600000,1900000,INR,market
+Senior Consultant,,Gurugram,Haryana,IN,mid,1300000,2800000,2000000,INR,market
+Senior Consultant,,India,,IN,mid,1100000,2800000,1800000,INR,market
+Lead Software Engineer,,Bangalore,Karnataka,IN,senior,1800000,3500000,2600000,INR,market
+Lead Software Engineer,,Hyderabad,Telangana,IN,senior,1600000,3200000,2400000,INR,market
+Lead Software Engineer,,India,,IN,senior,1500000,3500000,2300000,INR,market
+Staff Software Engineer,,Bangalore,Karnataka,IN,senior,3000000,6000000,4500000,INR,market
+Staff Software Engineer,,Hyderabad,Telangana,IN,senior,2800000,5500000,4000000,INR,market
+Staff Software Engineer,,India,,IN,senior,2500000,6000000,4000000,INR,market
+Director of Engineering,,Bangalore,Karnataka,IN,senior,4500000,10000000,7000000,INR,market
+Director of Engineering,,India,,IN,senior,4000000,10000000,6500000,INR,market
+Account Manager,,Bangalore,Karnataka,IN,mid,800000,1600000,1200000,INR,market
+Account Manager,,Mumbai,Maharashtra,IN,mid,850000,1700000,1250000,INR,market
+Account Manager,,India,,IN,mid,700000,1600000,1100000,INR,market
+Sales Executive,,Hyderabad,Telangana,IN,entry,280000,550000,410000,INR,market
+Sales Executive,,Mumbai,Maharashtra,IN,entry,320000,620000,470000,INR,market
+Sales Executive,,Gurugram,Haryana,IN,entry,310000,600000,450000,INR,market
+Sales Executive,,India,,IN,entry,280000,600000,420000,INR,market
+Human Resources,,Mumbai,Maharashtra,IN,entry,370000,720000,530000,INR,market
+Human Resources,,Gurugram,Haryana,IN,entry,360000,700000,520000,INR,market
+Human Resources,,Hyderabad,Telangana,IN,entry,340000,680000,500000,INR,market
+Human Resources,,India,,IN,entry,320000,700000,480000,INR,market
+Scrum Master,,Hyderabad,Telangana,IN,mid,850000,1700000,1250000,INR,market
+Scrum Master,,India,,IN,mid,800000,1800000,1250000,INR,market
+Technical Writer,,Hyderabad,Telangana,IN,mid,750000,1500000,1100000,INR,market
+Technical Writer,,India,,IN,mid,700000,1600000,1100000,INR,market
+Security Engineer,,Pune,Maharashtra,IN,mid,1000000,2200000,1600000,INR,market
+Security Engineer,,Mumbai,Maharashtra,IN,mid,1100000,2400000,1700000,INR,market
+Security Engineer,,India,,IN,mid,1000000,2500000,1700000,INR,market
+Database Administrator,,Hyderabad,Telangana,IN,entry,380000,750000,560000,INR,market
+Database Administrator,,India,,IN,entry,350000,800000,550000,INR,market
+Network Engineer,,Hyderabad,Telangana,IN,entry,330000,680000,500000,INR,market
+Network Engineer,,India,,IN,entry,320000,700000,490000,INR,market
+Mobile Developer,,Pune,Maharashtra,IN,mid,900000,2000000,1400000,INR,market
+Mobile Developer,,Gurugram,Haryana,IN,mid,1000000,2200000,1500000,INR,market
+Mobile Developer,,Mumbai,Maharashtra,IN,mid,1000000,2200000,1500000,INR,market
+Product Designer,,Hyderabad,Telangana,IN,mid,1000000,2200000,1600000,INR,market
+Product Designer,,Gurugram,Haryana,IN,mid,1100000,2400000,1700000,INR,market
+Product Designer,,India,,IN,mid,1000000,2600000,1700000,INR,market

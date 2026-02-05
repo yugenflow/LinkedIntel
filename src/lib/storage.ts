@@ -5,6 +5,7 @@ const DEFAULTS: StorageData = {
   showSalaryBadges: true,
   enableSmartConnect: true,
   matchCache: {},
+  salaryCache: {},
 };
 
 export async function getStorage<K extends keyof StorageData>(

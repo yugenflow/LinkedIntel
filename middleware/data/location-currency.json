@@ -1,0 +1,53 @@
+{
+  "countries": {
+    "IN": { "currency": "INR", "symbol": "\u20b9", "format": "lakh" },
+    "US": { "currency": "USD", "symbol": "$", "format": "k" },
+    "GB": { "currency": "GBP", "symbol": "\u00a3", "format": "k" },
+    "CA": { "currency": "CAD", "symbol": "CA$", "format": "k" },
+    "DE": { "currency": "EUR", "symbol": "\u20ac", "format": "k" },
+    "SG": { "currency": "SGD", "symbol": "S$", "format": "k" },
+    "AE": { "currency": "AED", "symbol": "AED", "format": "k" },
+    "AU": { "currency": "AUD", "symbol": "A$", "format": "k" }
+  },
+  "cities": {
+    "bangalore": "IN", "bengaluru": "IN", "mumbai": "IN", "bombay": "IN",
+    "gurugram": "IN", "gurgaon": "IN", "noida": "IN", "hyderabad": "IN",
+    "pune": "IN", "chennai": "IN", "madras": "IN", "delhi": "IN", "new delhi": "IN",
+    "kolkata": "IN", "calcutta": "IN", "ahmedabad": "IN", "jaipur": "IN",
+    "indore": "IN", "coimbatore": "IN", "kochi": "IN", "cochin": "IN",
+    "trivandrum": "IN", "thiruvananthapuram": "IN", "chandigarh": "IN",
+    "lucknow": "IN", "nagpur": "IN", "bhubaneswar": "IN", "visakhapatnam": "IN",
+    "vizag": "IN", "mangalore": "IN", "mangaluru": "IN", "mysore": "IN", "mysuru": "IN",
+
+    "san francisco": "US", "new york": "US", "seattle": "US", "austin": "US",
+    "chicago": "US", "denver": "US", "boston": "US", "los angeles": "US",
+    "san jose": "US", "mountain view": "US", "menlo park": "US", "cupertino": "US",
+    "redmond": "US", "palo alto": "US", "sunnyvale": "US", "santa clara": "US",
+    "portland": "US", "atlanta": "US", "dallas": "US", "houston": "US",
+    "phoenix": "US", "miami": "US", "washington": "US", "dc": "US",
+    "raleigh": "US", "charlotte": "US", "minneapolis": "US", "detroit": "US",
+    "pittsburgh": "US", "philadelphia": "US", "san diego": "US", "salt lake city": "US",
+
+    "london": "GB", "manchester": "GB", "edinburgh": "GB", "cambridge": "GB",
+    "bristol": "GB", "birmingham": "GB", "leeds": "GB", "glasgow": "GB",
+
+    "toronto": "CA", "vancouver": "CA", "montreal": "CA", "ottawa": "CA", "calgary": "CA",
+
+    "berlin": "DE", "munich": "DE", "frankfurt": "DE", "hamburg": "DE",
+    "amsterdam": "NL", "dublin": "IE", "paris": "FR", "zurich": "CH",
+
+    "singapore": "SG",
+    "dubai": "AE", "abu dhabi": "AE",
+    "sydney": "AU", "melbourne": "AU"
+  },
+  "states": {
+    "karnataka": "IN", "telangana": "IN", "maharashtra": "IN", "tamil nadu": "IN",
+    "haryana": "IN", "uttar pradesh": "IN", "delhi": "IN", "west bengal": "IN",
+    "gujarat": "IN", "rajasthan": "IN", "kerala": "IN", "madhya pradesh": "IN",
+    "andhra pradesh": "IN", "odisha": "IN", "punjab": "IN",
+    "california": "US", "washington": "US", "texas": "US", "new york": "US",
+    "massachusetts": "US", "colorado": "US", "illinois": "US", "georgia": "US",
+    "oregon": "US", "virginia": "US", "north carolina": "US", "pennsylvania": "US",
+    "florida": "US", "ohio": "US", "michigan": "US", "minnesota": "US"
+  }
+}

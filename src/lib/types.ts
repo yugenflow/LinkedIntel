@@ -7,11 +7,17 @@ export interface ParsedResume {
   parsedAt: number;
 }
 
+export interface SalaryCacheEntry {
+  results: SalaryResult[];
+  cachedAt: number;
+}
+
 export interface StorageData {
   resume: ParsedResume | null;
   showSalaryBadges: boolean;
   enableSmartConnect: boolean;
   matchCache: Record<string, MatchResult>;
+  salaryCache: Record<string, SalaryCacheEntry>;
 }
 
 export interface CategoryBreakdown {
@@ -72,8 +78,13 @@ export interface SalaryResult {
   found: boolean;
   salaryMin?: number;
   salaryMax?: number;
+  salaryMedian?: number;
   currency?: string;
-  matchType?: 'exact' | 'market_average';
+  matchType?: 'exact' | 'company_average' | 'market_average' | 'national_average' | 'fuzzy_average' | 'ai_estimate';
+  source?: string;
+  isAiEstimate?: boolean;
+  confidence?: 'high' | 'medium' | 'low';
+  sampleSize?: number;
   label: string;
 }
 
@@ -106,7 +117,9 @@ export type MessageType =
   | { type: 'GET_STORAGE'; payload: { keys: (keyof StorageData)[] } }
   | { type: 'SET_STORAGE'; payload: Partial<StorageData> }
   | { type: 'PAGE_DATA'; payload: PageDataPayload }
-  | { type: 'REQUEST_SCRAPE' };
+  | { type: 'REQUEST_SCRAPE' }
+  | { type: 'SALARY_LOOKUP'; payload: { jobs: { title: string; company: string; location: string }[] } }
+  | { type: 'AI_ESTIMATE_SALARY'; payload: { title: string; company: string; location: string; cardIndex: number } };
 
 export interface MessageResponse<T = unknown> {
   success: boolean;

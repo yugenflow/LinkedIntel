@@ -15,6 +15,9 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
+const { matchSalaries } = require('./lib/salary-matcher');
+const { buildSalaryEstimatePrompt } = require('./prompts/salary-estimate');
+
 const PORT = process.env.PORT || 3099;
 const API_KEY = process.env.GEMINI_API_KEY;
 
@@ -142,6 +145,96 @@ async function handleConnect(body) {
   });
 }
 
+function formatSalaryLabel(min, max, currency) {
+  const fmt = (n) => {
+    if (currency === 'INR') {
+      if (n >= 100000) return `₹${(n / 100000).toFixed(1)}L`;
+      return `₹${Math.round(n / 1000)}k`;
+    }
+    if (currency === 'USD') return `$${Math.round(n / 1000)}k`;
+    if (currency === 'GBP') return `£${Math.round(n / 1000)}k`;
+    return `${currency}${Math.round(n / 1000)}k`;
+  };
+  if (min === max) return fmt(min);
+  return `${fmt(min)} - ${fmt(max)}`;
+}
+
+async function handleSalaryLookup(body) {
+  const { jobs, forceAi } = body;
+  if (!jobs || !Array.isArray(jobs)) throw new Error('Missing jobs array');
+
+  // If forceAi, skip DB and go straight to Gemini
+  if (forceAi) {
+    const results = await Promise.all(
+      jobs.map(async (job) => {
+        try {
+          const prompt = buildSalaryEstimatePrompt(job.title, job.company, job.location);
+          const geminiResult = await callGeminiWithRetry(prompt, {
+            responseMimeType: 'application/json',
+            temperature: 0.3,
+            maxOutputTokens: 256,
+          });
+          return {
+            found: true,
+            salaryMin: geminiResult.salaryMin,
+            salaryMax: geminiResult.salaryMax,
+            salaryMedian: geminiResult.salaryMedian,
+            currency: geminiResult.currency,
+            matchType: 'ai_estimate',
+            source: 'gemini',
+            isAiEstimate: true,
+            confidence: geminiResult.confidence,
+            label: formatSalaryLabel(geminiResult.salaryMin, geminiResult.salaryMax, geminiResult.currency),
+          };
+        } catch (err) {
+          console.error(`[salary] AI estimate failed for "${job.title}":`, err.message);
+          return { found: false, matchType: 'none', isAiEstimate: false, label: 'Estimate Failed' };
+        }
+      })
+    );
+    return { results };
+  }
+
+  // First pass: match from DB
+  const dbResults = matchSalaries(jobs);
+
+  // Second pass: Gemini fallback for unmatched
+  const results = await Promise.all(
+    dbResults.map(async (result, i) => {
+      if (result.found) return result;
+
+      // Try Gemini estimate
+      try {
+        const job = jobs[i];
+        const prompt = buildSalaryEstimatePrompt(job.title, job.company, job.location);
+        const geminiResult = await callGeminiWithRetry(prompt, {
+          responseMimeType: 'application/json',
+          temperature: 0.3,
+          maxOutputTokens: 256,
+        });
+
+        return {
+          found: true,
+          salaryMin: geminiResult.salaryMin,
+          salaryMax: geminiResult.salaryMax,
+          salaryMedian: geminiResult.salaryMedian,
+          currency: geminiResult.currency,
+          matchType: 'ai_estimate',
+          source: 'gemini',
+          isAiEstimate: true,
+          confidence: geminiResult.confidence,
+          label: formatSalaryLabel(geminiResult.salaryMin, geminiResult.salaryMax, geminiResult.currency),
+        };
+      } catch (err) {
+        console.error(`[salary] Gemini fallback failed for "${jobs[i].title}":`, err.message);
+        return result; // Return the "not found" result
+      }
+    })
+  );
+
+  return { results };
+}
+
 const server = http.createServer(async (req, res) => {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -176,6 +269,12 @@ const server = http.createServer(async (req, res) => {
       console.log('[connect] Generating icebreaker...');
       result = await handleConnect(body);
       console.log('[connect] Done:', result.message?.substring(0, 50) + '...');
+    } else if (req.url === '/api/salary-lookup') {
+      console.log('[salary] Looking up', body.jobs?.length, 'jobs...');
+      result = await handleSalaryLookup(body);
+      const matched = result.results.filter(r => r.found).length;
+      const aiCount = result.results.filter(r => r.isAiEstimate).length;
+      console.log(`[salary] Done: ${matched} found (${aiCount} AI estimates)`);
     } else {
       res.writeHead(404, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ error: 'Not found' }));
@@ -195,5 +294,6 @@ server.listen(PORT, () => {
   console.log(`\n  LinkedIntel API dev server running at http://localhost:${PORT}`);
   console.log('  Endpoints:');
   console.log('    POST /api/gemini-match');
-  console.log('    POST /api/gemini-connect\n');
+  console.log('    POST /api/gemini-connect');
+  console.log('    POST /api/salary-lookup\n');
 });

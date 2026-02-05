@@ -1,6 +1,7 @@
-import type { MessageType, MessageResponse, MatchResult, ConnectMessage } from '../lib/types';
+import type { MessageType, MessageResponse, MatchResult, ConnectMessage, SalaryResult, SalaryCacheEntry } from '../lib/types';
 import { getStorage, setStorage, hashString } from '../lib/storage';
 import { buildMatchPrompt, buildConnectPrompt } from '../lib/prompts';
+import salaryFallback from '../data/salary-fallback.json';
 
 // ── Middleware base URL ──
 const API_BASE = 'http://localhost:3099/api';
@@ -60,6 +61,35 @@ chrome.runtime.onMessage.addListener(
       return false;
     }
 
+    // SALARY_LOOKUP: handle async and relay results to popup as SALARY_LOOKUP_RESULT
+    if (message.type === 'SALARY_LOOKUP') {
+      handleSalaryLookup(message.payload).then((result) => {
+        chrome.runtime.sendMessage({
+          type: 'SALARY_LOOKUP_RESULT',
+          payload: result.data,
+        }).catch(() => {});
+        sendResponse(result);
+      }).catch((err) => {
+        sendResponse({ success: false, error: err.message });
+      });
+      return true;
+    }
+
+    // AI_ESTIMATE_SALARY: force AI estimate for a single job
+    if (message.type === 'AI_ESTIMATE_SALARY') {
+      const { title, company, location, cardIndex } = message.payload;
+      handleAiEstimate(title, company, location).then((result) => {
+        chrome.runtime.sendMessage({
+          type: 'AI_ESTIMATE_RESULT',
+          payload: { result, cardIndex },
+        }).catch(() => {});
+        sendResponse({ success: true, data: result });
+      }).catch((err) => {
+        sendResponse({ success: false, error: err.message });
+      });
+      return true;
+    }
+
     handleMessage(message)
       .then(sendResponse)
       .catch((err) => sendResponse({ success: false, error: err.message }));
@@ -86,6 +116,9 @@ async function handleMessage(message: MessageType): Promise<MessageResponse> {
       await setStorage(message.payload);
       return { success: true };
     }
+
+    case 'SALARY_LOOKUP':
+      return handleSalaryLookup(message.payload);
 
     default:
       return { success: false, error: 'Unknown message type' };
@@ -154,5 +187,165 @@ async function handleIcebreaker(
     return { success: true, data: result };
   } catch (err) {
     return { success: false, error: (err as Error).message };
+  }
+}
+
+// ── Salary lookup with caching ──
+const SALARY_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+
+function makeSalaryCacheKey(job: { title: string; company: string; location: string }): string {
+  return hashString(`${job.title}|${job.company}|${job.location}`.toLowerCase());
+}
+
+// Fallback: simple local matching from bundled dataset
+function fallbackLookup(title: string, company: string, location: string): SalaryResult {
+  const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+  const normTitle = norm(title);
+  const normCompany = norm(company);
+  const city = norm(location.split(',')[0]);
+
+  const fallbackData = salaryFallback as Array<{
+    title: string; titleNormalized: string; company: string;
+    city: string; country: string; salaryMin: number; salaryMax: number;
+    salaryMedian: number; currency: string; source: string;
+  }>;
+
+  // Try title + company
+  let match = fallbackData.find(
+    (e) => e.titleNormalized === normTitle && norm(e.company) === normCompany && normCompany !== ''
+  );
+  if (match) {
+    return {
+      found: true, salaryMin: match.salaryMin, salaryMax: match.salaryMax,
+      salaryMedian: match.salaryMedian, currency: match.currency,
+      matchType: 'company_average', isAiEstimate: false,
+      label: formatFallbackLabel(match.salaryMin, match.salaryMax, match.currency),
+    };
+  }
+
+  // Try title + city
+  match = fallbackData.find(
+    (e) => e.titleNormalized === normTitle && e.city === city
+  );
+  if (match) {
+    return {
+      found: true, salaryMin: match.salaryMin, salaryMax: match.salaryMax,
+      salaryMedian: match.salaryMedian, currency: match.currency,
+      matchType: 'market_average', isAiEstimate: false,
+      label: formatFallbackLabel(match.salaryMin, match.salaryMax, match.currency),
+    };
+  }
+
+  // Try title only (country-level)
+  match = fallbackData.find((e) => e.titleNormalized === normTitle);
+  if (match) {
+    return {
+      found: true, salaryMin: match.salaryMin, salaryMax: match.salaryMax,
+      salaryMedian: match.salaryMedian, currency: match.currency,
+      matchType: 'national_average', isAiEstimate: false,
+      label: formatFallbackLabel(match.salaryMin, match.salaryMax, match.currency),
+    };
+  }
+
+  return { found: false, label: 'Data Unavailable' };
+}
+
+function formatFallbackLabel(min: number, max: number, currency: string): string {
+  const fmt = (n: number) => {
+    if (currency === 'INR') {
+      if (n >= 100000) return `₹${(n / 100000).toFixed(1)}L`;
+      return `₹${Math.round(n / 1000)}k`;
+    }
+    if (currency === 'USD') return `$${Math.round(n / 1000)}k`;
+    if (currency === 'GBP') return `£${Math.round(n / 1000)}k`;
+    return `${currency}${Math.round(n / 1000)}k`;
+  };
+  if (min === max) return fmt(min);
+  return `${fmt(min)} - ${fmt(max)}`;
+}
+
+async function handleSalaryLookup(
+  payload: { jobs: { title: string; company: string; location: string }[] }
+): Promise<MessageResponse<{ results: SalaryResult[] }>> {
+  const { jobs } = payload;
+  const { salaryCache } = await getStorage(['salaryCache']);
+
+  // Check cache for each job
+  const uncachedJobs: { index: number; job: typeof jobs[0] }[] = [];
+  const results: SalaryResult[] = new Array(jobs.length);
+
+  for (let i = 0; i < jobs.length; i++) {
+    const key = makeSalaryCacheKey(jobs[i]);
+    const cached = salaryCache[key];
+    if (cached && Date.now() - cached.cachedAt < SALARY_CACHE_TTL) {
+      results[i] = cached.results[0];
+    } else {
+      uncachedJobs.push({ index: i, job: jobs[i] });
+    }
+  }
+
+  // If all cached, return immediately
+  if (uncachedJobs.length === 0) {
+    return { success: true, data: { results } };
+  }
+
+  // Call API for uncached jobs
+  try {
+    const response = await fetch(`${API_BASE}/salary-lookup`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ jobs: uncachedJobs.map((u) => u.job) }),
+    });
+
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+
+    const apiData: { results: SalaryResult[] } = await response.json();
+
+    // Merge API results and cache them
+    for (let i = 0; i < uncachedJobs.length; i++) {
+      const { index, job } = uncachedJobs[i];
+      const result = apiData.results[i];
+      results[index] = result;
+
+      const key = makeSalaryCacheKey(job);
+      salaryCache[key] = { results: [result], cachedAt: Date.now() };
+    }
+
+    await setStorage({ salaryCache });
+    return { success: true, data: { results } };
+  } catch {
+    // API failed — use local fallback
+    for (const { index, job } of uncachedJobs) {
+      results[index] = fallbackLookup(job.title, job.company, job.location);
+    }
+    return { success: true, data: { results } };
+  }
+}
+
+// ── Single AI salary estimate (on-demand, triggered by user click) ──
+async function handleAiEstimate(
+  title: string, company: string, location: string
+): Promise<SalaryResult> {
+  try {
+    const response = await fetch(`${API_BASE}/salary-lookup`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ jobs: [{ title, company, location }], forceAi: true }),
+    });
+
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+
+    const apiData: { results: SalaryResult[] } = await response.json();
+    const result = apiData.results[0];
+
+    // Cache it
+    const { salaryCache } = await getStorage(['salaryCache']);
+    const key = makeSalaryCacheKey({ title, company, location });
+    salaryCache[key] = { results: [result], cachedAt: Date.now() };
+    await setStorage({ salaryCache });
+
+    return result;
+  } catch (err) {
+    return { found: false, label: 'Estimate Failed', isAiEstimate: true };
   }
 }

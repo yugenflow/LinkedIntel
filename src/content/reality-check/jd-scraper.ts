@@ -68,15 +68,19 @@ export function scrapeJobDescription(): ScrapedJD | null {
 
 /**
  * Fallback title finder: looks for the first short text element
- * outside the job description area.
+ * outside the job description area and navigation/notification regions.
  */
 function findTitleElement(): Element | null {
   const descBox = document.querySelector('[data-testid="expandable-text-box"]');
+  const navBar = document.querySelector('header, nav, [role="navigation"]');
   const candidates = document.querySelectorAll('p, h1, h2, h3');
+  const junkPatterns = /^\d+\s*notifications?$|^messages?$|^home$|^my network$/i;
   for (const el of candidates) {
     const text = el.textContent?.trim() || '';
     if (text.length >= 3 && text.length <= 80 && !text.includes('\n')) {
       if (descBox && descBox.contains(el)) continue;
+      if (navBar && navBar.contains(el)) continue;
+      if (junkPatterns.test(text)) continue;
       return el;
     }
   }

@@ -1,5 +1,4 @@
 import { scrapeJobCards } from './job-card-scraper';
-import { lookupSalary } from './salary-lookup';
 import { scrapeJobDescription } from '../reality-check/jd-scraper';
 import { observePageChanges } from '../shared/dom-observer';
 import { detectPage } from '../shared/page-detector';
@@ -17,17 +16,32 @@ async function processFeed() {
   isProcessing = true;
   try {
     const cards = scrapeJobCards();
-    const salaryCards: SalaryCardData[] = cards.map((card) => ({
-      title: card.title,
-      company: card.company,
-      location: card.location,
-      salary: lookupSalary(card.title, card.company, card.location),
-    }));
 
-    if (salaryCards.length > 0) {
+    if (cards.length > 0) {
+      // Send raw job data to service worker for backend lookup
+      // Also send initial PAGE_DATA with placeholder salaries so popup shows cards immediately
+      const salaryCards: SalaryCardData[] = cards.map((card) => ({
+        title: card.title,
+        company: card.company,
+        location: card.location,
+        salary: { found: false, label: 'Looking up...' },
+      }));
+
       chrome.runtime.sendMessage({
         type: 'PAGE_DATA',
         payload: { page: 'job-search', salaryCards },
+      });
+
+      // Request salary lookup from service worker → backend API
+      chrome.runtime.sendMessage({
+        type: 'SALARY_LOOKUP',
+        payload: {
+          jobs: cards.map((c) => ({
+            title: c.title,
+            company: c.company,
+            location: c.location,
+          })),
+        },
       });
     }
   } finally {

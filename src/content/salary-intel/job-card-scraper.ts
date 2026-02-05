@@ -23,7 +23,20 @@ export function scrapeJobCards(): ScrapedJobCard[] {
     const companyEl = card.querySelector(CARD_SELECTORS.company);
     const locationEl = card.querySelector(CARD_SELECTORS.location);
 
-    const title = titleEl?.textContent?.trim() || '';
+    // Use innerText (respects visibility) or fall back to first text run
+    // LinkedIn nests the title in a <strong> inside an <a>, so textContent
+    // concatenates them producing "Title\n\nTitle with verification".
+    let title = '';
+    if (titleEl) {
+      // Prefer the visually-rendered text (innerText collapses hidden nodes)
+      const inner = (titleEl as HTMLElement).innerText?.trim();
+      if (inner) {
+        // innerText may still have newlines — take the first non-empty line
+        title = inner.split('\n').map(s => s.trim()).filter(Boolean)[0] || inner;
+      } else {
+        title = titleEl.textContent?.trim() || '';
+      }
+    }
     const company = companyEl?.textContent?.trim() || '';
     const location = locationEl?.textContent?.trim() || '';
 

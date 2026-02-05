@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
-import type { ParsedResume, PageDataPayload } from '../lib/types';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import type { ParsedResume, PageDataPayload, SalaryResult, SalaryCardData } from '../lib/types';
 import { getStorage, setStorage } from '../lib/storage';
 import { parseResume } from '../lib/resume-parser';
 import Header from './components/Header';
@@ -20,6 +20,13 @@ export default function App() {
 
   const [pageData, setPageData] = useState<PageDataPayload | null>(null);
   const [scrapeLoading, setScrapeLoading] = useState(true);
+  const [salaryLoading, setSalaryLoading] = useState(false);
+  const [estimatingIndices, setEstimatingIndices] = useState<Set<number>>(new Set());
+  const salaryCardsRef = useRef<SalaryCardData[]>([]);
+
+  // Job detail salary state
+  const [jdSalary, setJdSalary] = useState<SalaryResult | null>(null);
+  const [jdSalaryLoading, setJdSalaryLoading] = useState(false);
 
   // Load persisted state
   useEffect(() => {
@@ -34,6 +41,7 @@ export default function App() {
   const requestScrape = useCallback(() => {
     setScrapeLoading(true);
     setPageData(null);
+    setJdSalary(null);
 
     chrome.runtime.sendMessage({ type: 'REQUEST_SCRAPE' }).catch(() => {
       // No content script available
@@ -47,12 +55,67 @@ export default function App() {
     return timeout;
   }, []);
 
-  // Listen for PAGE_DATA and do initial scrape on mount
+  // Listen for PAGE_DATA, SALARY_LOOKUP_RESULT, AI_ESTIMATE_RESULT
   useEffect(() => {
-    const listener = (message: { type: string; payload?: PageDataPayload }) => {
+    const listener = (message: { type: string; payload?: any }) => {
       if (message.type === 'PAGE_DATA' && message.payload) {
-        setPageData(message.payload);
+        const data = message.payload as PageDataPayload;
+        setPageData(data);
         setScrapeLoading(false);
+
+        if (data.page === 'job-search') {
+          salaryCardsRef.current = data.salaryCards;
+          const hasPlaceholders = data.salaryCards.some((c: SalaryCardData) => c.salary.label === 'Looking up...');
+          if (hasPlaceholders) {
+            setSalaryLoading(true);
+          }
+        }
+
+        // Auto-lookup salary for job detail page
+        if (data.page === 'job-detail' && data.jd) {
+          setJdSalaryLoading(true);
+          chrome.runtime.sendMessage({
+            type: 'SALARY_LOOKUP',
+            payload: {
+              jobs: [{ title: data.jd.title, company: data.jd.company, location: '' }],
+            },
+          }).catch(() => {});
+        }
+      }
+
+      // Handle salary lookup results
+      if (message.type === 'SALARY_LOOKUP_RESULT' && message.payload?.results) {
+        const results: SalaryResult[] = message.payload.results;
+
+        // Check if this is a job-detail single lookup or job-search batch
+        if (results.length === 1 && pageData?.page === 'job-detail') {
+          setJdSalary(results[0]);
+          setJdSalaryLoading(false);
+        } else if (salaryCardsRef.current.length > 0) {
+          const updatedCards = salaryCardsRef.current.map((card: SalaryCardData, i: number) => ({
+            ...card,
+            salary: results[i] || card.salary,
+          }));
+          salaryCardsRef.current = updatedCards;
+          setPageData({ page: 'job-search', salaryCards: updatedCards });
+          setSalaryLoading(false);
+        }
+      }
+
+      // Handle single AI estimate result
+      if (message.type === 'AI_ESTIMATE_RESULT' && message.payload) {
+        const { result, cardIndex } = message.payload as { result: SalaryResult; cardIndex: number };
+        const cards = [...salaryCardsRef.current];
+        if (cards[cardIndex]) {
+          cards[cardIndex] = { ...cards[cardIndex], salary: result };
+          salaryCardsRef.current = cards;
+          setPageData({ page: 'job-search', salaryCards: cards });
+        }
+        setEstimatingIndices((prev) => {
+          const next = new Set(prev);
+          next.delete(cardIndex);
+          return next;
+        });
       }
     };
 
@@ -68,6 +131,55 @@ export default function App() {
   const handleRefresh = useCallback(() => {
     requestScrape();
   }, [requestScrape]);
+
+  const handleRequestAiEstimate = useCallback((cardIndex: number) => {
+    const card = salaryCardsRef.current[cardIndex];
+    if (!card) return;
+
+    setEstimatingIndices((prev) => new Set(prev).add(cardIndex));
+
+    chrome.runtime.sendMessage({
+      type: 'AI_ESTIMATE_SALARY',
+      payload: {
+        title: card.title,
+        company: card.company,
+        location: card.location,
+        cardIndex,
+      },
+    }).catch(() => {
+      setEstimatingIndices((prev) => {
+        const next = new Set(prev);
+        next.delete(cardIndex);
+        return next;
+      });
+    });
+  }, []);
+
+  const handleRequestJdAiEstimate = useCallback(() => {
+    if (!pageData || pageData.page !== 'job-detail') return;
+    setJdSalaryLoading(true);
+    chrome.runtime.sendMessage({
+      type: 'AI_ESTIMATE_SALARY',
+      payload: {
+        title: pageData.jd.title,
+        company: pageData.jd.company,
+        location: '',
+        cardIndex: -1,
+      },
+    }).catch(() => setJdSalaryLoading(false));
+  }, [pageData]);
+
+  // Also listen for AI estimate result for jd
+  useEffect(() => {
+    const listener = (message: { type: string; payload?: any }) => {
+      if (message.type === 'AI_ESTIMATE_RESULT' && message.payload?.cardIndex === -1) {
+        setJdSalary(message.payload.result);
+        setJdSalaryLoading(false);
+      }
+    };
+    chrome.runtime.onMessage.addListener(listener);
+    return () => chrome.runtime.onMessage.removeListener(listener);
+  }, []);
 
   const handleFileUpload = useCallback(async (file: File) => {
     setUploading(true);
@@ -97,6 +209,68 @@ export default function App() {
     setResume(null);
     setError(null);
   }, []);
+
+  function renderSalaryBadge() {
+    if (!pageData || pageData.page !== 'job-detail') return null;
+
+    if (jdSalaryLoading) {
+      return (
+        <div className="flex items-center gap-2 px-1 mb-3">
+          <span className="inline-block w-2.5 h-2.5 border-[1.5px] border-accent border-t-transparent rounded-full animate-spin" />
+          <span className="text-[11px] text-text-tertiary">Looking up salary...</span>
+        </div>
+      );
+    }
+
+    if (jdSalary && jdSalary.found) {
+      const isAi = jdSalary.isAiEstimate;
+      const bgClass = isAi ? 'bg-amber-50 border-amber-200' : 'bg-accent-subtle border-accent/20';
+      const textClass = isAi ? 'text-amber-600' : 'text-accent';
+      const tagText = isAi ? 'AI Estimate'
+        : jdSalary.matchType === 'exact' || jdSalary.matchType === 'company_average' ? 'Company Data'
+        : jdSalary.matchType === 'market_average' ? 'Market Avg'
+        : jdSalary.matchType === 'national_average' ? 'National Avg'
+        : 'Estimated Range';
+
+      return (
+        <div className={`flex items-center justify-between rounded-lg border ${bgClass} px-3 py-2 mb-3`}>
+          <div className="flex items-center gap-2">
+            <svg className={`w-3.5 h-3.5 ${textClass}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+            <span className="text-[11px] text-text-secondary">Salary Range</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className={`text-[12px] font-semibold ${textClass}`}>
+              {isAi && (
+                <svg className="w-3 h-3 inline mr-1" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1z" />
+                </svg>
+              )}
+              {jdSalary.label}
+            </span>
+            <span className={`text-[9px] ${textClass} opacity-70`}>{tagText}</span>
+          </div>
+        </div>
+      );
+    }
+
+    // No salary data — show AI estimate button
+    return (
+      <div className="flex items-center justify-between rounded-lg border border-border bg-surface-sunken px-3 py-2 mb-3">
+        <span className="text-[11px] text-text-tertiary">Salary data unavailable</span>
+        <button
+          onClick={handleRequestJdAiEstimate}
+          className="flex items-center gap-1 text-[10px] font-medium text-amber-600 hover:text-amber-700 transition-colors"
+        >
+          <svg className="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1zm4 7l.75 1.75L14.5 10.5l-1.75.75L12 13l-.75-1.75L9.5 10.5l1.75-.75L12 8zM4 9l.5 1.5L6 11l-1.5.5L4 13l-.5-1.5L2 11l1.5-.5L4 9z" />
+          </svg>
+          AI Estimate
+        </button>
+      </div>
+    );
+  }
 
   function renderContextSection() {
     if (scrapeLoading) {
@@ -151,8 +325,20 @@ export default function App() {
             </svg>
           </button>
         </div>
-        {pageData.page === 'job-search' && <SalaryView cards={pageData.salaryCards} />}
-        {pageData.page === 'job-detail' && <RealityCheckView jd={pageData.jd} />}
+        {pageData.page === 'job-search' && (
+          <SalaryView
+            cards={pageData.salaryCards}
+            salaryLoading={salaryLoading}
+            onRequestAiEstimate={handleRequestAiEstimate}
+            estimatingIndices={estimatingIndices}
+          />
+        )}
+        {pageData.page === 'job-detail' && (
+          <>
+            {renderSalaryBadge()}
+            <RealityCheckView jd={pageData.jd} />
+          </>
+        )}
         {pageData.page === 'profile' && <SmartConnectView profile={pageData.profile} />}
       </>
     );
