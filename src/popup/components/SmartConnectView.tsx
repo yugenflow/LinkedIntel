@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import type { ProfileData, IntentType, ConnectMessage } from '../../lib/types';
 
 interface Props {
@@ -11,6 +11,10 @@ const INTENTS: { value: IntentType; label: string }[] = [
   { value: 'business', label: 'Business' },
 ];
 
+function isRateLimitError(msg: string): boolean {
+  return /rate.?limit|429|quota|too many/i.test(msg);
+}
+
 export default function SmartConnectView({ profile }: Props) {
   const [intent, setIntent] = useState<IntentType>('connect');
   const [result, setResult] = useState<ConnectMessage | null>(null);
@@ -18,8 +22,32 @@ export default function SmartConnectView({ profile }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [editedMessage, setEditedMessage] = useState('');
+  const [cooldown, setCooldown] = useState(0);
+  const cooldownRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (cooldownRef.current) clearInterval(cooldownRef.current);
+    };
+  }, []);
+
+  const startCooldown = useCallback((seconds: number) => {
+    setCooldown(seconds);
+    if (cooldownRef.current) clearInterval(cooldownRef.current);
+    cooldownRef.current = setInterval(() => {
+      setCooldown((prev) => {
+        if (prev <= 1) {
+          clearInterval(cooldownRef.current!);
+          cooldownRef.current = null;
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }, []);
 
   async function handleGenerate() {
+    if (cooldown > 0) return;
     setLoading(true);
     setError(null);
     setResult(null);
@@ -40,7 +68,11 @@ export default function SmartConnectView({ profile }: Props) {
         setResult(response.data);
         setEditedMessage(response.data.message);
       } else {
-        setError(response.error || 'Failed to generate message.');
+        const errMsg = response.error || 'Failed to generate message.';
+        setError(errMsg);
+        if (isRateLimitError(errMsg)) {
+          startCooldown(30);
+        }
       }
     } catch {
       setError('Connection error. Try again.');
@@ -92,9 +124,14 @@ export default function SmartConnectView({ profile }: Props) {
       {!result && !loading && (
         <button
           onClick={handleGenerate}
-          className="w-full py-2.5 bg-accent text-white text-[13px] font-medium rounded-lg hover:bg-accent/90 active:scale-[0.98] transition-all duration-150 shadow-[0_1px_3px_rgba(13,148,136,0.3)]"
+          disabled={cooldown > 0}
+          className={`w-full py-2.5 text-[13px] font-medium rounded-lg transition-all duration-150 ${
+            cooldown > 0
+              ? 'bg-zinc-100 text-text-tertiary cursor-not-allowed'
+              : 'bg-accent text-white hover:bg-accent/90 active:scale-[0.98] shadow-[0_1px_3px_rgba(13,148,136,0.3)]'
+          }`}
         >
-          Generate message
+          {cooldown > 0 ? `Retry in ${cooldown}s` : 'Generate message'}
         </button>
       )}
 
@@ -108,7 +145,18 @@ export default function SmartConnectView({ profile }: Props) {
 
       {/* Error */}
       {error && (
-        <div className="px-3 py-2 rounded-lg bg-danger-light text-danger text-[12px]">{error}</div>
+        <div className="px-3 py-2 rounded-lg bg-danger-light text-[12px] space-y-1">
+          <p className="text-danger">
+            {isRateLimitError(error)
+              ? 'AI temporarily unavailable due to rate limits.'
+              : error}
+          </p>
+          {cooldown > 0 && (
+            <p className="text-danger/60 text-[11px]">
+              You can retry in {cooldown} seconds.
+            </p>
+          )}
+        </div>
       )}
 
       {/* Generated message */}
@@ -144,9 +192,14 @@ export default function SmartConnectView({ profile }: Props) {
             </button>
             <button
               onClick={handleGenerate}
-              className="py-2 px-4 text-[12px] font-medium text-text-secondary border border-border rounded-lg hover:border-accent/40 hover:text-accent transition-all"
+              disabled={cooldown > 0}
+              className={`py-2 px-4 text-[12px] font-medium border rounded-lg transition-all ${
+                cooldown > 0
+                  ? 'text-text-tertiary border-border cursor-not-allowed'
+                  : 'text-text-secondary border-border hover:border-accent/40 hover:text-accent'
+              }`}
             >
-              Retry
+              {cooldown > 0 ? `${cooldown}s` : 'Retry'}
             </button>
           </div>
         </div>

@@ -22,6 +22,15 @@ const COMPANY_SELECTORS = [
   'a[href*="/company/"]',
 ];
 
+const LOCATION_SELECTORS = [
+  '.jobs-unified-top-card__bullet',
+  '.job-details-jobs-unified-top-card__bullet',
+  '[class*="top-card"] [class*="bullet"]',
+  '[class*="topcard"] [class*="bullet"]',
+  '[class*="top-card"] [class*="location"]',
+  '[class*="topcard"] [class*="location"]',
+];
+
 const DESCRIPTION_SELECTORS = [
   '[data-testid="expandable-text-box"]',
   '.jobs-description__content',
@@ -50,6 +59,7 @@ export interface ScrapedJD {
   title: string;
   company: string;
   description: string;
+  location: string;
 }
 
 export function scrapeJobDescription(): ScrapedJD | null {
@@ -58,12 +68,86 @@ export function scrapeJobDescription(): ScrapedJD | null {
 
   const titleEl = queryFirst(TITLE_SELECTORS) || findTitleElement();
   const companyEl = queryFirst(COMPANY_SELECTORS);
+  let location = '';
+
+  // Extract title — prefer innerText to avoid hidden duplicates
+  let title = '';
+  if (titleEl) {
+    const inner = (titleEl as HTMLElement).innerText?.trim();
+    if (inner) {
+      title = inner.split('\n').map(s => s.trim()).filter(Boolean)[0] || inner;
+    } else {
+      title = cleanText(titleEl.textContent);
+    }
+  }
+
+  const company = cleanText(companyEl?.textContent) || 'Unknown Company';
+
+  // If DOM title is missing, too short, or matches the company name, it's likely wrong.
+  // Fall back to document.title which LinkedIn always sets as "Job Title - Company | LinkedIn"
+  if (!title || title.length <= 3 || title.toLowerCase() === company.toLowerCase()) {
+    const fromDocTitle = getTitleFromDocumentTitle();
+    if (fromDocTitle) {
+      title = fromDocTitle;
+    }
+  }
+
+  // Try dedicated location selectors first
+  const locationEl = queryFirst(LOCATION_SELECTORS);
+  if (locationEl) {
+    location = cleanText(locationEl.textContent);
+  }
+
+  // Fallback: scan spans in the top card area for location-like text
+  if (!location) {
+    const topCardArea = document.querySelector(
+      '.job-details-jobs-unified-top-card__primary-description-container, ' +
+      '[class*="top-card"] [class*="primary-description"], ' +
+      '[class*="top-card"], [class*="topcard"], ' +
+      '[class*="job-details-jobs-unified-top-card"]'
+    );
+    const scanRoot = topCardArea || document.body;
+    const spans = scanRoot.querySelectorAll('span, div');
+    for (const el of spans) {
+      // Skip the description area and nav
+      if (descEl.contains(el)) continue;
+      const text = cleanText(el.textContent);
+      // Location pattern: contains a comma, under 60 chars, looks like "City, State, Country"
+      if (text.includes(',') && text.length > 4 && text.length < 60 && !el.closest('a')) {
+        // Skip if it looks like a date or number-heavy string
+        if (/^\d/.test(text) || /\d{4}/.test(text)) continue;
+        location = text;
+        break;
+      }
+    }
+  }
+
+  // Strip work-type suffixes like "(On-site)", "(Remote)", "(Hybrid)"
+  location = location.replace(/\s*\(.*?\)\s*$/, '').trim();
 
   return {
-    title: cleanText(titleEl?.textContent) || 'Unknown Title',
-    company: cleanText(companyEl?.textContent) || 'Unknown Company',
+    title: title || 'Unknown Title',
+    company,
     description: cleanText(descEl.textContent) || '',
+    location,
   };
+}
+
+/**
+ * Parse the browser's document.title for the job title.
+ * LinkedIn always sets it to "Job Title - Company | LinkedIn"
+ * or "(1) Job Title - Company | LinkedIn" (with notification count).
+ */
+function getTitleFromDocumentTitle(): string {
+  const docTitle = document.title;
+  // Strip notification count: "(1) Job Title..." → "Job Title..."
+  const cleaned = docTitle.replace(/^\(\d+\)\s*/, '');
+  // Split by " - " or " | " and take the first part
+  const parts = cleaned.split(/\s+[-–—|]\s+/);
+  if (parts.length >= 2) {
+    return parts[0].trim();
+  }
+  return '';
 }
 
 /**

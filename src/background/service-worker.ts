@@ -1,10 +1,29 @@
 import type { MessageType, MessageResponse, MatchResult, ConnectMessage, SalaryResult, SalaryCacheEntry } from '../lib/types';
-import { getStorage, setStorage, hashString } from '../lib/storage';
+import { getStorage, setStorage, hashString, enforceMatchCacheLimit, enforceSalaryCacheLimit, sweepCaches } from '../lib/storage';
 import { buildMatchPrompt, buildConnectPrompt } from '../lib/prompts';
 import salaryFallback from '../data/salary-fallback.json';
 
+// ── Startup: sweep stale cache entries ──
+sweepCaches().then(() => {
+  console.log('[LinkedIntel] Cache sweep complete');
+}).catch(() => {});
+
 // ── Middleware base URL ──
 const API_BASE = 'http://localhost:3099/api';
+
+// ── In-flight request deduplication ──
+const inflightRequests = new Map<string, Promise<any>>();
+
+function deduplicatedFetch<T>(key: string, fn: () => Promise<T>): Promise<T> {
+  const existing = inflightRequests.get(key);
+  if (existing) return existing as Promise<T>;
+
+  const promise = fn().finally(() => {
+    inflightRequests.delete(key);
+  });
+  inflightRequests.set(key, promise);
+  return promise;
+}
 
 // ── Determine which content script to inject based on URL ──
 function getContentScriptForUrl(url: string): string | null {
@@ -138,23 +157,26 @@ async function handleMatch(
   }
 
   try {
-    const prompt = buildMatchPrompt(payload.resumeText, payload.jdText);
+    const result = await deduplicatedFetch(`match:${cacheKey}`, async () => {
+      const prompt = buildMatchPrompt(payload.resumeText, payload.jdText);
 
-    const response = await fetch(`${API_BASE}/gemini-match`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt }),
+      const response = await fetch(`${API_BASE}/gemini-match`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+        throw new Error(body.error || `API error: ${response.status}`);
+      }
+
+      return response.json() as Promise<MatchResult>;
     });
 
-    if (!response.ok) {
-      throw new Error(`API error: ${response.status}`);
-    }
-
-    const result: MatchResult = await response.json();
     result.cachedAt = Date.now();
-
     matchCache[cacheKey] = result;
-    await setStorage({ matchCache });
+    await setStorage({ matchCache: enforceMatchCacheLimit(matchCache) });
 
     return { success: true, data: result };
   } catch (err) {
@@ -167,23 +189,28 @@ async function handleIcebreaker(
   payload: { profile: any; intent: any; resumeContext?: string }
 ): Promise<MessageResponse<ConnectMessage>> {
   try {
-    const prompt = buildConnectPrompt(
-      payload.profile,
-      payload.intent,
-      payload.resumeContext
-    );
+    const dedupeKey = `connect:${payload.profile?.name}:${payload.intent}`;
+    const result = await deduplicatedFetch(dedupeKey, async () => {
+      const prompt = buildConnectPrompt(
+        payload.profile,
+        payload.intent,
+        payload.resumeContext
+      );
 
-    const response = await fetch(`${API_BASE}/gemini-connect`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt }),
+      const response = await fetch(`${API_BASE}/gemini-connect`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+        throw new Error(body.error || `API error: ${response.status}`);
+      }
+
+      return response.json() as Promise<ConnectMessage>;
     });
 
-    if (!response.ok) {
-      throw new Error(`API error: ${response.status}`);
-    }
-
-    const result: ConnectMessage = await response.json();
     return { success: true, data: result };
   } catch (err) {
     return { success: false, error: (err as Error).message };
@@ -191,7 +218,8 @@ async function handleIcebreaker(
 }
 
 // ── Salary lookup with caching ──
-const SALARY_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+const SALARY_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours for DB results
+const SALARY_AI_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days for AI estimates
 
 function makeSalaryCacheKey(job: { title: string; company: string; location: string }): string {
   return hashString(`${job.title}|${job.company}|${job.location}`.toLowerCase());
@@ -277,11 +305,15 @@ async function handleSalaryLookup(
   for (let i = 0; i < jobs.length; i++) {
     const key = makeSalaryCacheKey(jobs[i]);
     const cached = salaryCache[key];
-    if (cached && Date.now() - cached.cachedAt < SALARY_CACHE_TTL) {
-      results[i] = cached.results[0];
-    } else {
-      uncachedJobs.push({ index: i, job: jobs[i] });
+    // Only serve from cache if the result was actually found
+    if (cached && cached.results[0]?.found) {
+      const ttl = cached.results[0]?.isAiEstimate ? SALARY_AI_CACHE_TTL : SALARY_CACHE_TTL;
+      if (Date.now() - cached.cachedAt < ttl) {
+        results[i] = cached.results[0];
+        continue;
+      }
     }
+    uncachedJobs.push({ index: i, job: jobs[i] });
   }
 
   // If all cached, return immediately
@@ -311,7 +343,7 @@ async function handleSalaryLookup(
       salaryCache[key] = { results: [result], cachedAt: Date.now() };
     }
 
-    await setStorage({ salaryCache });
+    await setStorage({ salaryCache: enforceSalaryCacheLimit(salaryCache) });
     return { success: true, data: { results } };
   } catch {
     // API failed — use local fallback
@@ -333,7 +365,10 @@ async function handleAiEstimate(
       body: JSON.stringify({ jobs: [{ title, company, location }], forceAi: true }),
     });
 
-    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    if (!response.ok) {
+      const isRateLimit = response.status === 429;
+      throw new Error(isRateLimit ? 'RATE_LIMITED' : `API error: ${response.status}`);
+    }
 
     const apiData: { results: SalaryResult[] } = await response.json();
     const result = apiData.results[0];
@@ -342,10 +377,16 @@ async function handleAiEstimate(
     const { salaryCache } = await getStorage(['salaryCache']);
     const key = makeSalaryCacheKey({ title, company, location });
     salaryCache[key] = { results: [result], cachedAt: Date.now() };
-    await setStorage({ salaryCache });
+    await setStorage({ salaryCache: enforceSalaryCacheLimit(salaryCache) });
 
     return result;
   } catch (err) {
-    return { found: false, label: 'Estimate Failed', isAiEstimate: true };
+    const isRateLimit = (err as Error).message === 'RATE_LIMITED';
+    return {
+      found: false,
+      label: isRateLimit ? 'Rate Limited' : 'Estimate Failed',
+      isAiEstimate: true,
+      rateLimited: isRateLimit,
+    } as SalaryResult;
   }
 }

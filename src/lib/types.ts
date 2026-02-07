@@ -99,6 +99,7 @@ export interface JobDescriptionData {
   title: string;
   company: string;
   description: string;
+  location: string;
 }
 
 // ── Page data types for side panel ──

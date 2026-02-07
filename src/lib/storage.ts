@@ -1,4 +1,4 @@
-import type { StorageData } from './types';
+import type { StorageData, MatchResult, SalaryCacheEntry } from './types';
 
 const DEFAULTS: StorageData = {
   resume: null,
@@ -7,6 +7,11 @@ const DEFAULTS: StorageData = {
   matchCache: {},
   salaryCache: {},
 };
+
+// ── Cache limits ──
+const MATCH_CACHE_MAX = 100;
+const SALARY_CACHE_MAX = 500;
+const CACHE_MAX_AGE = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 export async function getStorage<K extends keyof StorageData>(
   keys: K[]
@@ -36,4 +41,65 @@ export function hashString(str: string): string {
     hash |= 0;
   }
   return hash.toString(36);
+}
+
+// ── Cache management ──
+
+/** Evict oldest entries from match cache if over limit */
+export function enforceMatchCacheLimit(
+  cache: Record<string, MatchResult>
+): Record<string, MatchResult> {
+  const entries = Object.entries(cache);
+  if (entries.length <= MATCH_CACHE_MAX) return cache;
+
+  // Sort by cachedAt ascending (oldest first), evict oldest
+  entries.sort((a, b) => (a[1].cachedAt || 0) - (b[1].cachedAt || 0));
+  const keep = entries.slice(entries.length - MATCH_CACHE_MAX);
+  return Object.fromEntries(keep);
+}
+
+/** Evict oldest entries from salary cache if over limit */
+export function enforceSalaryCacheLimit(
+  cache: Record<string, SalaryCacheEntry>
+): Record<string, SalaryCacheEntry> {
+  const entries = Object.entries(cache);
+  if (entries.length <= SALARY_CACHE_MAX) return cache;
+
+  entries.sort((a, b) => (a[1].cachedAt || 0) - (b[1].cachedAt || 0));
+  const keep = entries.slice(entries.length - SALARY_CACHE_MAX);
+  return Object.fromEntries(keep);
+}
+
+/**
+ * Sweep both caches: remove entries older than 7 days and enforce size limits.
+ * Call on service worker startup.
+ */
+export async function sweepCaches(): Promise<void> {
+  const { matchCache, salaryCache } = await getStorage(['matchCache', 'salaryCache']);
+  const now = Date.now();
+  let changed = false;
+
+  // Purge expired match entries
+  for (const key of Object.keys(matchCache)) {
+    if (now - (matchCache[key].cachedAt || 0) > CACHE_MAX_AGE) {
+      delete matchCache[key];
+      changed = true;
+    }
+  }
+
+  // Purge expired salary entries
+  for (const key of Object.keys(salaryCache)) {
+    if (now - (salaryCache[key].cachedAt || 0) > CACHE_MAX_AGE) {
+      delete salaryCache[key];
+      changed = true;
+    }
+  }
+
+  // Enforce size limits after purge
+  const trimmedMatch = enforceMatchCacheLimit(matchCache);
+  const trimmedSalary = enforceSalaryCacheLimit(salaryCache);
+
+  if (changed || trimmedMatch !== matchCache || trimmedSalary !== salaryCache) {
+    await setStorage({ matchCache: trimmedMatch, salaryCache: trimmedSalary });
+  }
 }

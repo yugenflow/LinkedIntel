@@ -23,10 +23,14 @@ export default function App() {
   const [salaryLoading, setSalaryLoading] = useState(false);
   const [estimatingIndices, setEstimatingIndices] = useState<Set<number>>(new Set());
   const salaryCardsRef = useRef<SalaryCardData[]>([]);
+  const pageTypeRef = useRef<string>('');
 
-  // Job detail salary state
+  // Job detail salary state — separate DB match from AI estimate
   const [jdSalary, setJdSalary] = useState<SalaryResult | null>(null);
   const [jdSalaryLoading, setJdSalaryLoading] = useState(false);
+  const [jdAiEstimate, setJdAiEstimate] = useState<SalaryResult | null>(null);
+  const [jdAiLoading, setJdAiLoading] = useState(false);
+  const [jdAiError, setJdAiError] = useState<string | null>(null);
 
   // Load persisted state
   useEffect(() => {
@@ -42,6 +46,9 @@ export default function App() {
     setScrapeLoading(true);
     setPageData(null);
     setJdSalary(null);
+    setJdAiEstimate(null);
+    setJdAiLoading(false);
+    setJdAiError(null);
 
     chrome.runtime.sendMessage({ type: 'REQUEST_SCRAPE' }).catch(() => {
       // No content script available
@@ -62,6 +69,7 @@ export default function App() {
         const data = message.payload as PageDataPayload;
         setPageData(data);
         setScrapeLoading(false);
+        pageTypeRef.current = data.page;
 
         if (data.page === 'job-search') {
           salaryCardsRef.current = data.salaryCards;
@@ -77,7 +85,7 @@ export default function App() {
           chrome.runtime.sendMessage({
             type: 'SALARY_LOOKUP',
             payload: {
-              jobs: [{ title: data.jd.title, company: data.jd.company, location: '' }],
+              jobs: [{ title: data.jd.title, company: data.jd.company, location: data.jd.location || '' }],
             },
           }).catch(() => {});
         }
@@ -87,8 +95,8 @@ export default function App() {
       if (message.type === 'SALARY_LOOKUP_RESULT' && message.payload?.results) {
         const results: SalaryResult[] = message.payload.results;
 
-        // Check if this is a job-detail single lookup or job-search batch
-        if (results.length === 1 && pageData?.page === 'job-detail') {
+        // Use ref instead of state to avoid stale closure
+        if (results.length === 1 && pageTypeRef.current === 'job-detail') {
           setJdSalary(results[0]);
           setJdSalaryLoading(false);
         } else if (salaryCardsRef.current.length > 0) {
@@ -157,24 +165,37 @@ export default function App() {
 
   const handleRequestJdAiEstimate = useCallback(() => {
     if (!pageData || pageData.page !== 'job-detail') return;
-    setJdSalaryLoading(true);
+    setJdAiLoading(true);
+    setJdAiError(null);
     chrome.runtime.sendMessage({
       type: 'AI_ESTIMATE_SALARY',
       payload: {
         title: pageData.jd.title,
         company: pageData.jd.company,
-        location: '',
+        location: pageData.jd.location || '',
         cardIndex: -1,
       },
-    }).catch(() => setJdSalaryLoading(false));
+    }).catch(() => {
+      setJdAiLoading(false);
+      setJdAiError('Connection error. Try again.');
+    });
   }, [pageData]);
 
-  // Also listen for AI estimate result for jd
+  // Listen for AI estimate result for jd (separate from DB result)
   useEffect(() => {
     const listener = (message: { type: string; payload?: any }) => {
       if (message.type === 'AI_ESTIMATE_RESULT' && message.payload?.cardIndex === -1) {
-        setJdSalary(message.payload.result);
-        setJdSalaryLoading(false);
+        const result = message.payload.result as SalaryResult;
+        if (result.found) {
+          setJdAiEstimate(result);
+          setJdAiError(null);
+        } else {
+          const msg = (result as any).rateLimited
+            ? 'Rate limited — wait ~1 minute and retry.'
+            : 'AI estimate unavailable. Try again later.';
+          setJdAiError(msg);
+        }
+        setJdAiLoading(false);
       }
     };
     chrome.runtime.onMessage.addListener(listener);
@@ -222,18 +243,21 @@ export default function App() {
       );
     }
 
-    if (jdSalary && jdSalary.found) {
-      const isAi = jdSalary.isAiEstimate;
+    const hasDbMatch = jdSalary && jdSalary.found;
+    const isCompanySpecific = hasDbMatch && (jdSalary.matchType === 'exact' || jdSalary.matchType === 'company_average');
+
+    // Helper to render a salary row
+    const renderSalaryRow = (salary: SalaryResult, isAi: boolean) => {
       const bgClass = isAi ? 'bg-amber-50 border-amber-200' : 'bg-accent-subtle border-accent/20';
       const textClass = isAi ? 'text-amber-600' : 'text-accent';
       const tagText = isAi ? 'AI Estimate'
-        : jdSalary.matchType === 'exact' || jdSalary.matchType === 'company_average' ? 'Company Data'
-        : jdSalary.matchType === 'market_average' ? 'Market Avg'
-        : jdSalary.matchType === 'national_average' ? 'National Avg'
-        : 'Estimated Range';
+        : isCompanySpecific ? 'Company Data'
+        : salary.matchType === 'market_average' ? 'Market Avg'
+        : salary.matchType === 'national_average' ? 'National Avg'
+        : 'Similar Role';
 
       return (
-        <div className={`flex items-center justify-between rounded-lg border ${bgClass} px-3 py-2 mb-3`}>
+        <div className={`flex items-center justify-between rounded-lg border ${bgClass} px-3 py-2`}>
           <div className="flex items-center gap-2">
             <svg className={`w-3.5 h-3.5 ${textClass}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -247,27 +271,65 @@ export default function App() {
                   <path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1z" />
                 </svg>
               )}
-              {jdSalary.label}
+              {salary.label}
             </span>
             <span className={`text-[9px] ${textClass} opacity-70`}>{tagText}</span>
           </div>
         </div>
       );
+    };
+
+    // Helper to render the AI estimate row (button, loading, error, or result)
+    const renderAiEstimateRow = () => {
+      if (jdAiEstimate) {
+        return renderSalaryRow(jdAiEstimate, true);
+      }
+
+      if (jdAiLoading) {
+        return (
+          <div className="flex items-center justify-between rounded-lg border border-amber-200 bg-amber-50 px-3 py-1.5">
+            <span className="text-[10px] text-amber-600">Estimating for this company...</span>
+            <span className="inline-block w-2.5 h-2.5 border-[1.5px] border-amber-500 border-t-transparent rounded-full animate-spin" />
+          </div>
+        );
+      }
+
+      return (
+        <div className="rounded-lg border border-border bg-surface-sunken px-3 py-1.5 space-y-1">
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] text-text-tertiary">Company-specific data unavailable</span>
+            <button
+              onClick={handleRequestJdAiEstimate}
+              className="flex items-center gap-1 text-[10px] font-medium text-amber-600 hover:text-amber-700 transition-colors"
+            >
+              <svg className="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1zm4 7l.75 1.75L14.5 10.5l-1.75.75L12 13l-.75-1.75L9.5 10.5l1.75-.75L12 8zM4 9l.5 1.5L6 11l-1.5.5L4 13l-.5-1.5L2 11l1.5-.5L4 9z" />
+              </svg>
+              {jdAiError ? 'Retry' : 'AI Estimate'}
+            </button>
+          </div>
+          {jdAiError && (
+            <p className="text-[10px] text-danger">{jdAiError}</p>
+          )}
+        </div>
+      );
+    };
+
+    // Case 1: DB match exists
+    if (hasDbMatch) {
+      return (
+        <div className="space-y-1.5 mb-3">
+          {renderSalaryRow(jdSalary, false)}
+          {/* If not company-specific, show AI estimate option */}
+          {!isCompanySpecific && renderAiEstimateRow()}
+        </div>
+      );
     }
 
-    // No salary data — show AI estimate button
+    // Case 2: No DB match — show AI estimate as primary option
     return (
-      <div className="flex items-center justify-between rounded-lg border border-border bg-surface-sunken px-3 py-2 mb-3">
-        <span className="text-[11px] text-text-tertiary">Salary data unavailable</span>
-        <button
-          onClick={handleRequestJdAiEstimate}
-          className="flex items-center gap-1 text-[10px] font-medium text-amber-600 hover:text-amber-700 transition-colors"
-        >
-          <svg className="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 1l1.5 3.5L13 6l-3.5 1.5L8 11 6.5 7.5 3 6l3.5-1.5L8 1zm4 7l.75 1.75L14.5 10.5l-1.75.75L12 13l-.75-1.75L9.5 10.5l1.75-.75L12 8zM4 9l.5 1.5L6 11l-1.5.5L4 13l-.5-1.5L2 11l1.5-.5L4 9z" />
-          </svg>
-          AI Estimate
-        </button>
+      <div className="space-y-1.5 mb-3">
+        {renderAiEstimateRow()}
       </div>
     );
   }

@@ -208,9 +208,13 @@ function average(entries) {
 }
 
 function formatLabel(min, max, currency, format) {
+  // Derive format from currency when location didn't provide one
+  const country = currencyToCountry(currency);
+  const effectiveFormat = format || (locationData.countries[country] || {}).format || 'k';
+
   const fmt = (n) => {
-    const sym = (locationData.countries[currencyToCountry(currency)] || {}).symbol || currency;
-    if (format === 'lakh') {
+    const sym = (locationData.countries[country] || {}).symbol || currency;
+    if (effectiveFormat === 'lakh') {
       if (n >= 100000) return `${sym}${(n / 100000).toFixed(1)}L`;
       return `${sym}${Math.round(n / 1000)}k`;
     }

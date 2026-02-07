@@ -91,7 +91,7 @@ function cleanJsonResponse(text) {
   return cleaned;
 }
 
-async function callGeminiWithRetry(prompt, config, retries = 2) {
+async function callGeminiWithRetry(prompt, config, retries = 3) {
   const model = genAI.getGenerativeModel({
     model: 'gemini-2.5-flash',
     generationConfig: config,
@@ -112,7 +112,6 @@ async function callGeminiWithRetry(prompt, config, retries = 2) {
         return JSON.parse(cleaned);
       } catch (parseErr) {
         console.error(`[attempt ${attempt}/${retries}] JSON parse failed:`, parseErr.message);
-        // Show context around the failure position
         const pos = parseInt(parseErr.message.match(/position (\d+)/)?.[1] || '0');
         if (pos > 0) {
           console.error('[context around pos ' + pos + ']', JSON.stringify(cleaned.substring(Math.max(0, pos - 80), pos + 80)));
@@ -120,10 +119,23 @@ async function callGeminiWithRetry(prompt, config, retries = 2) {
         throw parseErr;
       }
     } catch (err) {
-      if (attempt === retries) throw err;
-      console.error(`[attempt ${attempt}/${retries}]`, err.message);
-      // Brief pause before retry
-      await new Promise(r => setTimeout(r, 1000));
+      const isRateLimit = err.status === 429 || err.status === 503 || err.message?.includes('429') || err.message?.includes('quota');
+
+      if (attempt === retries) {
+        // Attach metadata so the HTTP handler can return appropriate status
+        if (isRateLimit) {
+          const rateLimitErr = new Error('Rate limit exceeded. Please wait a moment and try again.');
+          rateLimitErr.statusCode = 429;
+          throw rateLimitErr;
+        }
+        throw err;
+      }
+
+      // Exponential backoff: 1s → 3s → 9s (longer for rate limits)
+      const baseDelay = isRateLimit ? 3000 : 1000;
+      const delay = baseDelay * Math.pow(3, attempt - 1);
+      console.error(`[attempt ${attempt}/${retries}] ${err.message} — retrying in ${delay}ms`);
+      await new Promise(r => setTimeout(r, delay));
     }
   }
 }
@@ -164,6 +176,7 @@ async function handleSalaryLookup(body) {
   if (!jobs || !Array.isArray(jobs)) throw new Error('Missing jobs array');
 
   // If forceAi, skip DB and go straight to Gemini
+  // Let rate limit errors propagate to HTTP handler (returns 429 to client)
   if (forceAi) {
     const results = await Promise.all(
       jobs.map(async (job) => {
@@ -188,6 +201,8 @@ async function handleSalaryLookup(body) {
           };
         } catch (err) {
           console.error(`[salary] AI estimate failed for "${job.title}":`, err.message);
+          // Propagate rate limit errors so HTTP handler returns 429
+          if (err.statusCode === 429) throw err;
           return { found: false, matchType: 'none', isAiEstimate: false, label: 'Estimate Failed' };
         }
       })
@@ -284,9 +299,10 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(result));
   } catch (err) {
-    console.error('[error]', err.message);
-    res.writeHead(500, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ error: err.message }));
+    const statusCode = err.statusCode || 500;
+    console.error(`[error ${statusCode}]`, err.message);
+    res.writeHead(statusCode, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: err.message, code: statusCode }));
   }
 });
 
