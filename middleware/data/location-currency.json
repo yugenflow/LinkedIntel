@@ -1,10 +1,15 @@
 {
   "countries": {
-    "IN": { "currency": "INR", "symbol": "\u20b9", "format": "lakh" },
+    "IN": { "currency": "INR", "symbol": "₹", "format": "lakh" },
     "US": { "currency": "USD", "symbol": "$", "format": "k" },
-    "GB": { "currency": "GBP", "symbol": "\u00a3", "format": "k" },
+    "GB": { "currency": "GBP", "symbol": "£", "format": "k" },
     "CA": { "currency": "CAD", "symbol": "CA$", "format": "k" },
-    "DE": { "currency": "EUR", "symbol": "\u20ac", "format": "k" },
+    "DE": { "currency": "EUR", "symbol": "€", "format": "k" },
+    "NL": { "currency": "EUR", "symbol": "€", "format": "k" },
+    "IE": { "currency": "EUR", "symbol": "€", "format": "k" },
+    "FR": { "currency": "EUR", "symbol": "€", "format": "k" },
+    "CH": { "currency": "CHF", "symbol": "CHF", "format": "k" },
+    "SE": { "currency": "SEK", "symbol": "kr", "format": "k" },
     "SG": { "currency": "SGD", "symbol": "S$", "format": "k" },
     "AE": { "currency": "AED", "symbol": "AED", "format": "k" },
     "AU": { "currency": "AUD", "symbol": "A$", "format": "k" }
@@ -32,13 +37,15 @@
     "bristol": "GB", "birmingham": "GB", "leeds": "GB", "glasgow": "GB",
 
     "toronto": "CA", "vancouver": "CA", "montreal": "CA", "ottawa": "CA", "calgary": "CA",
+    "waterloo": "CA",
 
     "berlin": "DE", "munich": "DE", "frankfurt": "DE", "hamburg": "DE",
     "amsterdam": "NL", "dublin": "IE", "paris": "FR", "zurich": "CH",
+    "stockholm": "SE",
 
     "singapore": "SG",
     "dubai": "AE", "abu dhabi": "AE",
-    "sydney": "AU", "melbourne": "AU"
+    "sydney": "AU", "melbourne": "AU", "brisbane": "AU", "perth": "AU", "adelaide": "AU"
   },
   "states": {
     "karnataka": "IN", "telangana": "IN", "maharashtra": "IN", "tamil nadu": "IN",
@@ -48,6 +55,11 @@
     "california": "US", "washington": "US", "texas": "US", "new york": "US",
     "massachusetts": "US", "colorado": "US", "illinois": "US", "georgia": "US",
     "oregon": "US", "virginia": "US", "north carolina": "US", "pennsylvania": "US",
-    "florida": "US", "ohio": "US", "michigan": "US", "minnesota": "US"
+    "florida": "US", "ohio": "US", "michigan": "US", "minnesota": "US",
+    "arizona": "US", "new jersey": "US", "connecticut": "US", "maryland": "US",
+    "ontario": "CA", "british columbia": "CA", "quebec": "CA", "alberta": "CA",
+    "england": "GB", "scotland": "GB",
+    "new south wales": "AU", "victoria": "AU", "queensland": "AU",
+    "western australia": "AU", "south australia": "AU"
   }
 }

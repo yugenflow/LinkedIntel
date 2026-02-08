@@ -93,6 +93,7 @@ export interface SalaryCardData {
   company: string;
   location: string;
   salary: SalaryResult;
+  postedSalary?: string;
 }
 
 export interface JobDescriptionData {
@@ -100,6 +101,7 @@ export interface JobDescriptionData {
   company: string;
   description: string;
   location: string;
+  postedSalary?: string;
 }
 
 // ── Page data types for side panel ──
@@ -119,7 +121,7 @@ export type MessageType =
   | { type: 'SET_STORAGE'; payload: Partial<StorageData> }
   | { type: 'PAGE_DATA'; payload: PageDataPayload }
   | { type: 'REQUEST_SCRAPE' }
-  | { type: 'SALARY_LOOKUP'; payload: { jobs: { title: string; company: string; location: string }[] } }
+  | { type: 'SALARY_LOOKUP'; payload: { jobs: { title: string; company: string; location: string }[]; _startIndex?: number } }
   | { type: 'AI_ESTIMATE_SALARY'; payload: { title: string; company: string; location: string; cardIndex: number } };
 
 export interface MessageResponse<T = unknown> {

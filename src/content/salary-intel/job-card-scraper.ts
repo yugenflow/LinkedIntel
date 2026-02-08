@@ -5,11 +5,15 @@ const CARD_SELECTORS = {
   location: '.job-card-container__metadata-wrapper, .artdeco-entity-lockup__caption',
 };
 
+// Regex to detect salary-like text across multiple currencies
+const SALARY_PATTERN = /(?:\$|₹|£|€|CA\$|A\$|S\$|AED|SGD|CHF|SEK|kr)\s*[\d,]+(?:\.\d+)?[kK]?\s*(?:\/\w+)?\s*[-–—]\s*(?:\$|₹|£|€|CA\$|A\$|S\$|AED|SGD|CHF|SEK|kr)\s*[\d,]+(?:\.\d+)?[kK]?\s*(?:\/\w+)?/;
+
 export interface ScrapedJobCard {
   element: Element;
   title: string;
   company: string;
   location: string;
+  postedSalary?: string;
 }
 
 export function scrapeJobCards(): ScrapedJobCard[] {
@@ -40,8 +44,21 @@ export function scrapeJobCards(): ScrapedJobCard[] {
     const company = companyEl?.textContent?.trim() || '';
     const location = locationEl?.textContent?.trim() || '';
 
+    // Scrape posted salary from the card (e.g., "$132K/yr - $189K/yr")
+    let postedSalary: string | undefined;
+    const cardSpans = card.querySelectorAll('span, li, div');
+    for (const el of cardSpans) {
+      const text = (el as HTMLElement).innerText?.trim() || el.textContent?.trim() || '';
+      if (text.length > 100) continue;
+      const match = text.match(SALARY_PATTERN);
+      if (match) {
+        postedSalary = match[0];
+        break;
+      }
+    }
+
     if (title) {
-      results.push({ element: card, title, company, location });
+      results.push({ element: card, title, company, location, ...(postedSalary && { postedSalary }) });
     }
   });
 

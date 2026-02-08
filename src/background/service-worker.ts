@@ -2,6 +2,7 @@ import type { MessageType, MessageResponse, MatchResult, ConnectMessage, SalaryR
 import { getStorage, setStorage, hashString, enforceMatchCacheLimit, enforceSalaryCacheLimit, sweepCaches } from '../lib/storage';
 import { buildMatchPrompt, buildConnectPrompt } from '../lib/prompts';
 import salaryFallback from '../data/salary-fallback.json';
+import locationCurrency from '../../middleware/data/location-currency.json';
 
 // ── Startup: sweep stale cache entries ──
 sweepCaches().then(() => {
@@ -225,12 +226,62 @@ function makeSalaryCacheKey(job: { title: string; company: string; location: str
   return hashString(`${job.title}|${job.company}|${job.location}`.toLowerCase());
 }
 
+// ── Country resolution from LinkedIn location strings ──
+const COUNTRY_NAMES: Record<string, string> = {
+  india: 'IN', 'united states': 'US', usa: 'US', 'united kingdom': 'GB', uk: 'GB',
+  canada: 'CA', germany: 'DE', singapore: 'SG', 'united arab emirates': 'AE', uae: 'AE',
+  australia: 'AU', netherlands: 'NL', 'the netherlands': 'NL', ireland: 'IE',
+  france: 'FR', switzerland: 'CH', sweden: 'SE',
+};
+
+const US_STATE_ABBREVS: Record<string, string> = {
+  ca: 'US', ny: 'US', wa: 'US', tx: 'US', ma: 'US', co: 'US',
+  il: 'US', ga: 'US', or: 'US', va: 'US', nc: 'US', pa: 'US',
+  fl: 'US', oh: 'US', mi: 'US', mn: 'US', az: 'US', nj: 'US',
+  ct: 'US', md: 'US', dc: 'US',
+};
+
+const cityToCountry = (locationCurrency as any).cities as Record<string, string>;
+const stateToCountry = (locationCurrency as any).states as Record<string, string>;
+
+function resolveCountryFromLocation(locationStr: string): string {
+  if (!locationStr) return '';
+  const raw = locationStr.toLowerCase().replace(/\(.*?\)/g, '').trim();
+  const parts = raw.split(',').map((p) => p.trim()).filter(Boolean);
+
+  // Check last part for country name
+  if (parts.length > 0) {
+    const last = parts[parts.length - 1];
+    if (COUNTRY_NAMES[last]) return COUNTRY_NAMES[last];
+  }
+
+  // Check second part for US state abbreviation or full state name
+  if (parts.length >= 2) {
+    const second = parts[1];
+    if (US_STATE_ABBREVS[second]) return US_STATE_ABBREVS[second];
+    if (stateToCountry[second]) return stateToCountry[second];
+  }
+
+  // Check first part (city) against known cities
+  if (parts.length > 0 && cityToCountry[parts[0]]) {
+    return cityToCountry[parts[0]];
+  }
+
+  // Check all parts against known cities
+  for (const part of parts) {
+    if (cityToCountry[part]) return cityToCountry[part];
+  }
+
+  return '';
+}
+
 // Fallback: simple local matching from bundled dataset
 function fallbackLookup(title: string, company: string, location: string): SalaryResult {
   const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
   const normTitle = norm(title);
   const normCompany = norm(company);
   const city = norm(location.split(',')[0]);
+  const country = resolveCountryFromLocation(location);
 
   const fallbackData = salaryFallback as Array<{
     title: string; titleNormalized: string; company: string;
@@ -238,9 +289,10 @@ function fallbackLookup(title: string, company: string, location: string): Salar
     salaryMedian: number; currency: string; source: string;
   }>;
 
-  // Try title + company
+  // Tier 1: title + company + country
   let match = fallbackData.find(
     (e) => e.titleNormalized === normTitle && norm(e.company) === normCompany && normCompany !== ''
+      && (!country || e.country === country)
   );
   if (match) {
     return {
@@ -251,9 +303,9 @@ function fallbackLookup(title: string, company: string, location: string): Salar
     };
   }
 
-  // Try title + city
+  // Tier 2: title + city
   match = fallbackData.find(
-    (e) => e.titleNormalized === normTitle && e.city === city
+    (e) => e.titleNormalized === normTitle && e.city === city && city !== ''
   );
   if (match) {
     return {
@@ -264,7 +316,22 @@ function fallbackLookup(title: string, company: string, location: string): Salar
     };
   }
 
-  // Try title only (country-level)
+  // Tier 3: title + country
+  if (country) {
+    match = fallbackData.find(
+      (e) => e.titleNormalized === normTitle && e.country === country
+    );
+    if (match) {
+      return {
+        found: true, salaryMin: match.salaryMin, salaryMax: match.salaryMax,
+        salaryMedian: match.salaryMedian, currency: match.currency,
+        matchType: 'national_average', isAiEstimate: false,
+        label: formatFallbackLabel(match.salaryMin, match.salaryMax, match.currency),
+      };
+    }
+  }
+
+  // Tier 4: title only (last resort)
   match = fallbackData.find((e) => e.titleNormalized === normTitle);
   if (match) {
     return {
@@ -278,15 +345,19 @@ function fallbackLookup(title: string, company: string, location: string): Salar
   return { found: false, label: 'Data Unavailable' };
 }
 
+const CURRENCY_SYMBOLS: Record<string, string> = {
+  INR: '₹', USD: '$', GBP: '£', EUR: '€', CAD: 'CA$', AUD: 'A$',
+  SGD: 'S$', AED: 'AED ', SEK: 'kr', CHF: 'CHF ',
+};
+
 function formatFallbackLabel(min: number, max: number, currency: string): string {
+  const sym = CURRENCY_SYMBOLS[currency] || `${currency} `;
   const fmt = (n: number) => {
     if (currency === 'INR') {
-      if (n >= 100000) return `₹${(n / 100000).toFixed(1)}L`;
-      return `₹${Math.round(n / 1000)}k`;
+      if (n >= 100000) return `${sym}${(n / 100000).toFixed(1)}L`;
+      return `${sym}${Math.round(n / 1000)}k`;
     }
-    if (currency === 'USD') return `$${Math.round(n / 1000)}k`;
-    if (currency === 'GBP') return `£${Math.round(n / 1000)}k`;
-    return `${currency}${Math.round(n / 1000)}k`;
+    return `${sym}${Math.round(n / 1000)}k`;
   };
   if (min === max) return fmt(min);
   return `${fmt(min)} - ${fmt(max)}`;

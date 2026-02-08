@@ -31,6 +31,17 @@ const LOCATION_SELECTORS = [
   '[class*="topcard"] [class*="location"]',
 ];
 
+const SALARY_SELECTORS = [
+  '.job-details-jobs-unified-top-card__job-insight--highlight span',
+  '.job-details-jobs-unified-top-card__job-insight span',
+  '[class*="salary"]',
+  '[class*="compensation"]',
+];
+
+// Regex to detect salary-like text across multiple currencies
+// Matches: $132K/yr, $132,000/yr, ₹12,00,000/yr, £65K - £85K, AED 25,000, etc.
+const SALARY_PATTERN = /(?:\$|₹|£|€|CA\$|A\$|S\$|AED|SGD|CHF|SEK|kr)\s*[\d,]+(?:\.\d+)?[kK]?\s*(?:\/\w+)?\s*[-–—]\s*(?:\$|₹|£|€|CA\$|A\$|S\$|AED|SGD|CHF|SEK|kr)\s*[\d,]+(?:\.\d+)?[kK]?\s*(?:\/\w+)?/;
+
 const DESCRIPTION_SELECTORS = [
   '[data-testid="expandable-text-box"]',
   '.jobs-description__content',
@@ -60,6 +71,7 @@ export interface ScrapedJD {
   company: string;
   description: string;
   location: string;
+  postedSalary?: string;
 }
 
 export function scrapeJobDescription(): ScrapedJD | null {
@@ -111,7 +123,11 @@ export function scrapeJobDescription(): ScrapedJD | null {
     for (const el of spans) {
       // Skip the description area and nav
       if (descEl.contains(el)) continue;
+      // Skip the title element (titles with commas get misidentified as locations)
+      if (titleEl && (el === titleEl || titleEl.contains(el) || el.contains(titleEl))) continue;
       const text = cleanText(el.textContent);
+      // Skip if text matches the already-scraped title
+      if (title && text.toLowerCase() === title.toLowerCase()) continue;
       // Location pattern: contains a comma, under 60 chars, looks like "City, State, Country"
       if (text.includes(',') && text.length > 4 && text.length < 60 && !el.closest('a')) {
         // Skip if it looks like a date or number-heavy string
@@ -125,11 +141,68 @@ export function scrapeJobDescription(): ScrapedJD | null {
   // Strip work-type suffixes like "(On-site)", "(Remote)", "(Hybrid)"
   location = location.replace(/\s*\(.*?\)\s*$/, '').trim();
 
+  // Scrape LinkedIn-posted salary (employer-provided salary range)
+  let postedSalary: string | undefined;
+
+  // Strategy 1: Check dedicated salary selectors
+  for (const sel of SALARY_SELECTORS) {
+    try {
+      const els = document.querySelectorAll(sel);
+      for (const el of els) {
+        const text = (el as HTMLElement).innerText?.trim() || el.textContent?.trim() || '';
+        const match = text.match(SALARY_PATTERN);
+        if (match) {
+          postedSalary = match[0];
+          break;
+        }
+      }
+    } catch { /* skip invalid selector */ }
+    if (postedSalary) break;
+  }
+
+  // Strategy 2: Scan the top card area for salary-like text (including buttons/pills)
+  if (!postedSalary) {
+    const topCard = document.querySelector(
+      '.job-details-jobs-unified-top-card__container, ' +
+      '[class*="jobs-unified-top-card"], [class*="topcard"], ' +
+      '[class*="job-details"]'
+    );
+    if (topCard) {
+      const elements = topCard.querySelectorAll('span, li, div, button, a');
+      for (const el of elements) {
+        if (descEl.contains(el)) continue;
+        const text = (el as HTMLElement).innerText?.trim() || el.textContent?.trim() || '';
+        if (text.length > 200) continue; // skip large blocks
+        const match = text.match(SALARY_PATTERN);
+        if (match) {
+          postedSalary = match[0];
+          break;
+        }
+      }
+    }
+  }
+
+  // Strategy 3: Last resort — scan the entire page above the description
+  if (!postedSalary) {
+    const allElements = document.querySelectorAll('button, span, li');
+    for (const el of allElements) {
+      if (descEl.contains(el)) continue;
+      const text = (el as HTMLElement).innerText?.trim() || el.textContent?.trim() || '';
+      if (text.length > 80) continue;
+      const match = text.match(SALARY_PATTERN);
+      if (match) {
+        postedSalary = match[0];
+        break;
+      }
+    }
+  }
+
   return {
     title: title || 'Unknown Title',
     company,
     description: cleanText(descEl.textContent) || '',
     location,
+    ...(postedSalary && { postedSalary }),
   };
 }
 

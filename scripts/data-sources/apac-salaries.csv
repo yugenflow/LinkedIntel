@@ -1,0 +1,109 @@
+title,company,city,state,country,experienceLevel,salaryMin,salaryMax,salaryMedian,currency,source
+Software Engineer,Grab,Singapore,,SG,entry,68000,85000,76000,SGD,levels
+Software Engineer,Grab,Singapore,,SG,mid,95000,130000,112000,SGD,levels
+Senior Software Engineer,Grab,Singapore,,SG,mid,120000,175000,148000,SGD,levels
+Software Engineer,Sea Group,Singapore,,SG,entry,65000,82000,73000,SGD,levels
+Software Engineer,Sea Group,Singapore,,SG,mid,90000,128000,108000,SGD,levels
+Senior Software Engineer,Sea Group,Singapore,,SG,mid,115000,170000,142000,SGD,levels
+Software Engineer,DBS,Singapore,,SG,entry,60000,78000,69000,SGD,levels
+Software Engineer,DBS,Singapore,,SG,mid,85000,115000,100000,SGD,levels
+Data Analyst,DBS,Singapore,,SG,entry,48000,68000,58000,SGD,levels
+Software Engineer,Google Singapore,Singapore,,SG,mid,110000,130000,120000,SGD,levels
+Senior Software Engineer,Google Singapore,Singapore,,SG,mid,140000,180000,160000,SGD,levels
+Staff Software Engineer,Google Singapore,Singapore,,SG,senior,195000,250000,222000,SGD,levels
+Software Engineer,Amazon Singapore,Singapore,,SG,mid,95000,125000,110000,SGD,levels
+Senior Software Engineer,Amazon Singapore,Singapore,,SG,mid,125000,170000,148000,SGD,levels
+Data Engineer,Amazon Singapore,Singapore,,SG,mid,90000,120000,105000,SGD,levels
+Software Engineer,Meta Singapore,Singapore,,SG,mid,105000,130000,118000,SGD,levels
+Senior Software Engineer,Meta Singapore,Singapore,,SG,mid,135000,180000,158000,SGD,levels
+Machine Learning Engineer,Meta Singapore,Singapore,,SG,mid,120000,170000,145000,SGD,levels
+Software Engineer,ByteDance,Singapore,,SG,entry,70000,85000,78000,SGD,levels
+Software Engineer,ByteDance,Singapore,,SG,mid,100000,128000,114000,SGD,levels
+Senior Software Engineer,ByteDance,Singapore,,SG,mid,130000,175000,152000,SGD,levels
+Software Engineer,Shopee,Singapore,,SG,entry,62000,80000,71000,SGD,levels
+Software Engineer,Shopee,Singapore,,SG,mid,88000,120000,104000,SGD,levels
+Data Scientist,Shopee,Singapore,,SG,mid,85000,130000,108000,SGD,levels
+Software Engineer,GovTech,Singapore,,SG,entry,60000,78000,69000,SGD,levels
+Software Engineer,GovTech,Singapore,,SG,mid,85000,115000,100000,SGD,levels
+Engineering Manager,GovTech,Singapore,,SG,senior,145000,210000,178000,SGD,levels
+Software Engineer,Stripe Singapore,Singapore,,SG,mid,108000,130000,119000,SGD,levels
+Senior Software Engineer,Stripe Singapore,Singapore,,SG,mid,138000,178000,158000,SGD,levels
+Product Manager,Stripe Singapore,Singapore,,SG,mid,110000,150000,130000,SGD,levels
+Software Engineer,,Singapore,,SG,entry,60000,85000,72000,SGD,market
+Software Engineer,,Singapore,,SG,mid,85000,130000,106000,SGD,market
+Senior Software Engineer,,Singapore,,SG,mid,110000,180000,145000,SGD,market
+Staff Software Engineer,,Singapore,,SG,senior,160000,250000,205000,SGD,market
+Data Scientist,,Singapore,,SG,mid,80000,140000,110000,SGD,market
+Data Engineer,,Singapore,,SG,mid,80000,120000,100000,SGD,market
+Machine Learning Engineer,,Singapore,,SG,mid,100000,170000,135000,SGD,market
+Product Manager,,Singapore,,SG,mid,90000,150000,120000,SGD,market
+Engineering Manager,,Singapore,,SG,senior,140000,220000,180000,SGD,market
+DevOps Engineer,,Singapore,,SG,mid,80000,120000,100000,SGD,market
+Data Analyst,,Singapore,,SG,entry,45000,70000,57000,SGD,market
+Business Analyst,,Singapore,,SG,entry,48000,72000,60000,SGD,market
+Financial Analyst,,Singapore,,SG,entry,50000,80000,65000,SGD,market
+Frontend Engineer,,Singapore,,SG,entry,58000,82000,70000,SGD,market
+Frontend Engineer,,Singapore,,SG,mid,82000,128000,104000,SGD,market
+Backend Engineer,,Singapore,,SG,entry,60000,85000,72000,SGD,market
+Backend Engineer,,Singapore,,SG,mid,85000,130000,108000,SGD,market
+Product Designer,,Singapore,,SG,mid,70000,110000,90000,SGD,market
+Software Engineer,,,,SG,entry,58000,82000,70000,SGD,market
+Software Engineer,,,,SG,mid,82000,125000,102000,SGD,market
+Senior Software Engineer,,,,SG,mid,105000,172000,138000,SGD,market
+Data Scientist,,,,SG,mid,78000,135000,106000,SGD,market
+DevOps Engineer,,,,SG,mid,78000,118000,98000,SGD,market
+Product Manager,,,,SG,mid,88000,145000,116000,SGD,market
+Engineering Manager,,,,SG,senior,138000,215000,176000,SGD,market
+Software Engineer,Atlassian,Sydney,New South Wales,AU,mid,110000,145000,128000,AUD,levels
+Senior Software Engineer,Atlassian,Sydney,New South Wales,AU,mid,140000,190000,165000,AUD,levels
+Staff Software Engineer,Atlassian,Sydney,New South Wales,AU,senior,180000,245000,212000,AUD,levels
+Software Engineer,Canva,Sydney,New South Wales,AU,entry,85000,100000,92000,AUD,levels
+Software Engineer,Canva,Sydney,New South Wales,AU,mid,115000,148000,132000,AUD,levels
+Senior Software Engineer,Canva,Sydney,New South Wales,AU,mid,145000,188000,166000,AUD,levels
+Software Engineer,Google Australia,Sydney,New South Wales,AU,mid,120000,150000,135000,AUD,levels
+Senior Software Engineer,Google Australia,Sydney,New South Wales,AU,mid,155000,190000,172000,AUD,levels
+Staff Software Engineer,Google Australia,Sydney,New South Wales,AU,senior,195000,250000,222000,AUD,levels
+Machine Learning Engineer,Google Australia,Sydney,New South Wales,AU,mid,125000,175000,150000,AUD,levels
+Software Engineer,Amazon Australia,Sydney,New South Wales,AU,mid,108000,142000,125000,AUD,levels
+Senior Software Engineer,Amazon Australia,Sydney,New South Wales,AU,mid,138000,185000,162000,AUD,levels
+Data Engineer,Amazon Australia,Sydney,New South Wales,AU,mid,105000,140000,122000,AUD,levels
+Software Engineer,CBA - Commonwealth Bank,Sydney,New South Wales,AU,entry,80000,98000,89000,AUD,levels
+Software Engineer,CBA - Commonwealth Bank,Sydney,New South Wales,AU,mid,105000,140000,122000,AUD,levels
+Data Analyst,CBA - Commonwealth Bank,Sydney,New South Wales,AU,entry,68000,88000,78000,AUD,levels
+Software Engineer,ANZ Bank,Melbourne,Victoria,AU,entry,78000,96000,87000,AUD,levels
+Software Engineer,ANZ Bank,Melbourne,Victoria,AU,mid,102000,138000,120000,AUD,levels
+Engineering Manager,ANZ Bank,Melbourne,Victoria,AU,senior,158000,225000,192000,AUD,levels
+Software Engineer,Xero,Melbourne,Victoria,AU,mid,105000,140000,122000,AUD,levels
+Senior Software Engineer,Xero,Melbourne,Victoria,AU,mid,135000,180000,158000,AUD,levels
+Software Engineer,REA Group,Melbourne,Victoria,AU,mid,108000,142000,125000,AUD,levels
+Senior Software Engineer,REA Group,Melbourne,Victoria,AU,mid,140000,185000,162000,AUD,levels
+Product Manager,REA Group,Melbourne,Victoria,AU,mid,115000,160000,138000,AUD,levels
+Software Engineer,Telstra,Melbourne,Victoria,AU,entry,76000,95000,86000,AUD,levels
+Software Engineer,Telstra,Melbourne,Victoria,AU,mid,100000,135000,118000,AUD,levels
+DevOps Engineer,Telstra,Melbourne,Victoria,AU,mid,105000,140000,122000,AUD,levels
+Software Engineer,Seek,Melbourne,Victoria,AU,mid,105000,140000,122000,AUD,levels
+Data Scientist,Seek,Melbourne,Victoria,AU,mid,108000,150000,130000,AUD,levels
+Software Engineer,,Sydney,New South Wales,AU,entry,78000,100000,89000,AUD,market
+Software Engineer,,Sydney,New South Wales,AU,mid,105000,150000,128000,AUD,market
+Senior Software Engineer,,Sydney,New South Wales,AU,mid,135000,190000,162000,AUD,market
+Staff Software Engineer,,Sydney,New South Wales,AU,senior,175000,250000,212000,AUD,market
+Data Scientist,,Sydney,New South Wales,AU,mid,105000,155000,130000,AUD,market
+Product Manager,,Sydney,New South Wales,AU,mid,115000,165000,140000,AUD,market
+Software Engineer,,Melbourne,Victoria,AU,entry,75000,98000,86000,AUD,market
+Software Engineer,,Melbourne,Victoria,AU,mid,100000,145000,122000,AUD,market
+Senior Software Engineer,,Melbourne,Victoria,AU,mid,130000,185000,158000,AUD,market
+Data Engineer,,Melbourne,Victoria,AU,mid,100000,142000,121000,AUD,market
+DevOps Engineer,,Melbourne,Victoria,AU,mid,100000,142000,121000,AUD,market
+Software Engineer,,Brisbane,Queensland,AU,entry,72000,95000,84000,AUD,market
+Software Engineer,,Brisbane,Queensland,AU,mid,95000,140000,118000,AUD,market
+Software Engineer,,Perth,Western Australia,AU,entry,74000,96000,85000,AUD,market
+Software Engineer,,Perth,Western Australia,AU,mid,98000,142000,120000,AUD,market
+Frontend Engineer,,Sydney,New South Wales,AU,mid,100000,148000,124000,AUD,market
+Backend Engineer,,Sydney,New South Wales,AU,mid,105000,150000,128000,AUD,market
+Product Designer,,Sydney,New South Wales,AU,mid,92000,138000,115000,AUD,market
+Software Engineer,,,,AU,entry,75000,100000,87000,AUD,market
+Software Engineer,,,,AU,mid,100000,150000,125000,AUD,market
+Senior Software Engineer,,,,AU,mid,130000,190000,160000,AUD,market
+Data Scientist,,,,AU,mid,100000,155000,128000,AUD,market
+Engineering Manager,,,,AU,senior,155000,230000,192000,AUD,market
+Machine Learning Engineer,,,,AU,mid,115000,175000,145000,AUD,market

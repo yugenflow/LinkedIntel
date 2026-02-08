@@ -26,9 +26,11 @@ const COUNTRY_NAMES = {
   uae: 'AE',
   australia: 'AU',
   netherlands: 'NL',
+  'the netherlands': 'NL',
   ireland: 'IE',
   france: 'FR',
   switzerland: 'CH',
+  sweden: 'SE',
 };
 
 // US state abbreviations

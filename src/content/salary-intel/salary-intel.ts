@@ -5,8 +5,9 @@ import { detectPage } from '../shared/page-detector';
 import type { SalaryCardData } from '../../lib/types';
 
 let isProcessing = false;
+let lastCardCount = 0;
 
-async function processFeed() {
+async function processFeed(force = false) {
   if (isProcessing) return;
   if (detectPage() !== 'job-search') return;
 
@@ -17,14 +18,17 @@ async function processFeed() {
   try {
     const cards = scrapeJobCards();
 
+    // Skip if card set hasn't changed since last scan (unless forced by refresh)
+    if (!force && cards.length > 0 && cards.length === lastCardCount) return;
+    lastCardCount = cards.length;
+
     if (cards.length > 0) {
-      // Send raw job data to service worker for backend lookup
-      // Also send initial PAGE_DATA with placeholder salaries so popup shows cards immediately
       const salaryCards: SalaryCardData[] = cards.map((card) => ({
         title: card.title,
         company: card.company,
         location: card.location,
         salary: { found: false, label: 'Looking up...' },
+        ...(card.postedSalary && { postedSalary: card.postedSalary }),
       }));
 
       chrome.runtime.sendMessage({
@@ -32,7 +36,6 @@ async function processFeed() {
         payload: { page: 'job-search', salaryCards },
       });
 
-      // Request salary lookup from service worker → backend API
       chrome.runtime.sendMessage({
         type: 'SALARY_LOOKUP',
         payload: {
@@ -66,9 +69,10 @@ function scrapeJobDetail() {
 // Listen for scrape requests from popup
 chrome.runtime.onMessage.addListener((message) => {
   if (message.type === 'REQUEST_SCRAPE') {
+    lastCardCount = 0; // Reset so processFeed resends everything
     const page = detectPage();
     if (page === 'job-search') {
-      processFeed();
+      processFeed(true);
     } else if (page === 'job-detail') {
       scrapeJobDetail();
     }
@@ -83,10 +87,11 @@ setInterval(processFeed, 5000);
 
 // Re-initialize on SPA navigation
 observePageChanges(() => {
+  lastCardCount = 0;
   setTimeout(() => {
     const page = detectPage();
     if (page === 'job-search') {
-      processFeed();
+      processFeed(true);
     } else if (page === 'job-detail') {
       scrapeJobDetail();
     }

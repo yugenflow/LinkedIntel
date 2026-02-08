@@ -1,0 +1,128 @@
+title,company,city,state,country,experienceLevel,salaryMin,salaryMax,salaryMedian,currency,source
+Software Engineer,SAP,Berlin,,DE,entry,48000,65000,56000,EUR,levels
+Software Engineer,SAP,Munich,,DE,mid,65000,90000,78000,EUR,levels
+Senior Software Engineer,SAP,Munich,,DE,mid,80000,115000,97000,EUR,levels
+Staff Software Engineer,SAP,Berlin,,DE,senior,105000,140000,122000,EUR,levels
+Data Engineer,SAP,Berlin,,DE,mid,58000,82000,70000,EUR,levels
+Product Manager,SAP,Munich,,DE,mid,68000,95000,82000,EUR,levels
+Software Engineer,Siemens,Munich,,DE,entry,50000,68000,58000,EUR,levels
+Senior Software Engineer,Siemens,Munich,,DE,mid,78000,112000,95000,EUR,levels
+Data Scientist,Siemens,Munich,,DE,mid,62000,90000,76000,EUR,levels
+Engineering Manager,Siemens,Munich,,DE,senior,95000,130000,112000,EUR,levels
+Software Engineer,BMW,Munich,,DE,entry,48000,64000,55000,EUR,levels
+Senior Software Engineer,BMW,Munich,,DE,mid,75000,108000,92000,EUR,levels
+Data Engineer,BMW,Munich,,DE,mid,60000,85000,72000,EUR,levels
+Software Engineer,Bosch,Munich,,DE,entry,47000,63000,54000,EUR,levels
+Senior Software Engineer,Bosch,Munich,,DE,mid,72000,105000,88000,EUR,levels
+Machine Learning Engineer,Bosch,Munich,,DE,mid,68000,100000,84000,EUR,levels
+Software Engineer,Deutsche Bank,Frankfurt,,DE,entry,52000,68000,60000,EUR,levels
+Senior Software Engineer,Deutsche Bank,Frankfurt,,DE,mid,78000,110000,94000,EUR,levels
+Financial Analyst,Deutsche Bank,Frankfurt,,DE,entry,50000,70000,60000,EUR,levels
+Data Analyst,Deutsche Bank,Frankfurt,,DE,entry,42000,58000,50000,EUR,levels
+Software Engineer,N26,Berlin,,DE,entry,50000,66000,58000,EUR,levels
+Senior Software Engineer,N26,Berlin,,DE,mid,75000,105000,90000,EUR,levels
+Product Manager,N26,Berlin,,DE,mid,65000,90000,78000,EUR,levels
+Product Designer,N26,Berlin,,DE,mid,55000,78000,66000,EUR,levels
+Software Engineer,Delivery Hero,Berlin,,DE,entry,48000,64000,56000,EUR,levels
+Senior Software Engineer,Delivery Hero,Berlin,,DE,mid,72000,102000,87000,EUR,levels
+Backend Engineer,Delivery Hero,Berlin,,DE,mid,68000,95000,82000,EUR,levels
+Data Scientist,Delivery Hero,Berlin,,DE,mid,60000,88000,74000,EUR,levels
+Software Engineer,Zalando,Berlin,,DE,entry,50000,67000,58000,EUR,levels
+Senior Software Engineer,Zalando,Berlin,,DE,mid,76000,108000,92000,EUR,levels
+Staff Software Engineer,Zalando,Berlin,,DE,senior,108000,145000,126000,EUR,levels
+Machine Learning Engineer,Zalando,Berlin,,DE,mid,70000,105000,88000,EUR,levels
+DevOps Engineer,Zalando,Berlin,,DE,mid,60000,85000,72000,EUR,levels
+Software Engineer,Klarna,Berlin,,DE,entry,52000,68000,60000,EUR,levels
+Senior Software Engineer,Klarna,Berlin,,DE,mid,78000,112000,95000,EUR,levels
+Frontend Engineer,Klarna,Berlin,,DE,mid,65000,92000,78000,EUR,levels
+Software Engineer,Spotify,Amsterdam,,NL,entry,55000,72000,63000,EUR,levels
+Senior Software Engineer,Spotify,Amsterdam,,NL,mid,82000,118000,100000,EUR,levels
+Data Scientist,Spotify,Amsterdam,,NL,mid,70000,100000,85000,EUR,levels
+Software Engineer,Google,Munich,,DE,entry,62000,82000,72000,EUR,levels
+Senior Software Engineer,Google,Munich,,DE,mid,95000,135000,115000,EUR,levels
+Staff Software Engineer,Google,Munich,,DE,senior,130000,175000,152000,EUR,levels
+Software Engineer,Google,Dublin,,IE,entry,60000,80000,70000,EUR,levels
+Senior Software Engineer,Google,Dublin,,IE,mid,92000,130000,110000,EUR,levels
+Software Engineer,Google,Amsterdam,,NL,mid,70000,98000,84000,EUR,levels
+Software Engineer,Amazon,Berlin,,DE,entry,55000,72000,63000,EUR,levels
+Senior Software Engineer,Amazon,Berlin,,DE,mid,85000,120000,102000,EUR,levels
+Software Engineer,Amazon,Dublin,,IE,entry,55000,75000,65000,EUR,levels
+Senior Software Engineer,Amazon,Dublin,,IE,mid,88000,125000,106000,EUR,levels
+Data Engineer,Amazon,Dublin,,IE,mid,65000,95000,80000,EUR,levels
+Software Engineer,Meta,Dublin,,IE,entry,65000,85000,75000,EUR,levels
+Senior Software Engineer,Meta,Dublin,,IE,mid,100000,145000,122000,EUR,levels
+Staff Software Engineer,Meta,Dublin,,IE,senior,140000,185000,162000,EUR,levels
+Machine Learning Engineer,Meta,Dublin,,IE,mid,90000,130000,110000,EUR,levels
+Software Engineer,Microsoft,Dublin,,IE,entry,58000,78000,68000,EUR,levels
+Senior Software Engineer,Microsoft,Dublin,,IE,mid,88000,125000,106000,EUR,levels
+Engineering Manager,Microsoft,Dublin,,IE,senior,105000,145000,125000,EUR,levels
+Product Manager,Microsoft,Dublin,,IE,mid,72000,100000,86000,EUR,levels
+Software Engineer,Stripe,Dublin,,IE,entry,65000,85000,75000,EUR,levels
+Senior Software Engineer,Stripe,Dublin,,IE,mid,100000,140000,120000,EUR,levels
+Staff Software Engineer,Stripe,Dublin,,IE,senior,135000,175000,155000,EUR,levels
+Software Engineer,Booking.com,Amsterdam,,NL,entry,52000,70000,61000,EUR,levels
+Senior Software Engineer,Booking.com,Amsterdam,,NL,mid,80000,115000,97000,EUR,levels
+Data Scientist,Booking.com,Amsterdam,,NL,mid,68000,98000,83000,EUR,levels
+Product Manager,Booking.com,Amsterdam,,NL,mid,65000,92000,78000,EUR,levels
+Software Engineer,,Berlin,,DE,entry,45000,62000,53000,EUR,market
+Software Engineer,,Munich,,DE,entry,48000,65000,56000,EUR,market
+Software Engineer,,Frankfurt,,DE,entry,47000,64000,55000,EUR,market
+Software Engineer,,Hamburg,,DE,entry,44000,60000,52000,EUR,market
+Senior Software Engineer,,Berlin,,DE,mid,70000,100000,85000,EUR,market
+Senior Software Engineer,,Munich,,DE,mid,75000,108000,92000,EUR,market
+Senior Software Engineer,,Frankfurt,,DE,mid,72000,105000,88000,EUR,market
+Staff Software Engineer,,Munich,,DE,senior,100000,142000,120000,EUR,market
+Staff Software Engineer,,Berlin,,DE,senior,95000,135000,115000,EUR,market
+Data Scientist,,Berlin,,DE,mid,55000,82000,68000,EUR,market
+Data Scientist,,Munich,,DE,mid,58000,88000,73000,EUR,market
+Data Engineer,,Berlin,,DE,mid,55000,80000,67000,EUR,market
+Data Engineer,,Munich,,DE,mid,58000,85000,71000,EUR,market
+Machine Learning Engineer,,Berlin,,DE,mid,65000,100000,82000,EUR,market
+Machine Learning Engineer,,Munich,,DE,mid,70000,110000,90000,EUR,market
+Product Manager,,Berlin,,DE,mid,60000,88000,74000,EUR,market
+Product Manager,,Munich,,DE,mid,65000,95000,80000,EUR,market
+Engineering Manager,,Munich,,DE,senior,85000,125000,105000,EUR,market
+Engineering Manager,,Berlin,,DE,senior,82000,120000,100000,EUR,market
+DevOps Engineer,,Berlin,,DE,mid,55000,80000,67000,EUR,market
+DevOps Engineer,,Munich,,DE,mid,58000,85000,71000,EUR,market
+Data Analyst,,Berlin,,DE,entry,35000,52000,43000,EUR,market
+Data Analyst,,Munich,,DE,entry,38000,55000,46000,EUR,market
+Business Analyst,,Frankfurt,,DE,entry,40000,55000,47000,EUR,market
+Business Analyst,,Munich,,DE,entry,40000,55000,47000,EUR,market
+Financial Analyst,,Frankfurt,,DE,entry,45000,65000,55000,EUR,market
+Consultant,,Munich,,DE,entry,50000,72000,60000,EUR,market
+Consultant,,Frankfurt,,DE,entry,52000,75000,62000,EUR,market
+Product Designer,,Berlin,,DE,mid,50000,75000,62000,EUR,market
+Frontend Engineer,,Berlin,,DE,mid,55000,82000,68000,EUR,market
+Backend Engineer,,Berlin,,DE,mid,58000,85000,71000,EUR,market
+Frontend Engineer,,Munich,,DE,mid,58000,88000,73000,EUR,market
+Backend Engineer,,Munich,,DE,mid,62000,90000,76000,EUR,market
+AI Engineer,,Berlin,,DE,mid,70000,108000,88000,EUR,market
+AI Engineer,,Munich,,DE,mid,75000,115000,95000,EUR,market
+Software Engineer,,Amsterdam,,NL,entry,48000,66000,57000,EUR,market
+Senior Software Engineer,,Amsterdam,,NL,mid,72000,105000,88000,EUR,market
+Data Scientist,,Amsterdam,,NL,mid,60000,88000,74000,EUR,market
+DevOps Engineer,,Amsterdam,,NL,mid,55000,82000,68000,EUR,market
+AI Engineer,,Amsterdam,,NL,mid,68000,105000,86000,EUR,market
+Software Engineer,,Dublin,,IE,entry,45000,65000,55000,EUR,market
+Senior Software Engineer,,Dublin,,IE,mid,75000,110000,92000,EUR,market
+Data Engineer,,Dublin,,IE,mid,60000,90000,75000,EUR,market
+Product Manager,,Dublin,,IE,mid,62000,90000,76000,EUR,market
+Engineering Manager,,Dublin,,IE,senior,88000,130000,108000,EUR,market
+Software Engineer,,Paris,,FR,entry,42000,58000,50000,EUR,market
+Senior Software Engineer,,Paris,,FR,mid,58000,90000,74000,EUR,market
+Data Scientist,,Paris,,FR,mid,50000,78000,64000,EUR,market
+Machine Learning Engineer,,Paris,,FR,mid,55000,88000,72000,EUR,market
+Product Manager,,Paris,,FR,mid,52000,80000,66000,EUR,market
+AI Engineer,,Paris,,FR,mid,60000,95000,78000,EUR,market
+Software Engineer,,Stockholm,,SE,entry,45000,62000,53000,EUR,market
+Senior Software Engineer,,Stockholm,,SE,mid,65000,98000,82000,EUR,market
+Data Scientist,,Stockholm,,SE,mid,55000,85000,70000,EUR,market
+Software Engineer,,Germany,,DE,entry,45000,63000,54000,EUR,market
+Senior Software Engineer,,Germany,,DE,mid,70000,105000,87000,EUR,market
+Software Engineer,,Netherlands,,NL,entry,46000,64000,55000,EUR,market
+Senior Software Engineer,,Netherlands,,NL,mid,70000,102000,86000,EUR,market
+Software Engineer,,Ireland,,IE,entry,44000,62000,53000,EUR,market
+Senior Software Engineer,,Ireland,,IE,mid,72000,108000,90000,EUR,market
+Software Engineer,,France,,FR,entry,40000,56000,48000,EUR,market
+Senior Software Engineer,,France,,FR,mid,55000,85000,70000,EUR,market

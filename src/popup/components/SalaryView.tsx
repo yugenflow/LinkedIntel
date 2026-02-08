@@ -125,6 +125,7 @@ export default function SalaryView({ cards, salaryLoading, onRequestAiEstimate, 
         const isUnavailable = !card.salary.found && card.salary.label === 'Data Unavailable';
         const isEstimating = estimatingIndices?.has(i) ?? false;
         const estimateFailed = card.salary.label === 'Estimate Failed';
+        const hasPostedSalary = !!card.postedSalary;
 
         return (
           <div
@@ -139,7 +140,15 @@ export default function SalaryView({ cards, salaryLoading, onRequestAiEstimate, 
               </p>
             </div>
             <div className="shrink-0 flex flex-col items-end gap-0.5">
-              {isLoading ? (
+              {/* Posted salary takes priority over everything */}
+              {hasPostedSalary ? (
+                <>
+                  <span className="flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700">
+                    {card.postedSalary}
+                  </span>
+                  <span className="text-[9px] text-emerald-700 opacity-70 px-1">Posted</span>
+                </>
+              ) : isLoading ? (
                 <span className="flex items-center gap-1.5 text-[11px] text-text-tertiary px-2.5 py-1">
                   <span className="inline-block w-2.5 h-2.5 border border-text-tertiary/40 border-t-transparent rounded-full animate-spin" />
                 </span>

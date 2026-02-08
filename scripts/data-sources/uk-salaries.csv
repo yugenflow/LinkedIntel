@@ -1,0 +1,162 @@
+title,company,city,state,country,experienceLevel,salaryMin,salaryMax,salaryMedian,currency,source
+Software Engineer,Google,London,England,GB,entry,50000,70000,60000,GBP,levels
+Software Engineer,Google,London,England,GB,mid,75000,105000,90000,GBP,levels
+Senior Software Engineer,Google,London,England,GB,senior,100000,145000,125000,GBP,levels
+Staff Software Engineer,Google,London,England,GB,senior,130000,175000,155000,GBP,levels
+Machine Learning Engineer,Google,London,England,GB,mid,80000,115000,95000,GBP,levels
+Software Engineer,Amazon,London,England,GB,entry,48000,65000,55000,GBP,levels
+Software Engineer,Amazon,London,England,GB,mid,70000,98000,82000,GBP,levels
+Senior Software Engineer,Amazon,London,England,GB,senior,95000,135000,115000,GBP,levels
+Data Engineer,Amazon,London,England,GB,mid,65000,90000,78000,GBP,levels
+Software Engineer,Amazon,Edinburgh,Scotland,GB,mid,60000,85000,72000,GBP,levels
+Software Engineer,Meta,London,England,GB,entry,52000,72000,62000,GBP,levels
+Software Engineer,Meta,London,England,GB,mid,78000,110000,95000,GBP,levels
+Senior Software Engineer,Meta,London,England,GB,senior,105000,155000,130000,GBP,levels
+Staff Software Engineer,Meta,London,England,GB,senior,135000,180000,160000,GBP,levels
+Machine Learning Engineer,Meta,London,England,GB,mid,85000,120000,100000,GBP,levels
+Software Engineer,Microsoft,London,England,GB,entry,47000,63000,55000,GBP,levels
+Software Engineer,Microsoft,London,England,GB,mid,68000,95000,80000,GBP,levels
+Senior Software Engineer,Microsoft,London,England,GB,senior,90000,130000,110000,GBP,levels
+Software Engineer,Microsoft,Cambridge,England,GB,mid,62000,88000,75000,GBP,levels
+Product Manager,Microsoft,London,England,GB,mid,70000,98000,85000,GBP,levels
+Software Engineer,Apple,London,England,GB,entry,48000,66000,57000,GBP,levels
+Software Engineer,Apple,London,England,GB,mid,72000,100000,85000,GBP,levels
+Senior Software Engineer,Apple,London,England,GB,senior,95000,140000,118000,GBP,levels
+Machine Learning Engineer,Apple,London,England,GB,mid,78000,112000,92000,GBP,levels
+Software Engineer,Revolut,London,England,GB,entry,45000,62000,53000,GBP,levels
+Software Engineer,Revolut,London,England,GB,mid,68000,95000,80000,GBP,levels
+Senior Software Engineer,Revolut,London,England,GB,senior,90000,130000,110000,GBP,levels
+Data Scientist,Revolut,London,England,GB,mid,65000,92000,78000,GBP,levels
+Product Manager,Revolut,London,England,GB,mid,62000,88000,75000,GBP,levels
+Software Engineer,Wise,London,England,GB,entry,42000,58000,50000,GBP,levels
+Software Engineer,Wise,London,England,GB,mid,62000,88000,75000,GBP,levels
+Senior Software Engineer,Wise,London,England,GB,senior,85000,120000,100000,GBP,levels
+Backend Engineer,Wise,London,England,GB,mid,60000,85000,72000,GBP,levels
+Software Engineer,Monzo,London,England,GB,entry,40000,55000,48000,GBP,levels
+Software Engineer,Monzo,London,England,GB,mid,58000,82000,70000,GBP,levels
+Senior Software Engineer,Monzo,London,England,GB,senior,80000,115000,95000,GBP,levels
+Data Engineer,Monzo,London,England,GB,mid,55000,78000,66000,GBP,levels
+Software Engineer,Deliveroo,London,England,GB,entry,42000,58000,50000,GBP,levels
+Software Engineer,Deliveroo,London,England,GB,mid,60000,85000,72000,GBP,levels
+Senior Software Engineer,Deliveroo,London,England,GB,senior,82000,118000,98000,GBP,levels
+Machine Learning Engineer,Deliveroo,London,England,GB,mid,65000,95000,78000,GBP,levels
+Software Engineer,Barclays,London,England,GB,entry,38000,52000,45000,GBP,levels
+Software Engineer,Barclays,London,England,GB,mid,55000,78000,65000,GBP,levels
+Senior Software Engineer,Barclays,London,England,GB,senior,75000,108000,90000,GBP,levels
+Data Analyst,Barclays,London,England,GB,entry,32000,48000,40000,GBP,levels
+Financial Analyst,Barclays,London,England,GB,entry,42000,62000,52000,GBP,levels
+Software Engineer,HSBC,London,England,GB,entry,37000,50000,43000,GBP,levels
+Software Engineer,HSBC,London,England,GB,mid,52000,75000,63000,GBP,levels
+Senior Software Engineer,HSBC,London,England,GB,senior,72000,105000,88000,GBP,levels
+Data Engineer,HSBC,London,England,GB,mid,50000,72000,60000,GBP,levels
+Financial Analyst,HSBC,London,England,GB,entry,40000,60000,50000,GBP,levels
+Software Engineer,ARM,Cambridge,England,GB,entry,36000,50000,43000,GBP,levels
+Software Engineer,ARM,Cambridge,England,GB,mid,52000,75000,62000,GBP,levels
+Senior Software Engineer,ARM,Cambridge,England,GB,senior,72000,105000,88000,GBP,levels
+Software Engineer,ARM,Manchester,England,GB,mid,48000,68000,58000,GBP,levels
+Software Engineer,Sky,London,England,GB,entry,35000,48000,42000,GBP,levels
+Software Engineer,Sky,London,England,GB,mid,50000,72000,60000,GBP,levels
+Senior Software Engineer,Sky,London,England,GB,senior,68000,98000,82000,GBP,levels
+DevOps Engineer,Sky,London,England,GB,mid,52000,75000,62000,GBP,levels
+Software Engineer,Rolls-Royce,Bristol,England,GB,entry,34000,48000,40000,GBP,levels
+Software Engineer,Rolls-Royce,Bristol,England,GB,mid,48000,70000,58000,GBP,levels
+Senior Software Engineer,Rolls-Royce,Bristol,England,GB,senior,65000,95000,80000,GBP,levels
+Data Scientist,Rolls-Royce,Bristol,England,GB,mid,50000,72000,60000,GBP,levels
+Consultant,Deloitte,London,England,GB,entry,48000,68000,58000,GBP,levels
+Consultant,Deloitte,London,England,GB,mid,65000,90000,78000,GBP,levels
+Data Analyst,Deloitte,London,England,GB,entry,35000,50000,42000,GBP,levels
+Software Engineer,Deloitte,London,England,GB,mid,55000,78000,65000,GBP,levels
+Investment Banker,Goldman Sachs,London,England,GB,entry,65000,95000,80000,GBP,levels
+Software Engineer,Goldman Sachs,London,England,GB,entry,50000,68000,58000,GBP,levels
+Software Engineer,Goldman Sachs,London,England,GB,mid,72000,100000,85000,GBP,levels
+Senior Software Engineer,Goldman Sachs,London,England,GB,senior,95000,135000,115000,GBP,levels
+Financial Analyst,Goldman Sachs,London,England,GB,entry,55000,78000,65000,GBP,levels
+Investment Banker,JP Morgan,London,England,GB,entry,60000,90000,75000,GBP,levels
+Software Engineer,JP Morgan,London,England,GB,entry,45000,62000,53000,GBP,levels
+Software Engineer,JP Morgan,London,England,GB,mid,65000,92000,78000,GBP,levels
+Senior Software Engineer,JP Morgan,London,England,GB,senior,88000,125000,105000,GBP,levels
+Financial Analyst,JP Morgan,London,England,GB,entry,50000,72000,60000,GBP,levels
+Data Scientist,JP Morgan,London,England,GB,mid,62000,88000,75000,GBP,levels
+Consultant,McKinsey,London,England,GB,entry,55000,75000,65000,GBP,levels
+Consultant,McKinsey,London,England,GB,mid,75000,105000,90000,GBP,levels
+Engineering Manager,Google,London,England,GB,senior,120000,160000,140000,GBP,levels
+Engineering Manager,Amazon,London,England,GB,senior,110000,150000,130000,GBP,levels
+Engineering Manager,Meta,London,England,GB,senior,125000,165000,145000,GBP,levels
+Software Engineer,,London,England,GB,entry,40000,58000,48000,GBP,market
+Software Engineer,,London,England,GB,mid,58000,85000,70000,GBP,market
+Senior Software Engineer,,London,England,GB,senior,78000,120000,95000,GBP,market
+Staff Software Engineer,,London,England,GB,senior,100000,150000,125000,GBP,market
+Software Engineer,,Manchester,England,GB,entry,32000,47000,40000,GBP,market
+Software Engineer,,Manchester,England,GB,mid,48000,72000,58000,GBP,market
+Senior Software Engineer,,Manchester,England,GB,senior,65000,100000,80000,GBP,market
+Software Engineer,,Edinburgh,Scotland,GB,entry,33000,48000,41000,GBP,market
+Software Engineer,,Edinburgh,Scotland,GB,mid,50000,74000,60000,GBP,market
+Senior Software Engineer,,Edinburgh,Scotland,GB,senior,68000,105000,85000,GBP,market
+Software Engineer,,Cambridge,England,GB,entry,35000,50000,43000,GBP,market
+Software Engineer,,Cambridge,England,GB,mid,52000,76000,63000,GBP,market
+Senior Software Engineer,,Cambridge,England,GB,senior,70000,108000,88000,GBP,market
+Software Engineer,,Bristol,England,GB,entry,32000,46000,39000,GBP,market
+Software Engineer,,Bristol,England,GB,mid,47000,70000,57000,GBP,market
+Senior Software Engineer,,Bristol,England,GB,senior,63000,98000,78000,GBP,market
+Software Engineer,,Birmingham,England,GB,entry,30000,45000,38000,GBP,market
+Software Engineer,,Birmingham,England,GB,mid,45000,68000,55000,GBP,market
+Senior Software Engineer,,Birmingham,England,GB,senior,60000,95000,76000,GBP,market
+Software Engineer,,Leeds,England,GB,entry,30000,44000,37000,GBP,market
+Software Engineer,,Leeds,England,GB,mid,44000,66000,54000,GBP,market
+Senior Software Engineer,,Leeds,England,GB,senior,58000,92000,74000,GBP,market
+Software Engineer,,Glasgow,Scotland,GB,entry,30000,44000,37000,GBP,market
+Software Engineer,,Glasgow,Scotland,GB,mid,45000,68000,55000,GBP,market
+Senior Software Engineer,,Glasgow,Scotland,GB,senior,60000,95000,76000,GBP,market
+Software Engineer,,,,,entry,35000,55000,44000,GBP,market
+Software Engineer,,,,,mid,52000,78000,63000,GBP,market
+Senior Software Engineer,,,,,senior,70000,110000,88000,GBP,market
+Staff Software Engineer,,,,,senior,95000,145000,118000,GBP,market
+Data Scientist,,London,England,GB,mid,55000,88000,70000,GBP,market
+Data Scientist,,Manchester,England,GB,mid,45000,72000,58000,GBP,market
+Data Scientist,,Edinburgh,Scotland,GB,mid,48000,75000,60000,GBP,market
+Data Scientist,,,,,mid,50000,82000,65000,GBP,market
+Data Engineer,,London,England,GB,mid,52000,82000,66000,GBP,market
+Data Engineer,,Manchester,England,GB,mid,42000,68000,54000,GBP,market
+Data Engineer,,,,,mid,48000,78000,62000,GBP,market
+Machine Learning Engineer,,London,England,GB,mid,65000,108000,85000,GBP,market
+Machine Learning Engineer,,Cambridge,England,GB,mid,58000,95000,75000,GBP,market
+Machine Learning Engineer,,,,,mid,60000,100000,78000,GBP,market
+Product Manager,,London,England,GB,mid,60000,92000,75000,GBP,market
+Product Manager,,Manchester,England,GB,mid,48000,75000,60000,GBP,market
+Product Manager,,,,,mid,52000,82000,66000,GBP,market
+Engineering Manager,,London,England,GB,senior,85000,135000,108000,GBP,market
+Engineering Manager,,Manchester,England,GB,senior,72000,112000,90000,GBP,market
+Engineering Manager,,,,,senior,78000,125000,100000,GBP,market
+DevOps Engineer,,London,England,GB,mid,55000,85000,68000,GBP,market
+DevOps Engineer,,Manchester,England,GB,mid,45000,70000,56000,GBP,market
+DevOps Engineer,,,,,mid,48000,78000,62000,GBP,market
+Data Analyst,,London,England,GB,entry,32000,50000,40000,GBP,market
+Data Analyst,,Manchester,England,GB,entry,28000,42000,34000,GBP,market
+Data Analyst,,,,,entry,30000,48000,38000,GBP,market
+Business Analyst,,London,England,GB,entry,33000,50000,42000,GBP,market
+Business Analyst,,Manchester,England,GB,entry,28000,43000,35000,GBP,market
+Business Analyst,,,,,entry,30000,48000,38000,GBP,market
+Financial Analyst,,London,England,GB,entry,42000,68000,55000,GBP,market
+Financial Analyst,,,,,entry,38000,62000,50000,GBP,market
+Investment Banker,,London,England,GB,entry,58000,95000,75000,GBP,market
+Investment Banker,,,,,entry,55000,90000,72000,GBP,market
+Consultant,,London,England,GB,entry,45000,68000,55000,GBP,market
+Consultant,,Manchester,England,GB,entry,38000,55000,45000,GBP,market
+Consultant,,,,,entry,40000,62000,50000,GBP,market
+Product Designer,,London,England,GB,mid,50000,80000,65000,GBP,market
+Product Designer,,Manchester,England,GB,mid,40000,65000,52000,GBP,market
+Product Designer,,,,,mid,45000,75000,58000,GBP,market
+Frontend Engineer,,London,England,GB,mid,55000,82000,68000,GBP,market
+Frontend Engineer,,Manchester,England,GB,mid,45000,68000,55000,GBP,market
+Frontend Engineer,,,,,mid,48000,75000,60000,GBP,market
+Backend Engineer,,London,England,GB,mid,58000,85000,70000,GBP,market
+Backend Engineer,,Manchester,England,GB,mid,48000,72000,58000,GBP,market
+Backend Engineer,,,,,mid,52000,78000,63000,GBP,market
+Security Engineer,,London,England,GB,mid,58000,92000,74000,GBP,market
+Security Engineer,,,,,mid,52000,85000,68000,GBP,market
+Mobile Developer,,London,England,GB,mid,52000,82000,66000,GBP,market
+Mobile Developer,,Manchester,England,GB,mid,42000,68000,54000,GBP,market
+Mobile Developer,,,,,mid,48000,78000,62000,GBP,market
+AI Engineer,,London,England,GB,mid,70000,118000,92000,GBP,market
+AI Engineer,,Cambridge,England,GB,mid,62000,105000,82000,GBP,market
+AI Engineer,,,,,mid,65000,110000,85000,GBP,market

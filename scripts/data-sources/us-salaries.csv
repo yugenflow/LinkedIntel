@@ -1,0 +1,607 @@
+title,company,city,state,country,experienceLevel,salaryMin,salaryMax,salaryMedian,currency,source
+Software Engineer,Google,Mountain View,California,US,entry,142000,185000,165000,USD,levels
+Software Engineer,Google,New York,New York,US,entry,142000,185000,165000,USD,levels
+Software Engineer,Google,Seattle,Washington,US,entry,138000,180000,160000,USD,levels
+Software Engineer,Meta,Menlo Park,California,US,entry,145000,190000,170000,USD,levels
+Software Engineer,Meta,New York,New York,US,entry,145000,190000,170000,USD,levels
+Software Engineer,Meta,Seattle,Washington,US,entry,140000,185000,165000,USD,levels
+Software Engineer,Amazon,Seattle,Washington,US,entry,120000,165000,145000,USD,levels
+Software Engineer,Amazon,New York,New York,US,entry,122000,168000,148000,USD,levels
+Software Engineer,Amazon,Austin,Texas,US,entry,115000,158000,138000,USD,levels
+Software Engineer,Apple,Cupertino,California,US,entry,135000,178000,158000,USD,levels
+Software Engineer,Apple,San Jose,California,US,entry,135000,178000,158000,USD,levels
+Software Engineer,Microsoft,Redmond,Washington,US,entry,125000,170000,150000,USD,levels
+Software Engineer,Microsoft,New York,New York,US,entry,128000,175000,155000,USD,levels
+Software Engineer,Netflix,Los Angeles,California,US,entry,150000,200000,180000,USD,levels
+Software Engineer,Nvidia,Sunnyvale,California,US,entry,130000,175000,155000,USD,levels
+Software Engineer,Nvidia,Santa Clara,California,US,entry,130000,175000,155000,USD,levels
+Software Engineer,Stripe,San Francisco,California,US,entry,140000,185000,165000,USD,levels
+Software Engineer,Airbnb,San Francisco,California,US,entry,140000,188000,168000,USD,levels
+Software Engineer,Uber,San Francisco,California,US,entry,132000,175000,155000,USD,levels
+Software Engineer,Salesforce,San Francisco,California,US,entry,120000,165000,145000,USD,levels
+Software Engineer,Adobe,San Jose,California,US,entry,118000,160000,140000,USD,levels
+Software Engineer,Coinbase,San Francisco,California,US,entry,140000,185000,165000,USD,levels
+Software Engineer,Databricks,San Francisco,California,US,entry,145000,190000,170000,USD,levels
+Software Engineer,Palantir,Palo Alto,California,US,entry,130000,172000,155000,USD,levels
+Software Engineer,Snowflake,San Mateo,California,US,entry,132000,175000,158000,USD,levels
+Software Engineer,DoorDash,San Francisco,California,US,entry,130000,175000,155000,USD,levels
+Software Engineer,Lyft,San Francisco,California,US,entry,125000,170000,150000,USD,levels
+Software Engineer,Pinterest,San Francisco,California,US,entry,128000,172000,152000,USD,levels
+Software Engineer,Snap,Los Angeles,California,US,entry,125000,168000,148000,USD,levels
+Software Engineer,Twitter/X,San Francisco,California,US,entry,128000,170000,152000,USD,levels
+Software Engineer,LinkedIn,Sunnyvale,California,US,entry,130000,175000,155000,USD,levels
+Software Engineer,Oracle,Austin,Texas,US,entry,105000,148000,128000,USD,levels
+Software Engineer,Oracle,Redwood City,California,US,entry,110000,155000,135000,USD,levels
+Software Engineer,Cisco,San Jose,California,US,entry,108000,150000,130000,USD,levels
+Software Engineer,Intel,Santa Clara,California,US,entry,100000,142000,122000,USD,levels
+Software Engineer,IBM,New York,New York,US,entry,95000,138000,118000,USD,levels
+Software Engineer,PayPal,San Jose,California,US,entry,112000,155000,135000,USD,levels
+Software Engineer,Block (Square),San Francisco,California,US,entry,128000,172000,152000,USD,levels
+Software Engineer,Robinhood,Menlo Park,California,US,entry,135000,178000,160000,USD,levels
+Software Engineer,Tesla,Austin,Texas,US,entry,110000,152000,132000,USD,levels
+Software Engineer,Tesla,Palo Alto,California,US,entry,115000,158000,138000,USD,levels
+Software Engineer,SpaceX,Los Angeles,California,US,entry,108000,148000,130000,USD,levels
+Software Engineer,Rivian,Irvine,California,US,entry,105000,145000,128000,USD,levels
+Software Engineer,Boeing,Seattle,Washington,US,entry,90000,132000,112000,USD,levels
+Software Engineer,Lockheed Martin,Dallas,Texas,US,entry,88000,128000,108000,USD,levels
+Software Engineer,Deloitte,New York,New York,US,entry,90000,130000,110000,USD,levels
+Software Engineer,Accenture,New York,New York,US,entry,85000,125000,105000,USD,levels
+Software Engineer,Goldman Sachs,New York,New York,US,entry,115000,160000,140000,USD,levels
+Software Engineer,JP Morgan,New York,New York,US,entry,110000,155000,135000,USD,levels
+Software Engineer,Capital One,McLean,Virginia,US,entry,105000,150000,130000,USD,levels
+Senior Software Engineer,Google,Mountain View,California,US,mid,210000,310000,265000,USD,levels
+Senior Software Engineer,Google,New York,New York,US,mid,215000,315000,270000,USD,levels
+Senior Software Engineer,Google,Seattle,Washington,US,mid,205000,305000,260000,USD,levels
+Senior Software Engineer,Meta,Menlo Park,California,US,mid,220000,330000,280000,USD,levels
+Senior Software Engineer,Meta,New York,New York,US,mid,225000,335000,285000,USD,levels
+Senior Software Engineer,Amazon,Seattle,Washington,US,mid,185000,270000,230000,USD,levels
+Senior Software Engineer,Amazon,New York,New York,US,mid,190000,278000,238000,USD,levels
+Senior Software Engineer,Apple,Cupertino,California,US,mid,200000,295000,250000,USD,levels
+Senior Software Engineer,Microsoft,Redmond,Washington,US,mid,190000,280000,240000,USD,levels
+Senior Software Engineer,Netflix,Los Angeles,California,US,mid,250000,380000,320000,USD,levels
+Senior Software Engineer,Nvidia,Sunnyvale,California,US,mid,200000,300000,255000,USD,levels
+Senior Software Engineer,Stripe,San Francisco,California,US,mid,225000,340000,285000,USD,levels
+Senior Software Engineer,Airbnb,San Francisco,California,US,mid,220000,330000,280000,USD,levels
+Senior Software Engineer,Uber,San Francisco,California,US,mid,200000,300000,255000,USD,levels
+Senior Software Engineer,Salesforce,San Francisco,California,US,mid,185000,270000,230000,USD,levels
+Senior Software Engineer,Adobe,San Jose,California,US,mid,180000,265000,225000,USD,levels
+Senior Software Engineer,Coinbase,San Francisco,California,US,mid,220000,330000,280000,USD,levels
+Senior Software Engineer,Databricks,San Francisco,California,US,mid,230000,350000,295000,USD,levels
+Senior Software Engineer,Palantir,Palo Alto,California,US,mid,195000,290000,245000,USD,levels
+Senior Software Engineer,Snowflake,San Mateo,California,US,mid,200000,300000,255000,USD,levels
+Senior Software Engineer,DoorDash,San Francisco,California,US,mid,200000,300000,252000,USD,levels
+Senior Software Engineer,Lyft,San Francisco,California,US,mid,195000,290000,245000,USD,levels
+Senior Software Engineer,Pinterest,San Francisco,California,US,mid,195000,290000,245000,USD,levels
+Senior Software Engineer,Snap,Los Angeles,California,US,mid,190000,285000,240000,USD,levels
+Senior Software Engineer,Twitter/X,San Francisco,California,US,mid,195000,288000,245000,USD,levels
+Senior Software Engineer,LinkedIn,Sunnyvale,California,US,mid,195000,290000,248000,USD,levels
+Senior Software Engineer,Oracle,Austin,Texas,US,mid,160000,235000,200000,USD,levels
+Senior Software Engineer,Cisco,San Jose,California,US,mid,162000,240000,205000,USD,levels
+Senior Software Engineer,Intel,Santa Clara,California,US,mid,155000,228000,195000,USD,levels
+Senior Software Engineer,PayPal,San Jose,California,US,mid,170000,250000,215000,USD,levels
+Senior Software Engineer,Block (Square),San Francisco,California,US,mid,200000,300000,255000,USD,levels
+Senior Software Engineer,Robinhood,Menlo Park,California,US,mid,210000,315000,268000,USD,levels
+Senior Software Engineer,Tesla,Austin,Texas,US,mid,165000,245000,210000,USD,levels
+Senior Software Engineer,Boeing,Seattle,Washington,US,mid,130000,190000,162000,USD,levels
+Senior Software Engineer,Lockheed Martin,Dallas,Texas,US,mid,125000,185000,158000,USD,levels
+Senior Software Engineer,Goldman Sachs,New York,New York,US,mid,175000,260000,220000,USD,levels
+Senior Software Engineer,JP Morgan,New York,New York,US,mid,165000,248000,210000,USD,levels
+Senior Software Engineer,Capital One,McLean,Virginia,US,mid,160000,240000,205000,USD,levels
+Senior Software Engineer,Deloitte,New York,New York,US,mid,140000,205000,175000,USD,levels
+Senior Software Engineer,Accenture,New York,New York,US,mid,130000,195000,165000,USD,levels
+Staff Software Engineer,Google,Mountain View,California,US,senior,310000,480000,400000,USD,levels
+Staff Software Engineer,Google,New York,New York,US,senior,315000,490000,408000,USD,levels
+Staff Software Engineer,Meta,Menlo Park,California,US,senior,330000,520000,430000,USD,levels
+Staff Software Engineer,Meta,New York,New York,US,senior,335000,525000,435000,USD,levels
+Staff Software Engineer,Amazon,Seattle,Washington,US,senior,270000,420000,350000,USD,levels
+Staff Software Engineer,Apple,Cupertino,California,US,senior,290000,450000,375000,USD,levels
+Staff Software Engineer,Microsoft,Redmond,Washington,US,senior,280000,430000,360000,USD,levels
+Staff Software Engineer,Netflix,Los Angeles,California,US,senior,380000,560000,475000,USD,levels
+Staff Software Engineer,Nvidia,Sunnyvale,California,US,senior,300000,460000,385000,USD,levels
+Staff Software Engineer,Stripe,San Francisco,California,US,senior,340000,510000,430000,USD,levels
+Staff Software Engineer,Airbnb,San Francisco,California,US,senior,320000,500000,415000,USD,levels
+Staff Software Engineer,Uber,San Francisco,California,US,senior,290000,440000,370000,USD,levels
+Staff Software Engineer,Salesforce,San Francisco,California,US,senior,265000,400000,335000,USD,levels
+Staff Software Engineer,Coinbase,San Francisco,California,US,senior,320000,490000,410000,USD,levels
+Staff Software Engineer,Databricks,San Francisco,California,US,senior,350000,530000,445000,USD,levels
+Staff Software Engineer,DoorDash,San Francisco,California,US,senior,290000,440000,370000,USD,levels
+Staff Software Engineer,Lyft,San Francisco,California,US,senior,280000,420000,355000,USD,levels
+Staff Software Engineer,Snowflake,San Mateo,California,US,senior,295000,450000,375000,USD,levels
+Staff Software Engineer,LinkedIn,Sunnyvale,California,US,senior,280000,425000,358000,USD,levels
+Staff Software Engineer,Palantir,Palo Alto,California,US,senior,275000,420000,352000,USD,levels
+Staff Software Engineer,Robinhood,Menlo Park,California,US,senior,300000,460000,385000,USD,levels
+Staff Software Engineer,Block (Square),San Francisco,California,US,senior,290000,440000,370000,USD,levels
+Staff Software Engineer,Goldman Sachs,New York,New York,US,senior,260000,400000,335000,USD,levels
+Frontend Engineer,Google,Mountain View,California,US,mid,195000,295000,250000,USD,levels
+Frontend Engineer,Meta,Menlo Park,California,US,mid,205000,315000,265000,USD,levels
+Frontend Engineer,Amazon,Seattle,Washington,US,mid,175000,260000,220000,USD,levels
+Frontend Engineer,Apple,Cupertino,California,US,mid,185000,278000,235000,USD,levels
+Frontend Engineer,Microsoft,Redmond,Washington,US,mid,178000,268000,228000,USD,levels
+Frontend Engineer,Stripe,San Francisco,California,US,mid,210000,320000,270000,USD,levels
+Frontend Engineer,Airbnb,San Francisco,California,US,mid,205000,310000,262000,USD,levels
+Frontend Engineer,Netflix,Los Angeles,California,US,mid,235000,360000,302000,USD,levels
+Frontend Engineer,Snap,Los Angeles,California,US,mid,178000,268000,228000,USD,levels
+Frontend Engineer,Pinterest,San Francisco,California,US,mid,185000,275000,235000,USD,levels
+Backend Engineer,Google,Mountain View,California,US,mid,200000,300000,255000,USD,levels
+Backend Engineer,Meta,Menlo Park,California,US,mid,210000,320000,270000,USD,levels
+Backend Engineer,Amazon,Seattle,Washington,US,mid,180000,268000,228000,USD,levels
+Backend Engineer,Apple,Cupertino,California,US,mid,190000,285000,242000,USD,levels
+Backend Engineer,Microsoft,Redmond,Washington,US,mid,182000,272000,232000,USD,levels
+Backend Engineer,Stripe,San Francisco,California,US,mid,215000,330000,278000,USD,levels
+Backend Engineer,Uber,San Francisco,California,US,mid,192000,290000,245000,USD,levels
+Backend Engineer,Coinbase,San Francisco,California,US,mid,210000,315000,268000,USD,levels
+Backend Engineer,Databricks,San Francisco,California,US,mid,220000,335000,282000,USD,levels
+Backend Engineer,DoorDash,San Francisco,California,US,mid,192000,288000,245000,USD,levels
+Full Stack Engineer,Google,Mountain View,California,US,mid,198000,298000,252000,USD,levels
+Full Stack Engineer,Meta,Menlo Park,California,US,mid,208000,318000,268000,USD,levels
+Full Stack Engineer,Amazon,Seattle,Washington,US,mid,178000,265000,225000,USD,levels
+Full Stack Engineer,Microsoft,Redmond,Washington,US,mid,180000,270000,230000,USD,levels
+Full Stack Engineer,Salesforce,San Francisco,California,US,mid,175000,260000,220000,USD,levels
+Full Stack Engineer,Airbnb,San Francisco,California,US,mid,200000,305000,258000,USD,levels
+Full Stack Engineer,Stripe,San Francisco,California,US,mid,212000,325000,272000,USD,levels
+Full Stack Engineer,Adobe,San Jose,California,US,mid,170000,255000,215000,USD,levels
+Full Stack Engineer,Uber,San Francisco,California,US,mid,190000,288000,242000,USD,levels
+Full Stack Engineer,Snap,Los Angeles,California,US,mid,175000,265000,225000,USD,levels
+Data Scientist,Google,Mountain View,California,US,mid,180000,280000,235000,USD,levels
+Data Scientist,Meta,Menlo Park,California,US,mid,185000,290000,242000,USD,levels
+Data Scientist,Amazon,Seattle,Washington,US,mid,155000,240000,200000,USD,levels
+Data Scientist,Apple,Cupertino,California,US,mid,170000,260000,220000,USD,levels
+Data Scientist,Microsoft,Redmond,Washington,US,mid,160000,248000,208000,USD,levels
+Data Scientist,Netflix,Los Angeles,California,US,mid,210000,330000,275000,USD,levels
+Data Scientist,Airbnb,San Francisco,California,US,mid,180000,278000,232000,USD,levels
+Data Scientist,Uber,San Francisco,California,US,mid,170000,265000,222000,USD,levels
+Data Scientist,Salesforce,San Francisco,California,US,mid,155000,238000,200000,USD,levels
+Data Scientist,Coinbase,San Francisco,California,US,mid,175000,272000,228000,USD,levels
+Data Scientist,Palantir,Palo Alto,California,US,mid,165000,258000,215000,USD,levels
+Data Scientist,Goldman Sachs,New York,New York,US,mid,160000,248000,208000,USD,levels
+Data Engineer,Google,Mountain View,California,US,mid,175000,268000,225000,USD,levels
+Data Engineer,Meta,Menlo Park,California,US,mid,180000,275000,232000,USD,levels
+Data Engineer,Amazon,Seattle,Washington,US,mid,152000,232000,195000,USD,levels
+Data Engineer,Microsoft,Redmond,Washington,US,mid,155000,238000,200000,USD,levels
+Data Engineer,Netflix,Los Angeles,California,US,mid,200000,310000,260000,USD,levels
+Data Engineer,Stripe,San Francisco,California,US,mid,180000,275000,230000,USD,levels
+Data Engineer,Airbnb,San Francisco,California,US,mid,172000,265000,222000,USD,levels
+Data Engineer,Uber,San Francisco,California,US,mid,162000,250000,210000,USD,levels
+Data Engineer,Databricks,San Francisco,California,US,mid,185000,282000,238000,USD,levels
+Data Engineer,Snowflake,San Mateo,California,US,mid,170000,262000,220000,USD,levels
+Machine Learning Engineer,Google,Mountain View,California,US,mid,200000,320000,265000,USD,levels
+Machine Learning Engineer,Meta,Menlo Park,California,US,mid,210000,330000,275000,USD,levels
+Machine Learning Engineer,Amazon,Seattle,Washington,US,mid,175000,280000,232000,USD,levels
+Machine Learning Engineer,Apple,Cupertino,California,US,mid,195000,305000,255000,USD,levels
+Machine Learning Engineer,Microsoft,Redmond,Washington,US,mid,185000,295000,245000,USD,levels
+Machine Learning Engineer,Netflix,Los Angeles,California,US,mid,240000,370000,310000,USD,levels
+Machine Learning Engineer,Nvidia,Sunnyvale,California,US,mid,200000,315000,262000,USD,levels
+Machine Learning Engineer,Stripe,San Francisco,California,US,mid,210000,325000,272000,USD,levels
+Machine Learning Engineer,Databricks,San Francisco,California,US,mid,220000,340000,285000,USD,levels
+Machine Learning Engineer,Coinbase,San Francisco,California,US,mid,205000,318000,265000,USD,levels
+Machine Learning Engineer,Tesla,Austin,Texas,US,mid,170000,270000,225000,USD,levels
+Machine Learning Engineer,SpaceX,Los Angeles,California,US,mid,165000,260000,218000,USD,levels
+AI Engineer,Google,Mountain View,California,US,mid,210000,330000,275000,USD,levels
+AI Engineer,Meta,Menlo Park,California,US,mid,215000,340000,282000,USD,levels
+AI Engineer,Amazon,Seattle,Washington,US,mid,180000,290000,240000,USD,levels
+AI Engineer,Microsoft,Redmond,Washington,US,mid,190000,305000,252000,USD,levels
+AI Engineer,Nvidia,Sunnyvale,California,US,mid,205000,325000,270000,USD,levels
+AI Engineer,Databricks,San Francisco,California,US,mid,225000,350000,292000,USD,levels
+AI Engineer,Coinbase,San Francisco,California,US,mid,210000,328000,272000,USD,levels
+AI Engineer,Stripe,San Francisco,California,US,mid,215000,335000,280000,USD,levels
+AI Engineer,Palantir,Palo Alto,California,US,mid,195000,308000,255000,USD,levels
+AI Engineer,Salesforce,San Francisco,California,US,mid,178000,280000,232000,USD,levels
+Product Manager,Google,Mountain View,California,US,mid,185000,280000,238000,USD,levels
+Product Manager,Meta,Menlo Park,California,US,mid,190000,290000,245000,USD,levels
+Product Manager,Amazon,Seattle,Washington,US,mid,160000,250000,210000,USD,levels
+Product Manager,Apple,Cupertino,California,US,mid,175000,268000,225000,USD,levels
+Product Manager,Microsoft,Redmond,Washington,US,mid,168000,258000,218000,USD,levels
+Product Manager,Stripe,San Francisco,California,US,mid,195000,300000,252000,USD,levels
+Product Manager,Airbnb,San Francisco,California,US,mid,185000,285000,240000,USD,levels
+Product Manager,Uber,San Francisco,California,US,mid,172000,268000,225000,USD,levels
+Product Manager,Salesforce,San Francisco,California,US,mid,158000,245000,205000,USD,levels
+Product Manager,DoorDash,San Francisco,California,US,mid,175000,272000,228000,USD,levels
+Product Manager,Coinbase,San Francisco,California,US,mid,180000,278000,232000,USD,levels
+Product Manager,Snap,Los Angeles,California,US,mid,168000,258000,218000,USD,levels
+Senior Product Manager,Google,Mountain View,California,US,senior,260000,380000,325000,USD,levels
+Senior Product Manager,Meta,Menlo Park,California,US,senior,270000,400000,340000,USD,levels
+Senior Product Manager,Amazon,Seattle,Washington,US,senior,220000,330000,280000,USD,levels
+Senior Product Manager,Apple,Cupertino,California,US,senior,245000,360000,308000,USD,levels
+Senior Product Manager,Microsoft,Redmond,Washington,US,senior,235000,350000,298000,USD,levels
+Senior Product Manager,Netflix,Los Angeles,California,US,senior,300000,430000,370000,USD,levels
+Senior Product Manager,Stripe,San Francisco,California,US,senior,275000,400000,342000,USD,levels
+Senior Product Manager,Airbnb,San Francisco,California,US,senior,262000,388000,330000,USD,levels
+Senior Product Manager,Salesforce,San Francisco,California,US,senior,225000,335000,285000,USD,levels
+Senior Product Manager,Uber,San Francisco,California,US,senior,248000,368000,312000,USD,levels
+Engineering Manager,Google,Mountain View,California,US,senior,280000,420000,355000,USD,levels
+Engineering Manager,Meta,Menlo Park,California,US,senior,290000,440000,370000,USD,levels
+Engineering Manager,Amazon,Seattle,Washington,US,senior,240000,370000,310000,USD,levels
+Engineering Manager,Apple,Cupertino,California,US,senior,265000,400000,338000,USD,levels
+Engineering Manager,Microsoft,Redmond,Washington,US,senior,255000,390000,328000,USD,levels
+Engineering Manager,Netflix,Los Angeles,California,US,senior,330000,480000,410000,USD,levels
+Engineering Manager,Stripe,San Francisco,California,US,senior,295000,440000,372000,USD,levels
+Engineering Manager,Uber,San Francisco,California,US,senior,265000,400000,338000,USD,levels
+Engineering Manager,Airbnb,San Francisco,California,US,senior,275000,415000,350000,USD,levels
+Engineering Manager,Salesforce,San Francisco,California,US,senior,240000,365000,308000,USD,levels
+Engineering Manager,Coinbase,San Francisco,California,US,senior,280000,420000,355000,USD,levels
+Engineering Manager,Databricks,San Francisco,California,US,senior,300000,450000,380000,USD,levels
+Director of Engineering,Google,Mountain View,California,US,senior,350000,520000,440000,USD,levels
+Director of Engineering,Meta,Menlo Park,California,US,senior,370000,550000,465000,USD,levels
+Director of Engineering,Amazon,Seattle,Washington,US,senior,310000,470000,395000,USD,levels
+Director of Engineering,Apple,Cupertino,California,US,senior,340000,500000,425000,USD,levels
+Director of Engineering,Microsoft,Redmond,Washington,US,senior,330000,490000,415000,USD,levels
+Director of Engineering,Netflix,Los Angeles,California,US,senior,400000,580000,495000,USD,levels
+Director of Engineering,Stripe,San Francisco,California,US,senior,365000,540000,458000,USD,levels
+Director of Engineering,Uber,San Francisco,California,US,senior,335000,500000,422000,USD,levels
+Director of Engineering,Salesforce,San Francisco,California,US,senior,305000,455000,385000,USD,levels
+Director of Engineering,Coinbase,San Francisco,California,US,senior,350000,520000,440000,USD,levels
+DevOps Engineer,Google,Mountain View,California,US,mid,175000,268000,225000,USD,levels
+DevOps Engineer,Amazon,Seattle,Washington,US,mid,152000,235000,198000,USD,levels
+DevOps Engineer,Microsoft,Redmond,Washington,US,mid,158000,242000,205000,USD,levels
+DevOps Engineer,Meta,Menlo Park,California,US,mid,178000,272000,230000,USD,levels
+DevOps Engineer,Salesforce,San Francisco,California,US,mid,155000,238000,200000,USD,levels
+DevOps Engineer,Adobe,San Jose,California,US,mid,148000,228000,192000,USD,levels
+DevOps Engineer,Uber,San Francisco,California,US,mid,160000,248000,208000,USD,levels
+DevOps Engineer,Oracle,Austin,Texas,US,mid,138000,215000,180000,USD,levels
+DevOps Engineer,Cisco,San Jose,California,US,mid,140000,218000,182000,USD,levels
+Site Reliability Engineer,Google,Mountain View,California,US,mid,185000,285000,240000,USD,levels
+Site Reliability Engineer,Meta,Menlo Park,California,US,mid,190000,292000,245000,USD,levels
+Site Reliability Engineer,Amazon,Seattle,Washington,US,mid,158000,248000,208000,USD,levels
+Site Reliability Engineer,Microsoft,Redmond,Washington,US,mid,165000,255000,215000,USD,levels
+Site Reliability Engineer,Netflix,Los Angeles,California,US,mid,225000,348000,290000,USD,levels
+Site Reliability Engineer,Stripe,San Francisco,California,US,mid,192000,295000,248000,USD,levels
+Site Reliability Engineer,Airbnb,San Francisco,California,US,mid,182000,280000,235000,USD,levels
+Site Reliability Engineer,LinkedIn,Sunnyvale,California,US,mid,170000,262000,220000,USD,levels
+Site Reliability Engineer,Uber,San Francisco,California,US,mid,168000,258000,218000,USD,levels
+Solutions Architect,Amazon,Seattle,Washington,US,mid,155000,245000,205000,USD,levels
+Solutions Architect,Google,Mountain View,California,US,mid,170000,265000,222000,USD,levels
+Solutions Architect,Microsoft,Redmond,Washington,US,mid,158000,248000,208000,USD,levels
+Solutions Architect,Salesforce,San Francisco,California,US,mid,155000,242000,202000,USD,levels
+Solutions Architect,Oracle,Austin,Texas,US,mid,142000,225000,188000,USD,levels
+Solutions Architect,Cisco,San Jose,California,US,mid,145000,228000,190000,USD,levels
+Solutions Architect,IBM,New York,New York,US,mid,135000,215000,178000,USD,levels
+Solutions Architect,Accenture,New York,New York,US,mid,130000,205000,170000,USD,levels
+Technical Program Manager,Google,Mountain View,California,US,mid,175000,272000,228000,USD,levels
+Technical Program Manager,Meta,Menlo Park,California,US,mid,180000,280000,235000,USD,levels
+Technical Program Manager,Amazon,Seattle,Washington,US,mid,155000,245000,205000,USD,levels
+Technical Program Manager,Apple,Cupertino,California,US,mid,168000,262000,220000,USD,levels
+Technical Program Manager,Microsoft,Redmond,Washington,US,mid,160000,252000,210000,USD,levels
+Technical Program Manager,Stripe,San Francisco,California,US,mid,185000,285000,240000,USD,levels
+Technical Program Manager,Uber,San Francisco,California,US,mid,165000,258000,215000,USD,levels
+Technical Program Manager,Salesforce,San Francisco,California,US,mid,152000,238000,198000,USD,levels
+Security Engineer,Google,Mountain View,California,US,mid,180000,278000,232000,USD,levels
+Security Engineer,Meta,Menlo Park,California,US,mid,185000,285000,240000,USD,levels
+Security Engineer,Amazon,Seattle,Washington,US,mid,155000,242000,202000,USD,levels
+Security Engineer,Microsoft,Redmond,Washington,US,mid,160000,248000,208000,USD,levels
+Security Engineer,Apple,Cupertino,California,US,mid,172000,265000,222000,USD,levels
+Security Engineer,Stripe,San Francisco,California,US,mid,188000,290000,242000,USD,levels
+Security Engineer,Coinbase,San Francisco,California,US,mid,178000,275000,230000,USD,levels
+Security Engineer,Goldman Sachs,New York,New York,US,mid,158000,248000,208000,USD,levels
+Security Engineer,Palantir,Palo Alto,California,US,mid,168000,260000,218000,USD,levels
+Mobile Developer,Google,Mountain View,California,US,mid,185000,282000,238000,USD,levels
+Mobile Developer,Meta,Menlo Park,California,US,mid,192000,295000,248000,USD,levels
+Mobile Developer,Amazon,Seattle,Washington,US,mid,162000,248000,210000,USD,levels
+Mobile Developer,Apple,Cupertino,California,US,mid,185000,280000,238000,USD,levels
+Mobile Developer,Microsoft,Redmond,Washington,US,mid,170000,260000,218000,USD,levels
+Mobile Developer,Uber,San Francisco,California,US,mid,175000,268000,225000,USD,levels
+Mobile Developer,Snap,Los Angeles,California,US,mid,168000,258000,218000,USD,levels
+Mobile Developer,Airbnb,San Francisco,California,US,mid,182000,278000,235000,USD,levels
+Mobile Developer,DoorDash,San Francisco,California,US,mid,172000,265000,222000,USD,levels
+Mobile Developer,Robinhood,Menlo Park,California,US,mid,185000,282000,238000,USD,levels
+Product Designer,Google,Mountain View,California,US,mid,162000,252000,212000,USD,levels
+Product Designer,Meta,Menlo Park,California,US,mid,168000,262000,220000,USD,levels
+Product Designer,Amazon,Seattle,Washington,US,mid,142000,225000,188000,USD,levels
+Product Designer,Apple,Cupertino,California,US,mid,155000,242000,202000,USD,levels
+Product Designer,Microsoft,Redmond,Washington,US,mid,148000,235000,195000,USD,levels
+Product Designer,Stripe,San Francisco,California,US,mid,172000,268000,225000,USD,levels
+Product Designer,Airbnb,San Francisco,California,US,mid,168000,262000,220000,USD,levels
+Product Designer,Netflix,Los Angeles,California,US,mid,190000,298000,248000,USD,levels
+Product Designer,Coinbase,San Francisco,California,US,mid,162000,252000,212000,USD,levels
+Product Designer,Snap,Los Angeles,California,US,mid,148000,232000,195000,USD,levels
+Data Analyst,Google,Mountain View,California,US,entry,95000,138000,118000,USD,levels
+Data Analyst,Meta,Menlo Park,California,US,entry,98000,142000,122000,USD,levels
+Data Analyst,Amazon,Seattle,Washington,US,entry,82000,122000,105000,USD,levels
+Data Analyst,Microsoft,Redmond,Washington,US,entry,85000,128000,108000,USD,levels
+Data Analyst,Apple,Cupertino,California,US,entry,88000,132000,112000,USD,levels
+Data Analyst,Salesforce,San Francisco,California,US,entry,82000,122000,105000,USD,levels
+Data Analyst,Uber,San Francisco,California,US,entry,88000,130000,110000,USD,levels
+Data Analyst,Goldman Sachs,New York,New York,US,entry,85000,128000,108000,USD,levels
+Data Analyst,JP Morgan,New York,New York,US,entry,80000,122000,102000,USD,levels
+Data Analyst,Capital One,McLean,Virginia,US,entry,78000,118000,100000,USD,levels
+Business Analyst,Goldman Sachs,New York,New York,US,entry,85000,125000,108000,USD,levels
+Business Analyst,JP Morgan,New York,New York,US,entry,82000,120000,102000,USD,levels
+Business Analyst,Morgan Stanley,New York,New York,US,entry,80000,118000,100000,USD,levels
+Business Analyst,Capital One,McLean,Virginia,US,entry,78000,115000,98000,USD,levels
+Business Analyst,Deloitte,New York,New York,US,entry,75000,110000,95000,USD,levels
+Business Analyst,Accenture,New York,New York,US,entry,72000,108000,92000,USD,levels
+Business Analyst,McKinsey,New York,New York,US,entry,90000,130000,112000,USD,levels
+Business Analyst,Amazon,Seattle,Washington,US,entry,80000,118000,100000,USD,levels
+Quality Assurance Engineer,Google,Mountain View,California,US,entry,100000,145000,125000,USD,levels
+Quality Assurance Engineer,Amazon,Seattle,Washington,US,entry,90000,132000,112000,USD,levels
+Quality Assurance Engineer,Microsoft,Redmond,Washington,US,entry,92000,135000,115000,USD,levels
+Quality Assurance Engineer,Apple,Cupertino,California,US,entry,95000,138000,118000,USD,levels
+Quality Assurance Engineer,Salesforce,San Francisco,California,US,entry,88000,130000,110000,USD,levels
+Quality Assurance Engineer,Adobe,San Jose,California,US,entry,85000,128000,108000,USD,levels
+Quality Assurance Engineer,Oracle,Austin,Texas,US,entry,80000,120000,102000,USD,levels
+Quality Assurance Engineer,Cisco,San Jose,California,US,entry,82000,122000,105000,USD,levels
+Consultant,McKinsey,New York,New York,US,entry,110000,180000,148000,USD,levels
+Consultant,BCG,New York,New York,US,entry,105000,175000,142000,USD,levels
+Consultant,McKinsey,San Francisco,California,US,entry,112000,182000,150000,USD,levels
+Consultant,BCG,San Francisco,California,US,entry,108000,178000,145000,USD,levels
+Consultant,McKinsey,Chicago,Illinois,US,entry,108000,178000,145000,USD,levels
+Consultant,BCG,Chicago,Illinois,US,entry,105000,172000,140000,USD,levels
+Consultant,McKinsey,Dallas,Texas,US,entry,108000,175000,144000,USD,levels
+Consultant,BCG,Dallas,Texas,US,entry,102000,170000,138000,USD,levels
+Consultant,Deloitte,New York,New York,US,entry,88000,140000,115000,USD,levels
+Consultant,Accenture,New York,New York,US,entry,80000,128000,105000,USD,levels
+Consultant,Deloitte,Chicago,Illinois,US,entry,85000,135000,112000,USD,levels
+Consultant,Accenture,Chicago,Illinois,US,entry,78000,125000,102000,USD,levels
+Senior Consultant,McKinsey,New York,New York,US,mid,180000,260000,225000,USD,levels
+Senior Consultant,BCG,New York,New York,US,mid,175000,252000,218000,USD,levels
+Senior Consultant,McKinsey,San Francisco,California,US,mid,185000,265000,230000,USD,levels
+Senior Consultant,BCG,San Francisco,California,US,mid,178000,258000,222000,USD,levels
+Senior Consultant,Deloitte,New York,New York,US,mid,145000,215000,182000,USD,levels
+Senior Consultant,Accenture,New York,New York,US,mid,138000,205000,175000,USD,levels
+Senior Consultant,Deloitte,Chicago,Illinois,US,mid,140000,208000,178000,USD,levels
+Senior Consultant,Accenture,Chicago,Illinois,US,mid,132000,198000,168000,USD,levels
+Financial Analyst,Goldman Sachs,New York,New York,US,entry,95000,140000,120000,USD,levels
+Financial Analyst,JP Morgan,New York,New York,US,entry,90000,135000,115000,USD,levels
+Financial Analyst,Morgan Stanley,New York,New York,US,entry,88000,132000,112000,USD,levels
+Financial Analyst,Capital One,McLean,Virginia,US,entry,82000,122000,105000,USD,levels
+Financial Analyst,Goldman Sachs,San Francisco,California,US,entry,98000,145000,124000,USD,levels
+Financial Analyst,JP Morgan,San Francisco,California,US,entry,92000,138000,118000,USD,levels
+Financial Analyst,Deloitte,New York,New York,US,entry,78000,118000,100000,USD,levels
+Financial Analyst,Goldman Sachs,Chicago,Illinois,US,entry,90000,135000,115000,USD,levels
+Investment Banker,Goldman Sachs,New York,New York,US,entry,130000,200000,170000,USD,levels
+Investment Banker,JP Morgan,New York,New York,US,entry,125000,195000,165000,USD,levels
+Investment Banker,Morgan Stanley,New York,New York,US,entry,122000,190000,160000,USD,levels
+Investment Banker,Goldman Sachs,San Francisco,California,US,entry,132000,205000,175000,USD,levels
+Investment Banker,JP Morgan,San Francisco,California,US,entry,128000,198000,168000,USD,levels
+Investment Banker,Morgan Stanley,San Francisco,California,US,entry,125000,195000,165000,USD,levels
+Quantitative Analyst,Jane Street,New York,New York,US,mid,250000,450000,360000,USD,levels
+Quantitative Analyst,Goldman Sachs,New York,New York,US,mid,220000,380000,305000,USD,levels
+Quantitative Analyst,JP Morgan,New York,New York,US,mid,200000,350000,280000,USD,levels
+Quantitative Analyst,Morgan Stanley,New York,New York,US,mid,195000,340000,272000,USD,levels
+Quantitative Analyst,Jane Street,New York,New York,US,senior,350000,600000,480000,USD,levels
+Quantitative Analyst,Goldman Sachs,New York,New York,US,senior,300000,500000,405000,USD,levels
+Quantitative Analyst,Coinbase,San Francisco,California,US,mid,210000,360000,290000,USD,levels
+Quantitative Analyst,Capital One,McLean,Virginia,US,mid,180000,310000,250000,USD,levels
+Marketing Manager,Google,Mountain View,California,US,mid,135000,210000,178000,USD,levels
+Marketing Manager,Meta,Menlo Park,California,US,mid,140000,218000,182000,USD,levels
+Marketing Manager,Amazon,Seattle,Washington,US,mid,120000,188000,158000,USD,levels
+Marketing Manager,Apple,Cupertino,California,US,mid,128000,200000,168000,USD,levels
+Marketing Manager,Microsoft,Redmond,Washington,US,mid,122000,192000,160000,USD,levels
+Marketing Manager,Salesforce,San Francisco,California,US,mid,118000,185000,155000,USD,levels
+Marketing Manager,Uber,San Francisco,California,US,mid,125000,195000,162000,USD,levels
+Marketing Manager,Airbnb,San Francisco,California,US,mid,130000,205000,170000,USD,levels
+Account Executive,Salesforce,San Francisco,California,US,mid,110000,175000,145000,USD,levels
+Account Executive,Google,Mountain View,California,US,mid,120000,185000,155000,USD,levels
+Account Executive,Microsoft,Redmond,Washington,US,mid,105000,168000,140000,USD,levels
+Account Executive,Amazon,Seattle,Washington,US,mid,100000,162000,135000,USD,levels
+Account Executive,Oracle,Austin,Texas,US,mid,95000,155000,128000,USD,levels
+Account Executive,Salesforce,New York,New York,US,mid,115000,180000,150000,USD,levels
+Account Executive,Adobe,San Jose,California,US,mid,100000,162000,135000,USD,levels
+Account Executive,Snowflake,San Mateo,California,US,mid,115000,178000,150000,USD,levels
+Software Engineer,,San Francisco,California,US,entry,125000,170000,150000,USD,market
+Software Engineer,,New York,New York,US,entry,120000,165000,145000,USD,market
+Software Engineer,,Seattle,Washington,US,entry,118000,162000,142000,USD,market
+Software Engineer,,Austin,Texas,US,entry,105000,148000,128000,USD,market
+Software Engineer,,Los Angeles,California,US,entry,110000,155000,135000,USD,market
+Software Engineer,,Chicago,Illinois,US,entry,100000,142000,122000,USD,market
+Software Engineer,,Boston,Massachusetts,US,entry,112000,155000,135000,USD,market
+Software Engineer,,Denver,Colorado,US,entry,105000,148000,128000,USD,market
+Software Engineer,,Dallas,Texas,US,entry,98000,140000,120000,USD,market
+Software Engineer,,Atlanta,Georgia,US,entry,95000,138000,118000,USD,market
+Software Engineer,,Washington,DC,US,entry,108000,152000,132000,USD,market
+Software Engineer,,San Jose,California,US,entry,122000,168000,148000,USD,market
+Software Engineer,,United States,,US,entry,100000,152000,128000,USD,market
+Senior Software Engineer,,San Francisco,California,US,mid,175000,268000,225000,USD,market
+Senior Software Engineer,,New York,New York,US,mid,170000,262000,220000,USD,market
+Senior Software Engineer,,Seattle,Washington,US,mid,168000,258000,218000,USD,market
+Senior Software Engineer,,Austin,Texas,US,mid,148000,228000,192000,USD,market
+Senior Software Engineer,,Los Angeles,California,US,mid,158000,245000,205000,USD,market
+Senior Software Engineer,,Chicago,Illinois,US,mid,145000,225000,188000,USD,market
+Senior Software Engineer,,Boston,Massachusetts,US,mid,160000,248000,208000,USD,market
+Senior Software Engineer,,Denver,Colorado,US,mid,148000,230000,192000,USD,market
+Senior Software Engineer,,Dallas,Texas,US,mid,140000,218000,182000,USD,market
+Senior Software Engineer,,Atlanta,Georgia,US,mid,138000,215000,180000,USD,market
+Senior Software Engineer,,Washington,DC,US,mid,155000,242000,202000,USD,market
+Senior Software Engineer,,United States,,US,mid,145000,238000,195000,USD,market
+Staff Software Engineer,,San Francisco,California,US,senior,255000,420000,342000,USD,market
+Staff Software Engineer,,New York,New York,US,senior,248000,410000,335000,USD,market
+Staff Software Engineer,,Seattle,Washington,US,senior,242000,398000,325000,USD,market
+Staff Software Engineer,,United States,,US,senior,230000,385000,312000,USD,market
+Frontend Engineer,,San Francisco,California,US,mid,158000,248000,208000,USD,market
+Frontend Engineer,,New York,New York,US,mid,155000,242000,202000,USD,market
+Frontend Engineer,,Seattle,Washington,US,mid,150000,235000,198000,USD,market
+Frontend Engineer,,Austin,Texas,US,mid,132000,210000,175000,USD,market
+Frontend Engineer,,United States,,US,mid,130000,218000,178000,USD,market
+Backend Engineer,,San Francisco,California,US,mid,162000,255000,212000,USD,market
+Backend Engineer,,New York,New York,US,mid,158000,248000,208000,USD,market
+Backend Engineer,,Seattle,Washington,US,mid,155000,242000,202000,USD,market
+Backend Engineer,,Austin,Texas,US,mid,138000,218000,182000,USD,market
+Backend Engineer,,United States,,US,mid,135000,225000,185000,USD,market
+Full Stack Engineer,,San Francisco,California,US,mid,158000,250000,208000,USD,market
+Full Stack Engineer,,New York,New York,US,mid,155000,245000,205000,USD,market
+Full Stack Engineer,,Seattle,Washington,US,mid,150000,238000,198000,USD,market
+Full Stack Engineer,,Austin,Texas,US,mid,132000,212000,176000,USD,market
+Full Stack Engineer,,United States,,US,mid,130000,220000,180000,USD,market
+Data Scientist,,San Francisco,California,US,mid,148000,242000,200000,USD,market
+Data Scientist,,New York,New York,US,mid,142000,235000,192000,USD,market
+Data Scientist,,Seattle,Washington,US,mid,138000,228000,188000,USD,market
+Data Scientist,,Austin,Texas,US,mid,125000,208000,170000,USD,market
+Data Scientist,,Boston,Massachusetts,US,mid,140000,232000,190000,USD,market
+Data Scientist,,United States,,US,mid,125000,222000,178000,USD,market
+Data Engineer,,San Francisco,California,US,mid,142000,232000,192000,USD,market
+Data Engineer,,New York,New York,US,mid,138000,225000,186000,USD,market
+Data Engineer,,Seattle,Washington,US,mid,135000,220000,182000,USD,market
+Data Engineer,,Austin,Texas,US,mid,122000,200000,165000,USD,market
+Data Engineer,,United States,,US,mid,118000,210000,168000,USD,market
+Machine Learning Engineer,,San Francisco,California,US,mid,168000,278000,228000,USD,market
+Machine Learning Engineer,,New York,New York,US,mid,162000,270000,220000,USD,market
+Machine Learning Engineer,,Seattle,Washington,US,mid,158000,262000,215000,USD,market
+Machine Learning Engineer,,Austin,Texas,US,mid,142000,238000,195000,USD,market
+Machine Learning Engineer,,Boston,Massachusetts,US,mid,155000,258000,210000,USD,market
+Machine Learning Engineer,,United States,,US,mid,145000,252000,202000,USD,market
+AI Engineer,,San Francisco,California,US,mid,172000,288000,235000,USD,market
+AI Engineer,,New York,New York,US,mid,165000,278000,226000,USD,market
+AI Engineer,,Seattle,Washington,US,mid,162000,272000,222000,USD,market
+AI Engineer,,Austin,Texas,US,mid,148000,248000,202000,USD,market
+AI Engineer,,United States,,US,mid,148000,260000,208000,USD,market
+Product Manager,,San Francisco,California,US,mid,152000,248000,205000,USD,market
+Product Manager,,New York,New York,US,mid,148000,242000,200000,USD,market
+Product Manager,,Seattle,Washington,US,mid,145000,235000,195000,USD,market
+Product Manager,,Austin,Texas,US,mid,128000,210000,172000,USD,market
+Product Manager,,United States,,US,mid,125000,218000,175000,USD,market
+Senior Product Manager,,San Francisco,California,US,senior,215000,330000,278000,USD,market
+Senior Product Manager,,New York,New York,US,senior,210000,322000,272000,USD,market
+Senior Product Manager,,Seattle,Washington,US,senior,205000,315000,265000,USD,market
+Senior Product Manager,,United States,,US,senior,195000,305000,255000,USD,market
+Engineering Manager,,San Francisco,California,US,senior,238000,378000,312000,USD,market
+Engineering Manager,,New York,New York,US,senior,232000,368000,305000,USD,market
+Engineering Manager,,Seattle,Washington,US,senior,228000,362000,300000,USD,market
+Engineering Manager,,Austin,Texas,US,senior,205000,328000,272000,USD,market
+Engineering Manager,,United States,,US,senior,200000,340000,275000,USD,market
+Director of Engineering,,San Francisco,California,US,senior,295000,458000,382000,USD,market
+Director of Engineering,,New York,New York,US,senior,288000,448000,375000,USD,market
+Director of Engineering,,Seattle,Washington,US,senior,282000,438000,365000,USD,market
+Director of Engineering,,United States,,US,senior,268000,425000,352000,USD,market
+DevOps Engineer,,San Francisco,California,US,mid,148000,238000,198000,USD,market
+DevOps Engineer,,New York,New York,US,mid,142000,230000,190000,USD,market
+DevOps Engineer,,Seattle,Washington,US,mid,140000,225000,188000,USD,market
+DevOps Engineer,,Austin,Texas,US,mid,125000,205000,168000,USD,market
+DevOps Engineer,,United States,,US,mid,122000,210000,170000,USD,market
+Site Reliability Engineer,,San Francisco,California,US,mid,155000,252000,208000,USD,market
+Site Reliability Engineer,,New York,New York,US,mid,150000,245000,202000,USD,market
+Site Reliability Engineer,,Seattle,Washington,US,mid,148000,240000,198000,USD,market
+Site Reliability Engineer,,United States,,US,mid,140000,235000,192000,USD,market
+Solutions Architect,,San Francisco,California,US,mid,148000,238000,198000,USD,market
+Solutions Architect,,New York,New York,US,mid,142000,232000,192000,USD,market
+Solutions Architect,,Seattle,Washington,US,mid,140000,228000,188000,USD,market
+Solutions Architect,,Austin,Texas,US,mid,128000,208000,172000,USD,market
+Solutions Architect,,United States,,US,mid,125000,218000,175000,USD,market
+Technical Program Manager,,San Francisco,California,US,mid,152000,245000,202000,USD,market
+Technical Program Manager,,New York,New York,US,mid,148000,238000,198000,USD,market
+Technical Program Manager,,Seattle,Washington,US,mid,145000,232000,192000,USD,market
+Technical Program Manager,,United States,,US,mid,135000,225000,185000,USD,market
+Security Engineer,,San Francisco,California,US,mid,152000,248000,205000,USD,market
+Security Engineer,,New York,New York,US,mid,148000,242000,200000,USD,market
+Security Engineer,,Seattle,Washington,US,mid,145000,235000,195000,USD,market
+Security Engineer,,Washington,DC,US,mid,148000,240000,198000,USD,market
+Security Engineer,,United States,,US,mid,138000,232000,190000,USD,market
+Mobile Developer,,San Francisco,California,US,mid,148000,242000,200000,USD,market
+Mobile Developer,,New York,New York,US,mid,142000,235000,192000,USD,market
+Mobile Developer,,Seattle,Washington,US,mid,138000,228000,188000,USD,market
+Mobile Developer,,United States,,US,mid,128000,220000,178000,USD,market
+Product Designer,,San Francisco,California,US,mid,138000,228000,188000,USD,market
+Product Designer,,New York,New York,US,mid,132000,222000,182000,USD,market
+Product Designer,,Seattle,Washington,US,mid,128000,215000,176000,USD,market
+Product Designer,,United States,,US,mid,118000,208000,168000,USD,market
+Data Analyst,,San Francisco,California,US,entry,80000,122000,102000,USD,market
+Data Analyst,,New York,New York,US,entry,78000,118000,100000,USD,market
+Data Analyst,,Seattle,Washington,US,entry,75000,115000,98000,USD,market
+Data Analyst,,Austin,Texas,US,entry,68000,105000,88000,USD,market
+Data Analyst,,Chicago,Illinois,US,entry,68000,105000,88000,USD,market
+Data Analyst,,United States,,US,entry,65000,108000,88000,USD,market
+Business Analyst,,San Francisco,California,US,entry,78000,118000,100000,USD,market
+Business Analyst,,New York,New York,US,entry,75000,115000,98000,USD,market
+Business Analyst,,Chicago,Illinois,US,entry,68000,105000,88000,USD,market
+Business Analyst,,United States,,US,entry,62000,102000,84000,USD,market
+Quality Assurance Engineer,,San Francisco,California,US,entry,85000,130000,110000,USD,market
+Quality Assurance Engineer,,New York,New York,US,entry,82000,125000,105000,USD,market
+Quality Assurance Engineer,,Seattle,Washington,US,entry,80000,122000,102000,USD,market
+Quality Assurance Engineer,,Austin,Texas,US,entry,72000,112000,95000,USD,market
+Quality Assurance Engineer,,United States,,US,entry,70000,115000,95000,USD,market
+Consultant,,New York,New York,US,entry,82000,135000,110000,USD,market
+Consultant,,San Francisco,California,US,entry,85000,138000,115000,USD,market
+Consultant,,Chicago,Illinois,US,entry,78000,128000,105000,USD,market
+Consultant,,Dallas,Texas,US,entry,75000,125000,102000,USD,market
+Consultant,,United States,,US,entry,72000,128000,102000,USD,market
+Senior Consultant,,New York,New York,US,mid,142000,225000,188000,USD,market
+Senior Consultant,,San Francisco,California,US,mid,148000,232000,195000,USD,market
+Senior Consultant,,Chicago,Illinois,US,mid,135000,215000,178000,USD,market
+Senior Consultant,,United States,,US,mid,130000,218000,178000,USD,market
+Financial Analyst,,New York,New York,US,entry,78000,122000,102000,USD,market
+Financial Analyst,,San Francisco,California,US,entry,80000,125000,105000,USD,market
+Financial Analyst,,Chicago,Illinois,US,entry,72000,112000,95000,USD,market
+Financial Analyst,,United States,,US,entry,68000,115000,95000,USD,market
+Investment Banker,,New York,New York,US,entry,115000,185000,155000,USD,market
+Investment Banker,,San Francisco,California,US,entry,118000,190000,158000,USD,market
+Investment Banker,,United States,,US,entry,110000,180000,150000,USD,market
+Quantitative Analyst,,New York,New York,US,mid,195000,365000,285000,USD,market
+Quantitative Analyst,,San Francisco,California,US,mid,190000,355000,278000,USD,market
+Quantitative Analyst,,Chicago,Illinois,US,mid,180000,338000,265000,USD,market
+Quantitative Analyst,,United States,,US,mid,175000,345000,265000,USD,market
+Marketing Manager,,San Francisco,California,US,mid,115000,185000,152000,USD,market
+Marketing Manager,,New York,New York,US,mid,112000,180000,148000,USD,market
+Marketing Manager,,Austin,Texas,US,mid,98000,158000,130000,USD,market
+Marketing Manager,,United States,,US,mid,95000,165000,132000,USD,market
+Account Executive,,San Francisco,California,US,mid,100000,165000,135000,USD,market
+Account Executive,,New York,New York,US,mid,98000,162000,132000,USD,market
+Account Executive,,Austin,Texas,US,mid,85000,142000,115000,USD,market
+Account Executive,,United States,,US,mid,82000,148000,118000,USD,market
+Software Engineer,,Mountain View,California,US,mid,162000,255000,212000,USD,market
+Software Engineer,,Menlo Park,California,US,mid,165000,258000,215000,USD,market
+Software Engineer,,Sunnyvale,California,US,mid,160000,252000,210000,USD,market
+Software Engineer,,Cupertino,California,US,mid,162000,255000,212000,USD,market
+Software Engineer,,Redmond,Washington,US,mid,155000,245000,205000,USD,market
+Software Engineer,,Palo Alto,California,US,mid,165000,258000,215000,USD,market
+Software Engineer,,San Francisco,California,US,mid,165000,260000,218000,USD,market
+Software Engineer,,New York,New York,US,mid,160000,255000,212000,USD,market
+Software Engineer,,Seattle,Washington,US,mid,155000,248000,208000,USD,market
+Software Engineer,,United States,,US,mid,138000,232000,190000,USD,market
+Software Engineer,Morgan Stanley,New York,New York,US,entry,112000,158000,138000,USD,levels
+Software Engineer,Jane Street,New York,New York,US,entry,150000,200000,178000,USD,levels
+Senior Software Engineer,Morgan Stanley,New York,New York,US,mid,168000,252000,215000,USD,levels
+Senior Software Engineer,Jane Street,New York,New York,US,mid,250000,400000,330000,USD,levels
+Senior Software Engineer,SpaceX,Los Angeles,California,US,mid,158000,240000,202000,USD,levels
+Senior Software Engineer,Rivian,Irvine,California,US,mid,155000,235000,198000,USD,levels
+Senior Software Engineer,IBM,New York,New York,US,mid,145000,218000,185000,USD,levels
+Staff Software Engineer,Tesla,Austin,Texas,US,senior,245000,380000,318000,USD,levels
+Staff Software Engineer,JP Morgan,New York,New York,US,senior,248000,385000,322000,USD,levels
+Staff Software Engineer,Capital One,McLean,Virginia,US,senior,235000,365000,305000,USD,levels
+Data Scientist,DoorDash,San Francisco,California,US,mid,170000,265000,222000,USD,levels
+Data Scientist,Databricks,San Francisco,California,US,mid,185000,290000,242000,USD,levels
+Data Scientist,LinkedIn,Sunnyvale,California,US,mid,162000,252000,210000,USD,levels
+Data Scientist,Snap,Los Angeles,California,US,mid,155000,242000,202000,USD,levels
+Machine Learning Engineer,Airbnb,San Francisco,California,US,mid,195000,305000,255000,USD,levels
+Machine Learning Engineer,DoorDash,San Francisco,California,US,mid,188000,295000,248000,USD,levels
+Machine Learning Engineer,Palantir,Palo Alto,California,US,mid,192000,302000,252000,USD,levels
+Machine Learning Engineer,LinkedIn,Sunnyvale,California,US,mid,182000,285000,238000,USD,levels
+Machine Learning Engineer,Uber,San Francisco,California,US,mid,185000,292000,242000,USD,levels
+AI Engineer,Apple,Cupertino,California,US,mid,200000,318000,262000,USD,levels
+AI Engineer,Netflix,Los Angeles,California,US,mid,245000,375000,315000,USD,levels
+AI Engineer,Tesla,Austin,Texas,US,mid,175000,278000,230000,USD,levels
+AI Engineer,Uber,San Francisco,California,US,mid,190000,302000,250000,USD,levels
+Product Manager,Netflix,Los Angeles,California,US,mid,200000,312000,260000,USD,levels
+Product Manager,LinkedIn,Sunnyvale,California,US,mid,165000,258000,215000,USD,levels
+Product Manager,Adobe,San Jose,California,US,mid,148000,232000,195000,USD,levels
+Product Manager,Palantir,Palo Alto,California,US,mid,165000,258000,215000,USD,levels
+Product Manager,Robinhood,Menlo Park,California,US,mid,172000,268000,225000,USD,levels
+Senior Product Manager,Coinbase,San Francisco,California,US,senior,268000,395000,335000,USD,levels
+Senior Product Manager,DoorDash,San Francisco,California,US,senior,255000,378000,320000,USD,levels
+Senior Product Manager,LinkedIn,Sunnyvale,California,US,senior,240000,358000,302000,USD,levels
+Senior Product Manager,Databricks,San Francisco,California,US,senior,278000,410000,348000,USD,levels
+Engineering Manager,LinkedIn,Sunnyvale,California,US,senior,262000,398000,335000,USD,levels
+Engineering Manager,Palantir,Palo Alto,California,US,senior,258000,392000,330000,USD,levels
+Engineering Manager,DoorDash,San Francisco,California,US,senior,268000,405000,342000,USD,levels
+Engineering Manager,Tesla,Austin,Texas,US,senior,228000,348000,292000,USD,levels
+Engineering Manager,Goldman Sachs,New York,New York,US,senior,245000,375000,315000,USD,levels
+Data Engineer,Adobe,San Jose,California,US,mid,148000,228000,192000,USD,levels
+Data Engineer,Salesforce,San Francisco,California,US,mid,155000,240000,202000,USD,levels
+Data Engineer,LinkedIn,Sunnyvale,California,US,mid,162000,252000,210000,USD,levels
+Data Engineer,Palantir,Palo Alto,California,US,mid,168000,258000,218000,USD,levels
+Data Engineer,Goldman Sachs,New York,New York,US,mid,152000,238000,200000,USD,levels
+Data Engineer,Capital One,McLean,Virginia,US,mid,140000,220000,185000,USD,levels
+Security Engineer,Netflix,Los Angeles,California,US,mid,218000,338000,282000,USD,levels
+Security Engineer,Uber,San Francisco,California,US,mid,168000,258000,218000,USD,levels
+Security Engineer,LinkedIn,Sunnyvale,California,US,mid,165000,255000,215000,USD,levels
+DevOps Engineer,PayPal,San Jose,California,US,mid,142000,222000,185000,USD,levels
+DevOps Engineer,LinkedIn,Sunnyvale,California,US,mid,155000,242000,202000,USD,levels
+DevOps Engineer,Tesla,Austin,Texas,US,mid,132000,208000,175000,USD,levels
+Mobile Developer,LinkedIn,Sunnyvale,California,US,mid,178000,272000,228000,USD,levels
+Mobile Developer,Pinterest,San Francisco,California,US,mid,172000,265000,222000,USD,levels
+Mobile Developer,Block (Square),San Francisco,California,US,mid,178000,272000,228000,USD,levels
+Mobile Developer,Tesla,Austin,Texas,US,mid,148000,232000,195000,USD,levels
+Product Designer,Uber,San Francisco,California,US,mid,158000,248000,208000,USD,levels
+Product Designer,DoorDash,San Francisco,California,US,mid,155000,242000,202000,USD,levels
+Product Designer,LinkedIn,Sunnyvale,California,US,mid,152000,238000,198000,USD,levels
+Consultant,McKinsey,Boston,Massachusetts,US,entry,110000,178000,148000,USD,levels
+Consultant,BCG,Boston,Massachusetts,US,entry,105000,172000,142000,USD,levels
+Financial Analyst,Morgan Stanley,San Francisco,California,US,entry,90000,135000,115000,USD,levels
+Financial Analyst,JP Morgan,Chicago,Illinois,US,entry,85000,128000,108000,USD,levels

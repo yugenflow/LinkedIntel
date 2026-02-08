@@ -25,14 +25,14 @@
 - **Tiered cache TTL**: AI salary estimates cached 7 days (market rates are stable), DB results cached 24 hours
 - **Better error propagation**: API error bodies are parsed and forwarded to the UI instead of generic "API error: 500"
 
-### 1.3 Expand Salary Database
-- **Problem**: Current DB is India-only (679 entries, ~30-40 companies). Users searching jobs in US/UK/EU fall through entirely to Gemini AI for every lookup — slow, expensive, and inaccurate.
-- **Data sources**: Build scraper/pipeline for US, UK, EU, Singapore, UAE salary data from public sources (Levels.fyi for US tech, public compensation surveys, aggregated Glassdoor-style data)
-- **Company coverage**: Target top 100-150 employers per region (big tech, consulting, banking, major employers on LinkedIn)
-- **Title coverage**: Expand `title-aliases.json` from 38 mappings to 150+ (add Product Manager, DevOps Engineer, Data Engineer, Business Analyst, UX Designer and their variants)
-- **Pipeline update**: Modify `build-salary-db.cjs` to ingest multiple regional CSVs (`us-salaries.csv`, `uk-salaries.csv`, etc.) — the architecture already supports this
-- **Region-aware matching**: Already works — location resolver maps 12 countries, matcher filters by country/city. Just needs data.
-- **Gate**: Salary visualization features (1.4) only ship once DB has solid multi-region coverage
+### 1.3 Expand Salary Database ✅ DONE
+- Expanded from 679 India-only entries to **2061 entries across 12 countries**
+- **7 regional CSVs**: India (938), US (606), UK (140), EU/Germany (78), Canada (86), APAC/SG+AU (108), UAE (56)
+- **210 unique companies** covered (up from ~80) including FAANG, fintech, consulting, banking
+- **Title aliases** expanded from 38 to 97 canonical titles with ~400 alias mappings
+- **Build pipeline** updated: multi-CSV glob, validation, stats reporting, auto-generated fallback JSON (212 entries)
+- **Location resolver** expanded: 13 countries, new cities (Waterloo, Brisbane, Perth, Adelaide, Stockholm), Canadian/Australian state mappings
+- **Gate cleared**: 1.4 Salary Visualization can now proceed
 
 ### 1.4 Salary Intel Enhancements (requires 1.3 complete)
 - **Salary range visualization**: Mini bar/range chart in popup showing where a salary falls within the range
@@ -126,8 +126,8 @@
 |------|--------|-------|
 | 1.1 Storage Quota Management | ✅ Done | LRU eviction, startup sweep, size caps |
 | 1.2 API Resilience | ✅ Done | Backoff, dedup, cooldown UI, tiered TTL |
-| 1.3 Salary DB Expansion | ⬜ Next | India-only → multi-region |
-| 1.4 Salary Visualization | ⬜ Blocked | Needs 1.3 |
+| 1.3 Salary DB Expansion | ✅ Done | 2061 entries, 12 countries, 210 companies |
+| 1.4 Salary Visualization | ⬜ Next | 1.3 complete, ready to build |
 | 1.5 Reality Check Enhancements | ⬜ Planned | |
 | 1.6 Smart Connect Enhancements | ⬜ Planned | |
 | 2.1 Job Fit Radar | ⬜ Planned | High-impact feature |
@@ -141,4 +141,4 @@
 
 ---
 
-*Last updated: 2026-02-07*
+*Last updated: 2026-02-08*

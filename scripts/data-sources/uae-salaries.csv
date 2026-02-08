@@ -1,0 +1,57 @@
+title,company,city,state,country,experienceLevel,salaryMin,salaryMax,salaryMedian,currency,source
+Software Engineer,Careem,Dubai,,AE,entry,144000,192000,168000,AED,levels
+Software Engineer,Noon,Dubai,,AE,entry,132000,180000,156000,AED,levels
+Software Engineer,Amazon UAE,Dubai,,AE,mid,228000,300000,264000,AED,levels
+Software Engineer,Google UAE,Dubai,,AE,mid,252000,312000,276000,AED,levels
+Software Engineer,Microsoft UAE,Dubai,,AE,mid,240000,300000,270000,AED,levels
+Software Engineer,Talabat,Dubai,,AE,entry,132000,174000,156000,AED,levels
+Software Engineer,Emirates Group,Dubai,,AE,entry,120000,168000,144000,AED,levels
+Software Engineer,Etisalat,Dubai,,AE,entry,126000,174000,150000,AED,levels
+Senior Software Engineer,Careem,Dubai,,AE,mid,276000,396000,336000,AED,levels
+Senior Software Engineer,Noon,Dubai,,AE,mid,264000,384000,324000,AED,levels
+Senior Software Engineer,Amazon UAE,Dubai,,AE,mid,312000,420000,372000,AED,levels
+Senior Software Engineer,Google UAE,Dubai,,AE,mid,336000,432000,384000,AED,levels
+Senior Software Engineer,Microsoft UAE,Dubai,,AE,mid,324000,420000,378000,AED,levels
+Senior Software Engineer,Mastercard Dubai,Dubai,,AE,mid,300000,408000,354000,AED,levels
+Staff Software Engineer,Google UAE,Dubai,,AE,senior,480000,600000,540000,AED,levels
+Staff Software Engineer,Amazon UAE,Dubai,,AE,senior,456000,576000,516000,AED,levels
+Staff Software Engineer,Microsoft UAE,Dubai,,AE,senior,444000,564000,504000,AED,levels
+Data Scientist,Careem,Dubai,,AE,mid,204000,300000,252000,AED,levels
+Data Scientist,Noon,Dubai,,AE,mid,192000,288000,240000,AED,levels
+Product Manager,Amazon UAE,Dubai,,AE,mid,252000,348000,300000,AED,levels
+Product Manager,Mastercard Dubai,Dubai,,AE,mid,240000,336000,288000,AED,levels
+Engineering Manager,Google UAE,Dubai,,AE,senior,396000,504000,450000,AED,levels
+Engineering Manager,Amazon UAE,Dubai,,AE,senior,372000,480000,432000,AED,levels
+DevOps Engineer,Etisalat,Abu Dhabi,,AE,mid,192000,276000,234000,AED,levels
+Machine Learning Engineer,Dubizzle,Dubai,,AE,mid,228000,348000,288000,AED,levels
+Software Engineer,,Dubai,,AE,entry,144000,192000,168000,AED,market
+Software Engineer,,Dubai,,AE,mid,204000,300000,252000,AED,market
+Software Engineer,,Abu Dhabi,,AE,entry,132000,180000,156000,AED,market
+Software Engineer,,Abu Dhabi,,AE,mid,192000,288000,240000,AED,market
+Senior Software Engineer,,Dubai,,AE,mid,276000,420000,348000,AED,market
+Senior Software Engineer,,Abu Dhabi,,AE,mid,264000,396000,330000,AED,market
+Staff Software Engineer,,Dubai,,AE,senior,396000,600000,498000,AED,market
+Staff Software Engineer,,United Arab Emirates,,AE,senior,372000,576000,474000,AED,market
+Data Scientist,,Dubai,,AE,mid,204000,324000,264000,AED,market
+Data Scientist,,Abu Dhabi,,AE,mid,192000,300000,246000,AED,market
+Data Engineer,,Dubai,,AE,mid,204000,300000,252000,AED,market
+Data Engineer,,Abu Dhabi,,AE,mid,192000,288000,240000,AED,market
+Machine Learning Engineer,,Dubai,,AE,mid,240000,384000,312000,AED,market
+Machine Learning Engineer,,United Arab Emirates,,AE,mid,228000,360000,294000,AED,market
+Product Manager,,Dubai,,AE,mid,228000,348000,288000,AED,market
+Product Manager,,Abu Dhabi,,AE,mid,216000,336000,276000,AED,market
+Engineering Manager,,Dubai,,AE,senior,336000,504000,420000,AED,market
+Engineering Manager,,United Arab Emirates,,AE,senior,312000,480000,396000,AED,market
+DevOps Engineer,,Dubai,,AE,mid,204000,300000,252000,AED,market
+DevOps Engineer,,Abu Dhabi,,AE,mid,192000,288000,240000,AED,market
+Data Analyst,,Dubai,,AE,entry,108000,168000,138000,AED,market
+Data Analyst,,Abu Dhabi,,AE,entry,96000,156000,126000,AED,market
+Business Analyst,,Dubai,,AE,entry,120000,168000,144000,AED,market
+Business Analyst,,United Arab Emirates,,AE,entry,100000,160000,132000,AED,market
+Financial Analyst,,Dubai,,AE,entry,132000,204000,168000,AED,market
+Frontend Engineer,,Dubai,,AE,mid,192000,288000,240000,AED,market
+Backend Engineer,,Dubai,,AE,mid,204000,300000,252000,AED,market
+Marketing Manager,,Dubai,,AE,mid,192000,300000,246000,AED,market
+Marketing Manager,,Abu Dhabi,,AE,mid,180000,288000,234000,AED,market
+Operations Manager,,Dubai,,AE,mid,204000,324000,264000,AED,market
+Operations Manager,,United Arab Emirates,,AE,mid,192000,300000,246000,AED,market

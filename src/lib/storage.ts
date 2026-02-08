@@ -13,6 +13,9 @@ const MATCH_CACHE_MAX = 100;
 const SALARY_CACHE_MAX = 500;
 const CACHE_MAX_AGE = 7 * 24 * 60 * 60 * 1000; // 7 days
 
+// Bump this when salary DB changes to invalidate stale cached results
+const SALARY_DB_VERSION = 2;
+
 export async function getStorage<K extends keyof StorageData>(
   keys: K[]
 ): Promise<Pick<StorageData, K>> {
@@ -72,12 +75,24 @@ export function enforceSalaryCacheLimit(
 
 /**
  * Sweep both caches: remove entries older than 7 days and enforce size limits.
+ * Also invalidates the entire salary cache when the DB version changes.
  * Call on service worker startup.
  */
 export async function sweepCaches(): Promise<void> {
   const { matchCache, salaryCache } = await getStorage(['matchCache', 'salaryCache']);
   const now = Date.now();
   let changed = false;
+
+  // Check DB version — if it changed, clear entire salary cache
+  const stored = await chrome.storage.local.get('salaryDbVersion');
+  if (stored.salaryDbVersion !== SALARY_DB_VERSION) {
+    console.log(`[LinkedIntel] Salary DB version changed (${stored.salaryDbVersion} → ${SALARY_DB_VERSION}), clearing salary cache`);
+    await chrome.storage.local.set({ salaryDbVersion: SALARY_DB_VERSION, salaryCache: {} });
+    // Still need to sweep match cache below
+    const trimmedMatch = enforceMatchCacheLimit(matchCache);
+    await setStorage({ matchCache: trimmedMatch });
+    return;
+  }
 
   // Purge expired match entries
   for (const key of Object.keys(matchCache)) {

@@ -1,0 +1,87 @@
+title,company,city,state,country,experienceLevel,salaryMin,salaryMax,salaryMedian,currency,source
+Software Engineer,Shopify,Ottawa,Ontario,CA,entry,75000,95000,85000,CAD,levels
+Software Engineer,Shopify,Toronto,Ontario,CA,mid,105000,145000,125000,CAD,levels
+Senior Software Engineer,Shopify,Ottawa,Ontario,CA,mid,130000,175000,152000,CAD,levels
+Senior Software Engineer,Shopify,Toronto,Ontario,CA,mid,135000,180000,158000,CAD,levels
+Staff Software Engineer,Shopify,Toronto,Ontario,CA,senior,175000,240000,210000,CAD,levels
+Data Scientist,Shopify,Toronto,Ontario,CA,mid,100000,145000,122000,CAD,levels
+Product Manager,Shopify,Toronto,Ontario,CA,mid,110000,155000,132000,CAD,levels
+Software Engineer,RBC,Toronto,Ontario,CA,entry,68000,88000,78000,CAD,levels
+Senior Software Engineer,RBC,Toronto,Ontario,CA,mid,110000,150000,130000,CAD,levels
+Data Engineer,RBC,Toronto,Ontario,CA,mid,90000,125000,108000,CAD,levels
+Data Analyst,RBC,Toronto,Ontario,CA,entry,58000,78000,68000,CAD,levels
+Software Engineer,TD Bank,Toronto,Ontario,CA,entry,66000,86000,76000,CAD,levels
+Senior Software Engineer,TD Bank,Toronto,Ontario,CA,mid,108000,148000,128000,CAD,levels
+Financial Analyst,TD Bank,Toronto,Ontario,CA,entry,60000,82000,72000,CAD,levels
+Software Engineer,Amazon Canada,Vancouver,British Columbia,CA,entry,85000,100000,92000,CAD,levels
+Software Engineer,Amazon Canada,Toronto,Ontario,CA,mid,110000,145000,128000,CAD,levels
+Senior Software Engineer,Amazon Canada,Vancouver,British Columbia,CA,mid,140000,185000,162000,CAD,levels
+Staff Software Engineer,Amazon Canada,Vancouver,British Columbia,CA,senior,185000,255000,220000,CAD,levels
+Machine Learning Engineer,Amazon Canada,Vancouver,British Columbia,CA,mid,120000,170000,145000,CAD,levels
+Software Engineer,Google Canada,Waterloo,Ontario,CA,entry,88000,105000,96000,CAD,levels
+Software Engineer,Google Canada,Toronto,Ontario,CA,mid,115000,150000,132000,CAD,levels
+Senior Software Engineer,Google Canada,Waterloo,Ontario,CA,mid,145000,190000,168000,CAD,levels
+Senior Software Engineer,Google Canada,Toronto,Ontario,CA,mid,148000,192000,170000,CAD,levels
+Staff Software Engineer,Google Canada,Toronto,Ontario,CA,senior,190000,260000,225000,CAD,levels
+Machine Learning Engineer,Google Canada,Toronto,Ontario,CA,mid,125000,175000,150000,CAD,levels
+Software Engineer,Microsoft Canada,Vancouver,British Columbia,CA,entry,82000,100000,90000,CAD,levels
+Senior Software Engineer,Microsoft Canada,Vancouver,British Columbia,CA,mid,138000,185000,160000,CAD,levels
+Staff Software Engineer,Microsoft Canada,Vancouver,British Columbia,CA,senior,180000,250000,215000,CAD,levels
+Engineering Manager,Microsoft Canada,Vancouver,British Columbia,CA,senior,160000,210000,185000,CAD,levels
+Software Engineer,Wealthsimple,Toronto,Ontario,CA,entry,75000,92000,84000,CAD,levels
+Senior Software Engineer,Wealthsimple,Toronto,Ontario,CA,mid,120000,165000,142000,CAD,levels
+Product Designer,Wealthsimple,Toronto,Ontario,CA,mid,90000,130000,110000,CAD,levels
+Software Engineer,Hootsuite,Vancouver,British Columbia,CA,entry,70000,88000,80000,CAD,levels
+Senior Software Engineer,Hootsuite,Vancouver,British Columbia,CA,mid,110000,155000,132000,CAD,levels
+DevOps Engineer,Hootsuite,Vancouver,British Columbia,CA,mid,95000,130000,112000,CAD,levels
+Software Engineer,Clio,Vancouver,British Columbia,CA,entry,72000,90000,82000,CAD,levels
+Senior Software Engineer,Clio,Vancouver,British Columbia,CA,mid,115000,160000,138000,CAD,levels
+Software Engineer,Telus,Vancouver,British Columbia,CA,entry,65000,85000,75000,CAD,levels
+Senior Software Engineer,Telus,Vancouver,British Columbia,CA,mid,105000,145000,125000,CAD,levels
+DevOps Engineer,Telus,Vancouver,British Columbia,CA,mid,88000,125000,106000,CAD,levels
+Software Engineer,Bell,Montreal,Quebec,CA,entry,62000,82000,72000,CAD,levels
+Senior Software Engineer,Bell,Montreal,Quebec,CA,mid,100000,140000,120000,CAD,levels
+Data Engineer,Bell,Montreal,Quebec,CA,mid,88000,120000,104000,CAD,levels
+Software Engineer,CGI,Montreal,Quebec,CA,entry,60000,78000,68000,CAD,levels
+Senior Software Engineer,CGI,Montreal,Quebec,CA,mid,95000,135000,115000,CAD,levels
+Engineering Manager,CGI,Montreal,Quebec,CA,senior,130000,175000,152000,CAD,levels
+Software Engineer,,Toronto,Ontario,CA,entry,70000,92000,80000,CAD,market
+Software Engineer,,Vancouver,British Columbia,CA,entry,68000,90000,78000,CAD,market
+Software Engineer,,Montreal,Quebec,CA,entry,62000,84000,72000,CAD,market
+Software Engineer,,Ottawa,Ontario,CA,entry,66000,88000,76000,CAD,market
+Software Engineer,,Calgary,Alberta,CA,entry,65000,86000,75000,CAD,market
+Software Engineer,,Canada,,CA,entry,65000,90000,76000,CAD,market
+Senior Software Engineer,,Toronto,Ontario,CA,mid,115000,170000,142000,CAD,market
+Senior Software Engineer,,Vancouver,British Columbia,CA,mid,112000,168000,140000,CAD,market
+Senior Software Engineer,,Montreal,Quebec,CA,mid,100000,150000,125000,CAD,market
+Senior Software Engineer,,Canada,,CA,mid,105000,160000,132000,CAD,market
+Staff Software Engineer,,Toronto,Ontario,CA,senior,155000,235000,195000,CAD,market
+Staff Software Engineer,,Canada,,CA,senior,148000,225000,185000,CAD,market
+Data Scientist,,Toronto,Ontario,CA,mid,90000,140000,115000,CAD,market
+Data Scientist,,Canada,,CA,mid,85000,135000,108000,CAD,market
+Data Engineer,,Toronto,Ontario,CA,mid,90000,130000,110000,CAD,market
+Data Engineer,,Canada,,CA,mid,85000,125000,105000,CAD,market
+Machine Learning Engineer,,Toronto,Ontario,CA,mid,105000,165000,135000,CAD,market
+Machine Learning Engineer,,Canada,,CA,mid,100000,158000,128000,CAD,market
+Product Manager,,Toronto,Ontario,CA,mid,95000,148000,120000,CAD,market
+Product Manager,,Canada,,CA,mid,90000,142000,115000,CAD,market
+Engineering Manager,,Toronto,Ontario,CA,senior,138000,200000,168000,CAD,market
+Engineering Manager,,Canada,,CA,senior,130000,190000,160000,CAD,market
+DevOps Engineer,,Toronto,Ontario,CA,mid,90000,130000,110000,CAD,market
+DevOps Engineer,,Canada,,CA,mid,85000,125000,105000,CAD,market
+Data Analyst,,Toronto,Ontario,CA,entry,58000,80000,68000,CAD,market
+Data Analyst,,Canada,,CA,entry,55000,76000,64000,CAD,market
+Business Analyst,,Toronto,Ontario,CA,entry,58000,78000,67000,CAD,market
+Business Analyst,,Canada,,CA,entry,55000,75000,64000,CAD,market
+Financial Analyst,,Toronto,Ontario,CA,entry,58000,82000,70000,CAD,market
+Financial Analyst,,Canada,,CA,entry,55000,78000,66000,CAD,market
+Frontend Engineer,,Toronto,Ontario,CA,mid,90000,138000,114000,CAD,market
+Frontend Engineer,,Vancouver,British Columbia,CA,mid,88000,135000,112000,CAD,market
+Backend Engineer,,Toronto,Ontario,CA,mid,92000,140000,116000,CAD,market
+Backend Engineer,,Vancouver,British Columbia,CA,mid,90000,138000,114000,CAD,market
+Product Designer,,Toronto,Ontario,CA,mid,85000,130000,108000,CAD,market
+Product Designer,,Vancouver,British Columbia,CA,mid,82000,128000,105000,CAD,market
+Mobile Developer,,Toronto,Ontario,CA,mid,88000,132000,110000,CAD,market
+Mobile Developer,,Vancouver,British Columbia,CA,mid,86000,130000,108000,CAD,market
+Quality Assurance Engineer,,Toronto,Ontario,CA,entry,58000,82000,70000,CAD,market
+Quality Assurance Engineer,,Canada,,CA,entry,55000,78000,66000,CAD,market

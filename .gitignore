@@ -4,3 +4,4 @@ middleware/node_modules/
 .env
 *.local
 .claude/
+middleware/last-*-response.txt

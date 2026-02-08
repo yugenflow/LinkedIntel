@@ -210,42 +210,12 @@ async function handleSalaryLookup(body) {
     return { results };
   }
 
-  // First pass: match from DB
-  const dbResults = matchSalaries(jobs);
-
-  // Second pass: Gemini fallback for unmatched
-  const results = await Promise.all(
-    dbResults.map(async (result, i) => {
-      if (result.found) return result;
-
-      // Try Gemini estimate
-      try {
-        const job = jobs[i];
-        const prompt = buildSalaryEstimatePrompt(job.title, job.company, job.location);
-        const geminiResult = await callGeminiWithRetry(prompt, {
-          responseMimeType: 'application/json',
-          temperature: 0.3,
-          maxOutputTokens: 256,
-        });
-
-        return {
-          found: true,
-          salaryMin: geminiResult.salaryMin,
-          salaryMax: geminiResult.salaryMax,
-          salaryMedian: geminiResult.salaryMedian,
-          currency: geminiResult.currency,
-          matchType: 'ai_estimate',
-          source: 'gemini',
-          isAiEstimate: true,
-          confidence: geminiResult.confidence,
-          label: formatSalaryLabel(geminiResult.salaryMin, geminiResult.salaryMax, geminiResult.currency),
-        };
-      } catch (err) {
-        console.error(`[salary] Gemini fallback failed for "${jobs[i].title}":`, err.message);
-        return result; // Return the "not found" result
-      }
-    })
-  );
+  // Match from DB only — no Gemini fallback in batch lookups.
+  // Gemini estimation is available on-demand via the forceAi flag.
+  // This ensures batch responses return instantly without blocking on API retries.
+  const results = matchSalaries(jobs);
+  const matched = results.filter(r => r.found).length;
+  console.log(`[salary] DB matched ${matched}/${jobs.length}`);
 
   return { results };
 }
