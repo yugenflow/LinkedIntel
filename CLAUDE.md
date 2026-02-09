@@ -27,7 +27,7 @@ src/
   popup/                          — React app (App.tsx + 8 components)
   data/salary-dataset.json        — local salary reference data
 middleware/
-  dev-server.js                   — local Express server (port 3001)
+  dev-server.js                   — local Express server (port 3099)
   api/gemini-match.ts             — Vercel serverless handler
   api/gemini-connect.ts           — Vercel serverless handler
 public/
@@ -75,6 +75,7 @@ node scripts/generate-icons.cjs
 - **Programmatic injection fallback**: Service worker uses `chrome.scripting.executeScript` when `sendMessage` fails (handles SPA navigation where declarative injection missed)
 - **Multi-selector scraping**: LinkedIn uses obfuscated/hashed CSS classes. Scrapers try multiple selectors in order, including `data-testid` attributes as stable anchors
 - **Local salary data**: Salary lookup uses a bundled JSON dataset with fuzzy title matching (60% word overlap threshold), no API call needed
+- **AI salary estimates**: On-demand only (forceAi flag), never in batch lookups. Gemini 2.5 Flash needs ≥2048 maxOutputTokens (thinking model uses tokens internally)
 - **24h match cache**: Resume-JD results cached in Chrome storage by content hash to avoid repeated API calls
 
 ## Content Script Selectors (Fragile)
@@ -92,12 +93,14 @@ LinkedIn frequently changes class names. If scraping breaks:
 - Components use semantic color tokens: `text-primary`, `surface`, `border-subtle`, etc.
 
 ## API Configuration
-- **Model**: Gemini 2.5 Flash (`gemini-2.5-flash`)
-- **Match endpoint**: temp 0.3, max 4096 tokens, JSON response mode
+- **Model**: Gemini 2.5 Flash (`gemini-2.5-flash`) — a thinking model; internal reasoning tokens consume the output budget
+- **Match endpoint**: temp 0.3, max 65536 tokens, JSON response mode
 - **Connect endpoint**: temp 0.7, max 2048 tokens, JSON response mode
+- **Salary AI estimate endpoint**: temp 0.3, max 2048 tokens, JSON response mode (was 256, caused truncated output)
 - **PII stripping**: Emails, phone numbers, SSNs removed before sending to Gemini
-- **Dev server**: localhost:3001 with CORS enabled
+- **Dev server**: localhost:3099 with CORS enabled (`.env` file in `middleware/` dir)
 - **Production**: Vercel serverless functions
+- **JSON cleaning**: `cleanJsonResponse()` strips markdown fences, fixes literal newlines in strings, strips prose wrapping before first `{` / after last `}`, removes trailing commas
 
 ## Testing
 No automated tests yet. Manual testing flow:
