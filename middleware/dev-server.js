@@ -84,6 +84,18 @@ function cleanJsonResponse(text) {
   }
   cleaned = fixed;
 
+  // Strip any prose before the first '{' (Gemini sometimes wraps JSON in prose)
+  const firstBrace = cleaned.indexOf('{');
+  if (firstBrace > 0) {
+    cleaned = cleaned.slice(firstBrace);
+  }
+
+  // Strip any trailing prose after the last '}'
+  const lastBrace = cleaned.lastIndexOf('}');
+  if (lastBrace >= 0 && lastBrace < cleaned.length - 1) {
+    cleaned = cleaned.slice(0, lastBrace + 1);
+  }
+
   // Fix common Gemini JSON issues:
   // 1. Trailing commas before ] or }
   cleaned = cleaned.replace(/,\s*([}\]])/g, '$1');
@@ -185,7 +197,7 @@ async function handleSalaryLookup(body) {
           const geminiResult = await callGeminiWithRetry(prompt, {
             responseMimeType: 'application/json',
             temperature: 0.3,
-            maxOutputTokens: 256,
+            maxOutputTokens: 2048,
           });
           return {
             found: true,
