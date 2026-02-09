@@ -31,16 +31,14 @@ const LOCATION_SELECTORS = [
   '[class*="topcard"] [class*="location"]',
 ];
 
+import { SALARY_PATTERN } from '../shared/constants';
+
 const SALARY_SELECTORS = [
   '.job-details-jobs-unified-top-card__job-insight--highlight span',
   '.job-details-jobs-unified-top-card__job-insight span',
   '[class*="salary"]',
   '[class*="compensation"]',
 ];
-
-// Regex to detect salary-like text across multiple currencies
-// Matches: $132K/yr, $132,000/yr, ₹12,00,000/yr, £65K - £85K, AED 25,000, etc.
-const SALARY_PATTERN = /(?:\$|₹|£|€|CA\$|A\$|S\$|AED|SGD|CHF|SEK|kr)\s*[\d,]+(?:\.\d+)?[kK]?\s*(?:\/\w+)?\s*[-–—]\s*(?:\$|₹|£|€|CA\$|A\$|S\$|AED|SGD|CHF|SEK|kr)\s*[\d,]+(?:\.\d+)?[kK]?\s*(?:\/\w+)?/;
 
 const DESCRIPTION_SELECTORS = [
   '[data-testid="expandable-text-box"]',

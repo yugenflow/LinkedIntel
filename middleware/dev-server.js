@@ -5,8 +5,8 @@
  *   1. Set your Gemini API key:  set GEMINI_API_KEY=your_key_here
  *   2. Run:                      node middleware/dev-server.js
  *
- * The extension's service worker will call http://localhost:3001/api/gemini-match
- * and http://localhost:3001/api/gemini-connect
+ * The extension's service worker will call http://localhost:3099/api/gemini-match
+ * and http://localhost:3099/api/gemini-connect
  */
 
 require('dotenv').config();

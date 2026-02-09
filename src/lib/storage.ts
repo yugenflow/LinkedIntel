@@ -31,10 +31,6 @@ export async function setStorage(data: Partial<StorageData>): Promise<void> {
   await chrome.storage.local.set(data);
 }
 
-export async function clearStorage(): Promise<void> {
-  await chrome.storage.local.clear();
-}
-
 /** Generate a simple hash for cache keys */
 export function hashString(str: string): string {
   let hash = 0;

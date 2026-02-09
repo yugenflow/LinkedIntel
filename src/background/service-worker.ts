@@ -137,9 +137,6 @@ async function handleMessage(message: MessageType): Promise<MessageResponse> {
       return { success: true };
     }
 
-    case 'SALARY_LOOKUP':
-      return handleSalaryLookup(message.payload);
-
     default:
       return { success: false, error: 'Unknown message type' };
   }
@@ -220,6 +217,7 @@ async function handleIcebreaker(
 
 // ── Salary lookup with caching ──
 const SALARY_CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours for DB results
+const SALARY_NOT_FOUND_TTL = 60 * 60 * 1000; // 1 hour for "not found" results
 const SALARY_AI_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days for AI estimates
 
 function makeSalaryCacheKey(job: { title: string; company: string; location: string }): string {
@@ -376,11 +374,13 @@ async function handleSalaryLookup(
   for (let i = 0; i < jobs.length; i++) {
     const key = makeSalaryCacheKey(jobs[i]);
     const cached = salaryCache[key];
-    // Only serve from cache if the result was actually found
-    if (cached && cached.results[0]?.found) {
-      const ttl = cached.results[0]?.isAiEstimate ? SALARY_AI_CACHE_TTL : SALARY_CACHE_TTL;
+    if (cached) {
+      const entry = cached.results[0];
+      const ttl = entry?.isAiEstimate ? SALARY_AI_CACHE_TTL
+        : entry?.found ? SALARY_CACHE_TTL
+        : SALARY_NOT_FOUND_TTL;
       if (Date.now() - cached.cachedAt < ttl) {
-        results[i] = cached.results[0];
+        results[i] = entry;
         continue;
       }
     }
@@ -458,6 +458,6 @@ async function handleAiEstimate(
       label: isRateLimit ? 'Rate Limited' : 'Estimate Failed',
       isAiEstimate: true,
       rateLimited: isRateLimit,
-    } as SalaryResult;
+    };
   }
 }

@@ -84,7 +84,7 @@ export interface SalaryResult {
   source?: string;
   isAiEstimate?: boolean;
   confidence?: 'high' | 'medium' | 'low';
-  sampleSize?: number;
+  rateLimited?: boolean;
   label: string;
 }
 
@@ -121,7 +121,7 @@ export type MessageType =
   | { type: 'SET_STORAGE'; payload: Partial<StorageData> }
   | { type: 'PAGE_DATA'; payload: PageDataPayload }
   | { type: 'REQUEST_SCRAPE' }
-  | { type: 'SALARY_LOOKUP'; payload: { jobs: { title: string; company: string; location: string }[]; _startIndex?: number } }
+  | { type: 'SALARY_LOOKUP'; payload: { jobs: { title: string; company: string; location: string }[] } }
   | { type: 'AI_ESTIMATE_SALARY'; payload: { title: string; company: string; location: string; cardIndex: number } };
 
 export interface MessageResponse<T = unknown> {

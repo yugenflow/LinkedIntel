@@ -1,3 +1,5 @@
+import { SALARY_PATTERN } from '../shared/constants';
+
 const CARD_SELECTORS = {
   card: '.job-card-container, .jobs-search-results__list-item, li.jobs-search-results__list-item',
   title: '.job-card-list__title, .job-card-container__link, a.job-card-list__title--link',
@@ -5,11 +7,7 @@ const CARD_SELECTORS = {
   location: '.job-card-container__metadata-wrapper, .artdeco-entity-lockup__caption',
 };
 
-// Regex to detect salary-like text across multiple currencies
-const SALARY_PATTERN = /(?:\$|₹|£|€|CA\$|A\$|S\$|AED|SGD|CHF|SEK|kr)\s*[\d,]+(?:\.\d+)?[kK]?\s*(?:\/\w+)?\s*[-–—]\s*(?:\$|₹|£|€|CA\$|A\$|S\$|AED|SGD|CHF|SEK|kr)\s*[\d,]+(?:\.\d+)?[kK]?\s*(?:\/\w+)?/;
-
 export interface ScrapedJobCard {
-  element: Element;
   title: string;
   company: string;
   location: string;
@@ -58,7 +56,7 @@ export function scrapeJobCards(): ScrapedJobCard[] {
     }
 
     if (title) {
-      results.push({ element: card, title, company, location, ...(postedSalary && { postedSalary }) });
+      results.push({ title, company, location, ...(postedSalary && { postedSalary }) });
     }
   });
 

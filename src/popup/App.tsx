@@ -210,7 +210,7 @@ export default function App() {
           setJdAiEstimate(result);
           setJdAiError(null);
         } else {
-          const msg = (result as any).rateLimited
+          const msg = result.rateLimited
             ? 'Rate limited — wait ~1 minute and retry.'
             : 'AI estimate unavailable. Try again later.';
           setJdAiError(msg);

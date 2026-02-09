@@ -8,7 +8,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const { globSync } = require('fs').promises ? require('fs') : { globSync: null };
 
 const DATA_DIR = path.join(__dirname, 'data-sources');
 const OUTPUT = path.join(__dirname, '..', 'middleware', 'data', 'salary-db.json');

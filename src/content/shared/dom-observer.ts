@@ -18,32 +18,3 @@ export function observePageChanges(callback: PageChangeCallback): () => void {
 
   return () => clearInterval(interval);
 }
-
-/**
- * Wait for an element to appear in the DOM.
- * Uses polling instead of MutationObserver to avoid performance issues.
- */
-export function waitForElement(
-  selector: string,
-  timeout = 10000
-): Promise<Element | null> {
-  return new Promise((resolve) => {
-    const existing = document.querySelector(selector);
-    if (existing) {
-      resolve(existing);
-      return;
-    }
-
-    const startTime = Date.now();
-    const interval = setInterval(() => {
-      const el = document.querySelector(selector);
-      if (el) {
-        clearInterval(interval);
-        resolve(el);
-      } else if (Date.now() - startTime > timeout) {
-        clearInterval(interval);
-        resolve(null);
-      }
-    }, 500);
-  });
-}
