@@ -30,6 +30,12 @@ middleware/
   dev-server.js                   — local Express server (port 3099)
   api/gemini-match.ts             — Vercel serverless handler
   api/gemini-connect.ts           — Vercel serverless handler
+tests/
+  unit/                           — Vitest unit + component tests
+    setup.ts                      — Chrome API mocks, global test setup
+  e2e/                            — Playwright E2E tests
+    extension-fixture.ts          — launches Chrome with extension loaded
+    *-snapshots/                  — visual regression baselines (committed)
 public/
   manifest.json                   — extension manifest
   icons/                          — LI monogram PNGs (16/32/48/128)
@@ -103,13 +109,46 @@ LinkedIn frequently changes class names. If scraping breaks:
 - **JSON cleaning**: `cleanJsonResponse()` strips markdown fences, fixes literal newlines in strings, strips prose wrapping before first `{` / after last `}`, removes trailing commas
 
 ## Testing
-No automated tests yet. Manual testing flow:
+
+### Automated Tests
+```bash
+npm test              # Vitest unit tests (components + utilities)
+npm run test:watch    # Vitest in watch mode
+npm run test:e2e      # Playwright E2E (loads real extension in headless Chrome)
+npm run test:e2e:update  # Regenerate visual regression baselines
+npm run test:all      # Run both unit + E2E
+npm run typecheck     # TypeScript type check (tsc --noEmit)
+```
+
+**Unit tests** (`tests/unit/`): Vitest + React Testing Library + happy-dom
+- Chrome API mocked globally in `tests/unit/setup.ts` (runtime, storage, tabs)
+- Component tests render with `@testing-library/react`, assert DOM content
+- Utility tests cover `storage.ts` functions (hashString, cache eviction)
+- Path alias `@/` works via vitest.config.ts resolve
+
+**E2E tests** (`tests/e2e/`): Playwright + headless Chrome (`--headless=new`)
+- `extension-fixture.ts` loads the built extension from `dist/`, extracts extension ID from service worker URL
+- Popup opened as a page at `chrome-extension://<id>/popup/index.html`
+- Visual regression via `toHaveScreenshot()` — baselines in `tests/e2e/*-snapshots/`
+- Requires `npm run build` first (tests run against `dist/`)
+
+### Manual Testing Flow
 1. `npm run build` → load `dist/` as unpacked extension in `chrome://extensions`
 2. Start middleware: `cd middleware && GEMINI_API_KEY=<key> node dev-server.js`
 3. Navigate to LinkedIn job search → verify salary cards appear in popup
 4. Navigate to job detail → verify "Analyze match" works (requires uploaded resume)
 5. Navigate to profile → verify "Generate message" works
 6. Test on non-LinkedIn page → verify hint text appears
+
+### Development Workflow
+1. **Ideate** → discuss feature goals and scope
+2. **Plan** → enter plan mode, explore codebase, produce implementation plan
+3. **Discuss** → iterate on plan, lock architecture decisions
+4. **Clarify** → resolve open questions before coding
+5. **Implement** → git worktree for feature branch, subagents for parallel work
+6. **Test** → automated (unit + E2E) then manual on real LinkedIn
+7. **Document** → update CLAUDE.md with new patterns/decisions
+8. **Merge** → feature branch → main after all tests pass
 
 ## Common Issues
 - **Content script not injecting**: LinkedIn is an SPA; navigating within LinkedIn doesn't trigger new content script injection. The service worker fallback handles this, but if it breaks, check `getContentScriptForUrl()` in service-worker.ts

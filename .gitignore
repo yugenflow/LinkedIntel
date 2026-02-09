@@ -5,3 +5,5 @@ middleware/node_modules/
 *.local
 .claude/
 middleware/last-*-response.txt
+test-results/
+playwright-report/
